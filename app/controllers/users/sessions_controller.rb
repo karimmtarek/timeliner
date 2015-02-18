@@ -7,7 +7,8 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def create_with_oauth
-    binding.pry
+    # binding.pry
+    redirect_to edit_user_registration_path
   end
 
   # POST /resource/sign_in
