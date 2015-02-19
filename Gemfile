@@ -28,7 +28,9 @@ gem 'devise'
 gem "haml-rails", "~> 0.8"
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'linkedin'
 gem 'pry-rails'
+gem "figaro"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -56,6 +58,7 @@ end
 group :development do
   gem 'thin'
   gem 'guard-rspec', require: false
+  gem 'guard-livereload', '~> 2.4', require: false
   gem 'faker'
   gem 'better_errors'
 end
