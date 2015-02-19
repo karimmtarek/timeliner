@@ -13,4 +13,10 @@
 //= require opal
 //= require opal_ujs
 //= require turbolinks
-//= require_tree .
+//= require semantic-ui
+
+$('.ui.checkbox').checkbox();
+
+$('.message .close').on('click', function() {
+  $(this).closest('.message').hide();
+});
