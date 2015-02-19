@@ -9,4 +9,11 @@
   %body
     %p.notice= notice
     %p.alert= alert
+    %nav
+      = link_to 'home', root_path
+      - if signed_in?
+        = link_to 'sign out', destroy_user_session_path, method: :delete
+      - else
+        = link_to 'sign in', new_user_session_path
+        = link_to 'sign up', new_user_registration_path
     = yield
