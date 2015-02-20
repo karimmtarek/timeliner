@@ -8,29 +8,31 @@ class Users::SessionsController < Devise::SessionsController
 
 
   def create_with_oauth
-    binding.pry
+    # binding.pry
 
-    if User.where(email: info['info']['email']).present?
-      redirect_to user_session_path, notice: 'What is wrong with you? you already signed up!! sign in below if you want.'
+    if User.where(email: auth_hash['info']['email']).present?
+      @user = User.find_by(email: auth_hash['info']['email'])
+      sign_in @user
+      redirect_to personal_info_path, notice: "Welcome back #{@user.username}"
       return false
     end
 
     @user = User.create(
-      email:    info['info']['email'],
-      username: info['info']['name'],
-      password: 'password',
+      email:    auth_hash['info']['email'],
+      username: auth_hash['info']['name'],
+      password: SecureRandom.hex(10)
     )
 
     @user_info = Information.create(
       user_id: @user.id,
-      uid:         info['uid'],
-      token:       info['credentials']['token'],
-      secret:      info['credentials']['secret'],
-      first_name:  info['info']['first_name'],
-      last_name:   info['info']['last_name'],
-      location:    info['info']['location'],
-      description: info['info']['description'],
-      phone:       info['info']['phone']
+      uid:         auth_hash['uid'],
+      token:       auth_hash['credentials']['token'],
+      secret:      auth_hash['credentials']['secret'],
+      first_name:  auth_hash['info']['first_name'],
+      last_name:   auth_hash['info']['last_name'],
+      location:    auth_hash['info']['location'],
+      description: auth_hash['info']['description'],
+      phone:       auth_hash['info']['phone']
     )
 
     sign_in @user
@@ -61,7 +63,7 @@ class Users::SessionsController < Devise::SessionsController
     params.require(:user).permit(:email, :username, :password)
   end
 
-  def info
+  def auth_hash
     request.env['omniauth.auth']
   end
 
