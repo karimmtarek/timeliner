@@ -14,9 +14,6 @@
 //= require opal_ujs
 //= require turbolinks
 //= require semantic-ui
+//= require static_pages_view
 
 $('.ui.checkbox').checkbox();
-
-$('.message .close').on('click', function() {
-  $(this).closest('.message').hide();
-});
