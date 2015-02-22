@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   get '/auth/failure' => "static_pages#auth_failure"
   get 'informations/show', as: :personal_info
 
-  devise_for :users do
+  devise_for :users, :controllers => {
+    :omniauth_callbacks => "users/omniauth_callbacks"
+  }
 
-  end
-  #Devise: Ensure you have defined root_url to *something* in your config/routes.rb.
-
-  devise_scope :user do
-    get "/auth/:provider/callback" => "users/sessions#create_with_oauth"
-  end
+  # devise_scope :user do
+  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
 
 end

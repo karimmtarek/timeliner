@@ -10,21 +10,6 @@
     = semantic_flash
     .ui.centered.vertically.padded.grid
       .fourteen.wide.column
-        .ui.menu
-          = link_to root_path, class: 'item' do
-            %i.home.icon
-            Home
-          .right.menu
-            - if signed_in?
-              = link_to destroy_user_session_path, class: 'item', method: :delete do
-                %i.sign.out.icon
-                Sign out
-            - else
-              = link_to new_user_session_path, class: 'item' do
-                %i.sign.in.icon
-                Sign in
-              = link_to new_user_registration_path, class: 'item' do
-                %i.linkedin.square.icon
-                Sign up
+        = render 'layouts/top_nav'
 
     = yield

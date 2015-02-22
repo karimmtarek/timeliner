@@ -6,7 +6,7 @@
       %p Fill out the form below to sign-up for a new account or just sign-up with your LinkedIn account
     .ui.form.attached.fluid.segment
       .field
-        = link_to '/auth/linkedin', class: 'ui linkedin button' do
+        = link_to user_omniauth_authorize_path(:linkedin), class: 'ui linkedin button' do
           %i.linkedin.square.icon
           Sign up
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|

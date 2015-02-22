@@ -10,15 +10,15 @@
 
   .eleven.wide.column
     %h1 Personal Informations
-    %p= "first name: #{@user_info.first_name}"
-    %p= "last name: #{@user_info.last_name}"
+    %p= "first name: #{@user.first_name}"
+    %p= "last name: #{@user.last_name}"
     %p= "email: #{@user.email}"
-    %p= "location: #{@user_info.location}"
-    %p= "phone: #{@user_info.phone}"
-    %p= "description: #{@user_info.description}"
-    -# %p= "uid: #{@user_info.uid}"
-    -# %p= "token: #{@user_info.token}"
-    -# %p= "secret: #{@user_info.secret}"
+    %p= "location: #{@user.location}"
+    %p= "phone: #{@user.phone}"
+    %p= "description: #{@user.description}"
+    %p= "uid: #{@user.uid}"
+    %p= "username: #{@user.username}"
+    %p= image_tag(@user.image, size: "100x100", alt: @user.username)
     %hr
     %h2 Social media links
     %hr
