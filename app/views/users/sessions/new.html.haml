@@ -5,10 +5,11 @@
         Log in
 
     .ui.form.attached.fluid.segment
-      .field
+      .field.center-this
         = link_to user_omniauth_authorize_path(:linkedin), class: 'ui linkedin button' do
           %i.linkedin.square.icon
-          Sign in
+          with Linkedin
+      .ui.horizontal.divider or
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.label :email
