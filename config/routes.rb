@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get 'static_pages/index'
 
-  resources :informations
+  resources :accounts
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"

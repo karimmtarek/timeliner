@@ -1,0 +1,21 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1
+      Account Information
+      = link_to 'Edit', edit_account_path(@account)
+    %p= "first name: #{@account.first_name}"
+    %p= "last name: #{@account.last_name}"
+    %p= "email: #{@account.email}"
+    %p= "location: #{@account.location}"
+    %p= "phone: #{@account.phone}"
+    %p= "description: #{@account.description}"
+    %p= "uid: #{@account.uid}"
+    %p= "username: #{@account.username}"
+    %p= image_tag(@account.image, size: "100x100", alt: @account.username)
+    %hr
+    %h2 Social media links
+    %hr
+    %h2 Skills

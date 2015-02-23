@@ -1,17 +1,17 @@
-class InformationsController < ApplicationController
+class AccountsController < ApplicationController
   def show
-    @information = current_user
+    @account = current_user
   end
 
   def edit
-    @information = current_user
+    @account = current_user
     # binding.pry
   end
 
   def update
-    @information = current_user
+    @account = current_user
 
-    if @information.update(info_params)
+    if @account.update(info_params)
       redirect_to information_path
     else
       render :edit
