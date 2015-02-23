@@ -8,12 +8,15 @@ describe "Edit user info" do
 
     visit information_path(user)
     expect(current_path).to eq(information_path(user))
-
     click_link 'Edit'
-    expect(current_path).to eq(edit_information_path(user))
 
-    expect(page).to have_content(user.username)
-    # expect(find_field('username').value).to eq(user.username)
+    expect(current_path).to eq(edit_information_path(user))
+    expect(find_field('Username').value).to eq(user.username)
+    fill_in 'Username', with: "new_user_name"
+    click_button 'Update'
+
+    expect(current_path).to eq(information_path(user))
+    expect(page).to have_text('new_user_name')
 
   end
 end
