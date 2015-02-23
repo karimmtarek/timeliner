@@ -12,8 +12,8 @@
 //
 //= require opal
 //= require opal_ujs
-//= require turbolinks
 //= require semantic-ui
 //= require static_pages_view
 
 $('.ui.checkbox').checkbox();
+$('.ui.dropdown').dropdown({transition: 'drop', on: 'hover'});
