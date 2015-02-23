@@ -1,0 +1,34 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1
+      Edit Personal Information
+
+    .ui.form
+      = form_for(@information, url: information_path(@information)) do |f|
+        .field
+          = f.label :username
+          = f.text_field :username, autofocus: true
+        .field
+          = f.label :image
+          = f.text_field :image
+        .field
+          = f.label :first_name
+          = f.text_field :first_name
+        .field
+          = f.label :last_name
+          = f.text_field :last_name
+        .field
+          = f.label :location
+          = f.text_field :location
+        .field
+          = f.label :phone
+          = f.text_field :phone
+        .field
+          = f.label :description
+          = f.text_area :description
+        .actions
+          = f.submit "Update", class: 'ui submit button'
+          = link_to "Cancel", information_path(@information)

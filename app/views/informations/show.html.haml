@@ -1,24 +1,20 @@
 .ui.centered.grid
   .three.wide.column
-    .ui.vertical.fluid.menu
-      %a.item
-        Link 1
-      %a.item
-        Link 2
-      %a.item
-        Link 3
+    = render 'layouts/backend_side_nav'
 
   .eleven.wide.column
-    %h1 Personal Informations
-    %p= "first name: #{@user.first_name}"
-    %p= "last name: #{@user.last_name}"
-    %p= "email: #{@user.email}"
-    %p= "location: #{@user.location}"
-    %p= "phone: #{@user.phone}"
-    %p= "description: #{@user.description}"
-    %p= "uid: #{@user.uid}"
-    %p= "username: #{@user.username}"
-    %p= image_tag(@user.image, size: "100x100", alt: @user.username)
+    %h1
+      Personal Information
+      = link_to 'Edit', edit_information_path(@information)
+    %p= "first name: #{@information.first_name}"
+    %p= "last name: #{@information.last_name}"
+    %p= "email: #{@information.email}"
+    %p= "location: #{@information.location}"
+    %p= "phone: #{@information.phone}"
+    %p= "description: #{@information.description}"
+    %p= "uid: #{@information.uid}"
+    %p= "username: #{@information.username}"
+    %p= image_tag(@information.image, size: "100x100", alt: @information.username)
     %hr
     %h2 Social media links
     %hr
