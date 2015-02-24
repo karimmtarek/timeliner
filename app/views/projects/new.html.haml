@@ -1,0 +1,37 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1
+      Create Project
+
+    .ui.form
+      = form_for(@project) do |f|
+        .field
+          = label_tag 'Belongs to'
+          = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
+        .field
+          = f.label :title
+          = f.text_field :title, autofocus: true
+        .field
+          = f.label :client
+          = f.text_field :client
+        .field
+          = f.label :link_live
+          = f.text_field :link_live
+        .field
+          = f.label :link_source
+          = f.text_field :link_source
+        .field
+          = f.label :published_on
+          = f.text_field :published_on
+        .field
+          = f.label :description
+          = f.text_area :description
+        .field
+          = f.label :role
+          = f.text_area :role
+        .actions
+          = f.submit "Create", class: 'ui submit button'
+          = link_to "Cancel", milestones_path

@@ -1,0 +1,31 @@
+.ui.form
+
+  = form_for(@milestone) do |f|
+    = render 'shared/errors', object: @milestone
+    .field
+      = f.label :title
+      = f.text_field :title, autofocus: true#, required: true
+    .field
+      = f.label :company
+      = f.text_field :company
+    .field
+      = f.label :company_url
+      = f.text_field :company_url
+    .field
+      = f.label :location
+      = f.text_field :location
+    .field
+      = f.label :date_start
+      = date_select :milestone, :date_start
+    .field
+      = f.label :date_end
+      = date_select :milestone, :date_end
+    .field
+      = f.label :description
+      = f.text_area :description
+    .actions
+      - if @milestone.new_record?
+        = f.submit "Create Milestone", class: 'ui submit button'
+      - else
+        = f.submit "Update Milestone", class: 'ui submit button'
+      = link_to "Cancel", milestones_path

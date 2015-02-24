@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222021248) do
+ActiveRecord::Schema.define(version: 20150224011244) do
+
+  create_table "milestones", force: :cascade do |t|
+    t.string   "title"
+    t.string   "company"
+    t.string   "company_url"
+    t.string   "location"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "milestones", ["user_id"], name: "index_milestones_on_user_id"
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "milestone_id"
+    t.string   "title"
+    t.text     "description"
+    t.text     "role"
+    t.string   "client"
+    t.date     "published_on"
+    t.string   "link_live"
+    t.string   "link_source"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "projects", ["milestone_id"], name: "index_projects_on_milestone_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -12,7 +12,7 @@ class AccountsController < ApplicationController
     @account = current_user
 
     if @account.update(info_params)
-      redirect_to information_path
+      redirect_to account_path
     else
       render :edit
     end

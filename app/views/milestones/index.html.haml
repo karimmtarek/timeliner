@@ -1,0 +1,23 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1 Milestones
+    .ui.accordion.styled.fluid
+      - @milestones.each do |milestone|
+        .title
+          %i.dropdown.icon
+          = "#{milestone.title} (#{milestone.date_start} - #{milestone.date_end})"
+          = link_to 'Delete', milestone_path(milestone), method: :delete
+          = link_to 'Edit', edit_milestone_path(milestone)
+        .content
+          %p
+            at
+            = link_to milestone.company, milestone.company_url, :target => '_blank'
+            |
+            = milestone.location
+          = markdown(milestone.description)
+          - unless milestone.projects.blank?
+            - milestone.projects.each do |project|
+              %p= project.title

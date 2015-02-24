@@ -1,0 +1,48 @@
+class MilestonesController < ApplicationController
+
+  def index
+    @milestones = current_user.milestones.all
+  end
+
+  def new
+    @milestone = current_user.milestones.new
+  end
+
+  def create
+    @milestone = current_user.milestones.new(milestone_params)
+
+    if @milestone.save
+      redirect_to milestones_path, notice: 'done!'
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @milestone = Milestone.find(params[:id])
+  end
+
+  def update
+    @milestone = Milestone.find(params[:id])
+
+    if @milestone.update(milestone_params)
+      redirect_to milestones_path, notice: 'Mile stone updated!'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @milestone = Milestone.find(params[:id])
+
+    @milestone.destroy
+    redirect_to :back
+  end
+
+  private
+
+  def milestone_params
+    params.require(:milestone).permit(:title, :company, :company_url, :location, :description, :date_start, :date_end)
+  end
+
+end

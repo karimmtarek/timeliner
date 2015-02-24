@@ -1,6 +1,9 @@
 .ui.vertical.fluid.menu
   = link_to 'Account info', account_path(current_user), class: 'item'
-  %a.item
-    Link 2
-  %a.item
-    Link 3
+  .item
+    %b
+      = link_to 'Milestones', milestones_path
+    .menu
+      = link_to 'Create milestone', new_milestone_path, class: 'item'
+      = link_to 'Create project', new_project_path, class: 'item'
+

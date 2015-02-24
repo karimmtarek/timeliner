@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :projects
+
+  resources :milestones
+
   root "static_pages#index"
   get 'static_pages/index'
 

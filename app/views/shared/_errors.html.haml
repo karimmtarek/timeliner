@@ -1,0 +1,10 @@
+- if object.errors.any?
+  %section#errors
+    %header
+      %h3
+        Ooops! your form could not be saved. Please correct the following
+        = pluralize(object.errors.count, 'error')
+
+    %ul
+      - object.errors.full_messages.each do |message|
+        %li= message
