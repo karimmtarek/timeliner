@@ -34,6 +34,9 @@ gem 'pry-rails'
 gem "figaro"
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
 gem 'redcarpet'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

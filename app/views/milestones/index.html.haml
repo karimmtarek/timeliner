@@ -21,3 +21,4 @@
           - unless milestone.projects.blank?
             - milestone.projects.each do |project|
               %p= project.title
+              = image_for(project)
