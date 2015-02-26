@@ -1,25 +1,37 @@
-.ui.form
+.ui.form.milestone
 
   = form_for(@milestone) do |f|
     = render 'shared/errors', object: @milestone
-    .field
-      = f.label :title
-      = f.text_field :title, autofocus: true#, required: true
-    .field
-      = f.label :company
-      = f.text_field :company
-    .field
-      = f.label :company_url
-      = f.text_field :company_url
-    .field
-      = f.label :location
-      = f.text_field :location
-    .field
-      = f.label :date_start
-      = date_select :milestone, :date_start
-    .field
-      = f.label :date_end
-      = date_select :milestone, :date_end
+    .two.fields
+      .field
+        = f.label :title
+        = f.text_field :title, autofocus: true#, required: true
+      .field
+        = f.label :location
+        = f.text_field :location
+    .two.fields
+      .field
+        = f.label :company
+        = f.text_field :company
+      .field
+        = f.label :company_url
+        .ui.labeled.input
+          .ui.label http://
+          = f.text_field :company_url, :placeholder => "domain.com"
+    .two.fields
+      .field.date_selector
+        = f.label 'Start date'
+        = date_select(:milestone, :date_start, start_year: 1995,
+                                               discard_day: true,
+                                               order: [:month, :year])
+      .field.date_selector
+        = f.label 'End date'
+        = date_select(:milestone, :date_end, start_year: 1995,
+                                               discard_day: true,
+                                               order: [:month, :year])
+        .ui.checkbox
+          = f.check_box :present
+          = f.label :present
     .field
       = f.label :description
       = f.text_area :description

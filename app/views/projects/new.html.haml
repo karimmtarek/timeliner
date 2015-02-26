@@ -6,44 +6,4 @@
     %h1
       Create Project
 
-    .ui.form
-      = form_for(@project) do |f|
-        .two.fields
-          .field
-            = f.label :title
-            = f.text_field :title, autofocus: true
-          .field
-            = label_tag 'Belongs to'
-            = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
-        .two.fields
-          .field
-            = f.label :client
-            = f.text_field :client
-          .field
-            = f.label :published_on
-            = f.text_field :published_on
-        .two.fields
-          .field
-            = f.label :link_live
-            = f.text_field :link_live
-          .field
-            = f.label :link_source
-            = f.text_field :link_source
-        .two.fields
-          .field
-            = f.label :description
-            = f.text_area :description
-          .field
-            = f.label :role
-            = f.text_area :role
-        .two.fields
-          = f.fields_for :images do |images_form|
-            .field
-              = images_form.label :image
-              = images_form.file_field :image
-            .field
-              = images_form.label :description
-              = images_form.text_field :description
-        .actions
-          = f.submit "Create", class: 'ui submit button'
-          = link_to "Cancel", milestones_path
+    = render 'form'

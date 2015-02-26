@@ -1,0 +1,52 @@
+.ui.form.project
+  = form_for(@project) do |f|
+    .two.fields
+      .field
+        = f.label :title
+        = f.text_field :title, autofocus: true
+      .field
+        = label_tag 'Belongs to'
+        = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
+    .two.fields
+      .field
+        = f.label :client
+        = f.text_field :client
+      .field.date_selector
+        = f.label :published_on
+        = date_select(:project, :published_on, start_year: 1995,
+                                               discard_day: true,
+                                               order: [:month, :year])
+    .two.fields
+      .field
+        = f.label :link_live
+        .ui.labeled.input
+          .ui.label http://
+          = f.text_field :link_live, :placeholder => "domain.com"
+      .field
+        = f.label :link_source
+        .ui.labeled.input
+          .ui.label http://
+          = f.text_field :link_source, :placeholder => "domain.com"
+    .two.fields
+      .field
+        = f.label :description
+        = f.text_area :description
+      .field
+        = f.label :role
+        = f.text_area :role
+    .two.fields
+      %h4.ui.dividing.header
+        Project screenshot
+      = f.fields_for :images do |images_form|
+        .field
+          = images_form.label 'Choose image to upload'
+          = images_form.file_field :image
+        .field
+          = images_form.label :description
+          = images_form.text_field :description
+    .actions
+      - if @project.new_record?
+        = f.submit "Create Project", class: 'ui submit button'
+      - else
+        = f.submit "Update Project", class: 'ui submit button'
+      = link_to "Cancel", milestones_path
