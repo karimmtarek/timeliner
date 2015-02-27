@@ -4,8 +4,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   # You should also create an action method in this controller like this:
   def linkedin
-    # binding.pry
+
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    # binding.pry
 
     if @user.persisted?
       #this will throw if @user is not activated

@@ -3,21 +3,29 @@
     = render 'layouts/backend_side_nav'
 
   .eleven.wide.column
-    %h1 Milestones
+    %h1
+      Milestones
+      = @milestones.size unless @milestones.blank?
+    %p
+      import your linkedin data to create your milestones
+      = link_to 'Import data', import_linkedin_data_path,  method: :put
     .ui.accordion.styled.fluid
       - @milestones.each do |milestone|
         .title
           %i.dropdown.icon
-          = "#{milestone.title} (#{milestone.date_start} - #{milestone.date_end})"
+
+          = "#{milestone.title} (#{milestone.date_start.strftime('%b, %Y')} - #{milestone.present ? 'Present' : milestone.date_end.strftime('%b, %Y')})"
           = link_to 'Delete', milestone_path(milestone), method: :delete
           = link_to 'Edit', edit_milestone_path(milestone)
         .content
           %p
             at
-            = link_to milestone.company, milestone.company_url, :target => '_blank'
-            |
-            = milestone.location
-          = markdown(milestone.description)
+            - if milestone.company_url.blank?
+              %strong= milestone.company
+            - else
+              = link_to milestone.company, milestone.company_url, :target => '_blank'
+            = milestone.location ? "| #{milestone.location}" : ''
+          = markdown(milestone.description) unless milestone.description.blank?
           - unless milestone.projects.blank?
             - milestone.projects.each do |project|
               %p= project.title

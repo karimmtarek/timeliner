@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :projects
   resources :images
 
+  put '/milestones/import_linkedin_data', to: "milestones#import_linkedin_data", as: :import_linkedin_data
+
   resources :milestones
 
   root "static_pages#index"

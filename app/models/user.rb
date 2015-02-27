@@ -9,19 +9,21 @@ class User < ActiveRecord::Base
          :validatable,
          :omniauthable,
          :omniauth_providers => [:linkedin]
-  has_many :milestones
+  has_many :milestones, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email       = auth.info.email
-      user.password    = Devise.friendly_token[0,20]
-      user.username    = auth.info.name
-      user.image       = auth.info.image
-      user.first_name  = auth.info.first_name
-      user.last_name   = auth.info.last_name
-      user.location    = auth.info.location
-      user.description = auth.info.description
-      user.phone       = auth.info.phone
+      user.access_key         = auth.extra.access_token.params[:oauth_token]
+      user.access_secret      = auth.extra.access_token.params[:oauth_token_secret]
+      user.email              = auth.info.email
+      user.password           = Devise.friendly_token[0,20]
+      user.username           = auth.info.name
+      user.image              = auth.info.image
+      user.first_name         = auth.info.first_name
+      user.last_name          = auth.info.last_name
+      user.location           = auth.info.location
+      user.description        = auth.info.description
+      user.phone              = auth.info.phone
     end
   end
 
