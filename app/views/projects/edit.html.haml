@@ -1,0 +1,10 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1
+      Editing project:
+      = @project.title
+
+    = render 'form'

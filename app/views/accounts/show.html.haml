@@ -10,12 +10,13 @@
     %p= "last name: #{@account.last_name}"
     %p= "email: #{@account.email}"
     %p= "location: #{@account.location}"
-    %p= "phone: #{@account.phone}"
+    - unless @account.phone.blank?
+      %p= "phone: #{@account.phone}"
     %p= "description: #{@account.description}"
-    %p= "uid: #{@account.uid}"
     %p= "username: #{@account.username}"
     %p= image_tag(@account.image, size: "100x100", alt: @account.username)
     %hr
-    %h2 Social media links
-    %hr
     %h2 Skills
+    %ul
+    - @account.skills.each do |skill|
+      %li= skill.name

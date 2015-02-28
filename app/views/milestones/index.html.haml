@@ -30,3 +30,7 @@
             - milestone.projects.each do |project|
               %p= project.title
               = image_for(project)
+              %br
+              = link_to 'Edit', edit_project_path(project)
+              |
+              = link_to 'Delete', project_path(project), method: :delete

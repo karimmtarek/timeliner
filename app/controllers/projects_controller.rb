@@ -6,13 +6,34 @@ class ProjectsController < ApplicationController
 
   def create
     @project   = Project.new(project_params)
-    # binding.pry
-    # @project.images.new(params[:project][:image])
+
     if @project.save
       redirect_to milestones_path, notice: "Project #{@project.title} created!"
     else
       render :new
     end
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+
+    if @project.update(project_params)
+      milestones_path
+    else
+      render :edit
+    end
+
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to milestones_path
+
   end
 
   private
