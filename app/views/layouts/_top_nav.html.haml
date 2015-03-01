@@ -1,7 +1,15 @@
-.ui.menu
-  = link_to root_path, class: 'item' do
-    %i.home.icon
-    Home
+.ui.large.menu
+  - if current_user
+    = link_to milestones_path, class: 'item' do
+      %h2
+        %i.selected.radio.icon
+        Timeliner
+        -# = "#{current_user.first_name} #{current_user.last_name}"
+  - else
+    = link_to root_path, class: 'item' do
+      %h3
+        %i.selected.radio.icon
+        Timeliner
   .right.menu
     - if signed_in?
       .ui.dropdown.item

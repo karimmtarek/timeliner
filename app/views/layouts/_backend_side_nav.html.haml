@@ -1,9 +1,9 @@
 .ui.vertical.fluid.menu
-  = link_to 'Account info', account_path(current_user), class: 'item'
-  .item
-    %b
-      = link_to 'Milestones', milestones_path
-    .menu
-      = link_to 'Create milestone', new_milestone_path, class: 'item'
-      = link_to 'Create project', new_project_path, class: 'item'
+  = link_to 'Account info', account_path(current_user), class: "item #{active_class?('accounts', %w[show edit], 'active teal')}"
+  = link_to milestones_path, class: "item #{active_class?('milestones',%w[index], 'active teal')}" do
+    Milestones
+    .ui.label
+      = current_user.milestones.size
+  = link_to 'Create milestone', new_milestone_path, class: "item #{active_class?('milestones', %w[new edit], 'active teal')}"
+  = link_to 'Create project', new_project_path, class: "item #{active_class?('projects', %w[new edit], 'active teal')}"
 

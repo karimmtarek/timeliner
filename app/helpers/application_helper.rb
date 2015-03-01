@@ -19,4 +19,10 @@ module ApplicationHelper
 
     markdown.render(text).html_safe
   end
+
+  def active_class?(controller, action, class_name='active')
+    if controller_name == controller && action.any? {|action| action_name == action}
+      class_name
+    end
+  end
 end
