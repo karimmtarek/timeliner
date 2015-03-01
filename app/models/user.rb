@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
          :omniauth_providers => [:linkedin]
   has_many :milestones, dependent: :destroy
   has_many :skills, dependent: :destroy
+  has_many :social_media_links, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -25,6 +26,10 @@ class User < ActiveRecord::Base
       user.location           = auth.info.location
       user.description        = auth.info.description
       user.phone              = auth.info.phone
+      user.social_media_links.new(
+        name: 'linkedin',
+        url: auth.info.urls.public_profile
+      )
       skills = auth.extra.raw_info.skills.values[1]
       skills.each do |skill_info|
         user.skills.new(name: skill_info.skill.name)

@@ -15,8 +15,15 @@
     %p= "description: #{@account.description}"
     %p= "username: #{@account.username}"
     %p= image_tag(@account.image, size: "100x100", alt: @account.username)
-    %hr
-    %h2 Skills
-    %ul
-    - @account.skills.each do |skill|
-      %li= skill.name
+    - unless @account.skills.blank?
+      %hr
+      %h2 Skills
+      %ul
+      - @account.skills.each do |skill|
+        %li= skill.name
+    - unless @account.social_media_links.blank?
+      %hr
+      %h2 Social media links
+      %ul
+      - @account.social_media_links.each do |link|
+        %li= link_to link.name, link.url, target: '_blank'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228014239) do
+ActiveRecord::Schema.define(version: 20150301003315) do
 
   create_table "images", force: :cascade do |t|
     t.string   "description"
@@ -62,6 +62,16 @@ ActiveRecord::Schema.define(version: 20150228014239) do
   end
 
   add_index "skills", ["user_id"], name: "index_skills_on_user_id"
+
+  create_table "social_media_links", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "social_media_links", ["user_id"], name: "index_social_media_links_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
