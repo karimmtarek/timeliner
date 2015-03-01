@@ -44,40 +44,11 @@ class MilestonesController < ApplicationController
 
     if current_user.access_key && current_user.access_secret
       client.authorize_from_access(current_user.access_key, current_user.access_secret)
+      Milestone.create_from_position(client, current_user)
+      Milestone.create_from_education(client, current_user)
     else
       raise 'You must re-sync with linkedin'
     end
-
-    @positions = client.profile(:fields => ["positions"])
-    @positions[:positions][:all].each do |position|
-      milestone = Milestone.create(
-        user_id: current_user.id,
-        title: position.title,
-        company: position.company.name,
-        # company_url
-        # location
-        date_start: Date.new(position.start_date.year, position.start_date.month),
-        present: position.is_current,
-        description: position.summary
-      )
-      milestone.update(date_end: Date.new(position.end_date.year, position.end_date.month)) unless position.end_date.nil?
-    end
-
-
-    @education = client.profile(:fields => ["educations"])
-    # binding.pry
-    @education[:educations][:all].each do |education|
-      milestone = Milestone.create(
-        user_id: current_user.id,
-        title: education.field_of_study,
-        company: education.school_name,
-        date_start: Date.new(education.start_date.year),
-        date_end: Date.new(education.end_date.year),
-        present: education.is_current,
-        description: education.notes
-      )
-    end
-
 
     redirect_to milestones_path
   end

@@ -6,7 +6,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def linkedin
 
     @user = User.from_omniauth(request.env["omniauth.auth"])
-    binding.pry
+    # binding.pry
     if @user.persisted?
       #this will throw if @user is not activated
       sign_in_and_redirect @user, :event => :authentication
