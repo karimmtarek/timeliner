@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :social_media_links, dependent: :destroy
   accepts_nested_attributes_for :social_media_links, allow_destroy: true
 
+  before_create :generate_username
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.access_key         = auth.extra.access_token.token
@@ -38,6 +40,19 @@ class User < ActiveRecord::Base
       skills.each do |skill_info|
         user.skills.new(name: skill_info.skill.name)
       end
+    end
+  end
+
+  private
+
+  def generate_username
+    username = self.username.gsub(' ', '').downcase
+    if User.where(username: username).exists?
+      x = 1
+      begin
+        self.username = username + "-#{x}"
+        x += 1
+      end while User.where(username: self.username).exists?
     end
   end
 
