@@ -264,6 +264,8 @@ GEM
     minitest (5.5.1)
     multi_json (1.10.1)
     nenv (0.2.0)
+    nested_form_fields (0.6.1)
+      rails (>= 3.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -452,6 +454,7 @@ DEPENDENCIES
   jquery-turbolinks
   linkedin
   mini_magick
+  nested_form_fields
   omniauth
   omniauth-linkedin
   opal-rails

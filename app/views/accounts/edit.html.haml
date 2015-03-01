@@ -26,6 +26,19 @@
         .field
           = f.label :description
           = f.text_area :description
+        .field
+          %h2 Edit skills
+          = f.nested_fields_for :skills do |sf|
+            = sf.remove_nested_fields_link
+            = sf.text_field :name
+          = f.add_nested_fields_link :skills
+        .field
+          %h2 Edit Social media links
+          = f.nested_fields_for :social_media_links do |smlf|
+            = smlf.remove_nested_fields_link
+            = smlf.text_field :name
+            = smlf.text_field :url
+          = f.add_nested_fields_link :social_media_links
         .actions
           = f.submit "Update", class: 'ui submit button'
           = link_to "Cancel", account_path(@account)
