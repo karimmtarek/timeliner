@@ -5,7 +5,6 @@ class AccountsController < ApplicationController
 
   def edit
     @account = current_user
-    # binding.pry
   end
 
   def update

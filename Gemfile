@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'nested_form_fields'
+gem 'bourbon'
+gem 'neat'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

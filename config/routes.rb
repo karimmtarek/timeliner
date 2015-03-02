@@ -10,14 +10,12 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get 'static_pages/index'
 
-  resources :accounts
+  resources :accounts do
+    resources :timelines, only: [:index]
+  end
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
-
-  # devise_scope :user do
-  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  # end
 
 end

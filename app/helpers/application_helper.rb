@@ -25,4 +25,10 @@ module ApplicationHelper
       class_name
     end
   end
+
+  def put_content(tag, object)
+    unless object.blank?
+      content_tag(tag, object)
+    end
+  end
 end

@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+#timeline{
+  @include clearfix;
+}
+
+.timeline {
+  position: relative;
+  border-left: 4px solid #ccc;
+  // background-color: #999;
+  width: 50%;
+  float: right;
+  // margin: 0 auto;
+  .event {
+    position: relative;
+    // padding: 0 25px;
+    &:before{
+      position: absolute;
+      content: '';
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      left: -12px;
+      border-radius: 20px;
+      z-index: 10;
+      border: 4px solid #ccc;
+      background: white;
+      // border: 4px solid white;
+      // background: #ccc;
+    }
+
+    &:nth-child(odd){
+      .bubble{
+        left: -100%;
+        &:before{
+          right: -10px;
+          border-left: 10px solid #000;
+        }
+      }
+    }
+
+    &:nth-child(even){
+      .bubble{
+        right: -5%;
+        &:before{
+          left: -10px;
+          border-right: 10px solid #000;
+        }
+      }
+    }
+  }
+  .bubble{
+    background-color: red;
+    position: relative;
+    width: 95%;
+    &:before{
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+    }
+
+
+  }
+}

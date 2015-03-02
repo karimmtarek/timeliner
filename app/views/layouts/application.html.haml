@@ -1,16 +1,20 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Timeliner
-    = stylesheet_link_tag    'application', media: 'all'
+    - if controller_name == 'timelines'
+      = stylesheet_link_tag    'frontend', media: 'all'
+    -else
+      = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     = semantic_flash
 
-    .ui.centered.vertically.padded.grid
-      .fourteen.wide.column
-        = render 'layouts/top_nav'
+    - unless controller_name == 'timelines'
+      .ui.centered.vertically.padded.grid
+        .fourteen.wide.column
+          = render 'layouts/top_nav'
 
     = yield
