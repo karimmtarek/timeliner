@@ -1,27 +1,44 @@
-%header
-  %h1
-    = "#{@user.first_name} #{@user.last_name}"
-    %span
-      |
-      = @user.description
-  %nav
-    %a(href='#') about
-    %a(href='#') timeline
-    %a(href='#') projects
-    %a(href='#') contact
-%section#about
-  %p= @user.bio
-  = image_tag(@user.image)
-  %p= @user.email
-  %p= @user.location
-  = put_content(:p, @user.phone)
-  %p
-    - @user.skills.each do |skill|
-      %span= skill.name
-%section#social-links
-  %ul
-    - @user.social_media_links.each do |link|
-      %li= link_to link.name, link.url, target: '_blank'
+%header.container
+  .row
+    .col-50.logo
+      %h1
+        %span.name= "#{@user.first_name} #{@user.last_name}"
+        %span.description= @user.description
+    .col-50.last
+      %nav
+        %ul
+          %li
+            %a(href='#') about
+          %li
+            %a(href='#') timeline
+          %li
+            %a(href='#') projects
+          %li
+            %a(href='#') contact
+
+
+
+#about.container
+  .row
+    .col-100
+      .bio= @user.bio
+      .image
+        = image_tag(@user.image)
+        %a.email
+          %i.fa.fa-envelope-o
+          %span= @user.email
+        %a.location
+          %i.fa.fa-map-marker
+          %span= @user.location
+        %a.phone
+          %i.fa.fa-phone
+          %span= @user.phone
+
+#skills.container
+  .row
+    .col-100
+      - @user.skills.each do |skill|
+        %span= skill.name
 
 %section#timeline
   .timeline
@@ -33,6 +50,16 @@
           = put_content(:p, milestone.location)
           = put_content(:p, milestone.date_start)
 
-%footer
-  All copyrights reserved - Timeliner &copy;
-  = "#{Date.today.year}."
+%footer.container
+  .row
+    .col-100.center.social-media
+      %h2 you should check those out
+      %ul
+        - @user.social_media_links.each do |link|
+          %li
+            = link_to link.url, title: link.name, target: '_blank' do
+              %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
+    .col-100.center
+      %p.copyrights
+        All copyrights reserved - Timeliner &copy;
+        = "#{Date.today.year}."

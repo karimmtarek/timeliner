@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%
+}
+
+.container{
+
+}
+
+.row{
+  width: 90%;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+.col-100{
+  width: 100%;
+}
+
+.col-75{
+
+}
+
+.col-50{
+  width: 50%;
+  float: left;
+  padding-right: 1em;
+}
+
+.last{
+  padding-right: 0;
+  padding-left: 1em;
+}
+
+.col-25{
+
+}
