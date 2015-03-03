@@ -11,4 +11,6 @@ Document.ready? do
     Element[".about-bubble"].find(bubble_class).add_class('show')
 
   end
+
+  `new WOW().init();`
 end

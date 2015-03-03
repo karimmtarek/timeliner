@@ -1,10 +1,9 @@
 = render 'header'
 
-#about.container
-  -# = image_tag('science.png')
+#about.container.ahoy
   .row
     .col-100
-      .about-bubble
+      .about-bubble.wow.bounce
         .bio= @user.bio
         .email= "Email me at #{@user.email}"
         .location= "I live in #{@user.location}"

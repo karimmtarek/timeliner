@@ -75,7 +75,6 @@ nav{
 // ABOUT
 
 #about{
-  background-image: url('escape-flight.png');
   .col-100{
     text-align: center;
   }
@@ -332,4 +331,18 @@ footer{
 
 .center{
   text-align: center;
+}
+
+// BACKGROUND PATTERNS
+
+.escape-flight{
+  background-image: image-url('escape-flight.png');
+}
+
+.ahoy{
+  background-image: image-url('ahoy.jpg');
+}
+
+.science{
+  background-image: image-url('science.png');
 }

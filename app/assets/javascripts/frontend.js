@@ -12,8 +12,5 @@
 //
 //= require opal
 //= require opal_ujs
-//= require semantic-ui
-//= require nested_form_fields
-//= require static_pages_view
 //= require wow.min
 //= require timelines_view
