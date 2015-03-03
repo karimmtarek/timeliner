@@ -15,3 +15,4 @@
 //= require semantic-ui
 //= require nested_form_fields
 //= require static_pages_view
+//= require timelines_view

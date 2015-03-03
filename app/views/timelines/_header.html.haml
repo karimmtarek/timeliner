@@ -1,0 +1,17 @@
+%header.container
+  .row
+    .col-50.logo
+      %h1
+        %span.name= "#{@user.first_name} #{@user.last_name}"
+        %span.description= @user.description
+    .col-50.last
+      %nav
+        %ul
+          %li
+            %a(href='#') about
+          %li
+            %a(href='#') timeline
+          %li
+            %a(href='#') projects
+          %li
+            %a(href='#') contact

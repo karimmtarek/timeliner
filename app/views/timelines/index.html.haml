@@ -1,38 +1,22 @@
-%header.container
-  .row
-    .col-50.logo
-      %h1
-        %span.name= "#{@user.first_name} #{@user.last_name}"
-        %span.description= @user.description
-    .col-50.last
-      %nav
-        %ul
-          %li
-            %a(href='#') about
-          %li
-            %a(href='#') timeline
-          %li
-            %a(href='#') projects
-          %li
-            %a(href='#') contact
-
-
+= render 'header'
 
 #about.container
+  -# = image_tag('science.png')
   .row
     .col-100
-      .bio= @user.bio
+      .about-bubble
+        .bio= @user.bio
+        .email= "Email me at #{@user.email}"
+        .location= "I live in #{@user.location}"
+        .phone= "Call me at #{@user.phone}"
       .image
-        = image_tag(@user.image)
-        %a.email
+        = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
+        %a.email.info-icon{:href => '#', :data => {:show => "email"}}
           %i.fa.fa-envelope-o
-          %span= @user.email
-        %a.location
+        %a.location.info-icon{:href => '#', :data => {:show => "location"}}
           %i.fa.fa-map-marker
-          %span= @user.location
-        %a.phone
+        %a.phone.info-icon{:href => '#', :data => {:show => "phone"}}
           %i.fa.fa-phone
-          %span= @user.phone
 
 #skills.container
   .row
@@ -50,16 +34,4 @@
           = put_content(:p, milestone.location)
           = put_content(:p, milestone.date_start)
 
-%footer.container
-  .row
-    .col-100.center.social-media
-      %h2 you should check those out
-      %ul
-        - @user.social_media_links.each do |link|
-          %li
-            = link_to link.url, title: link.name, target: '_blank' do
-              %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
-    .col-100.center
-      %p.copyrights
-        All copyrights reserved - Timeliner &copy;
-        = "#{Date.today.year}."
+= render 'footer'
