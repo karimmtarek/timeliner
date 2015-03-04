@@ -1,0 +1,12 @@
+%section#timeline
+  .timeline
+    - @milestones.each_with_index do |milestone, index|
+      .event
+        .bubble
+          .time-location
+            %span.time
+              = "#{milestone.date_start.strftime('%b, %Y')} - #{milestone.date_end.strftime('%b, %Y')}"
+            %span.location= milestone.location
+          %h3= milestone.title
+          %h4= "at #{milestone.company}"
+          %a{:href => '#'} more details

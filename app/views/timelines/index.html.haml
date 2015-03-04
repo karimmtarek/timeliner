@@ -23,14 +23,6 @@
       - @user.skills.each do |skill|
         %span= skill.name
 
-%section#timeline
-  .timeline
-    - @milestones.each do |milestone|
-      .event
-        .bubble
-          = put_content(:p, milestone.title)
-          = put_content(:p, milestone.company)
-          = put_content(:p, milestone.location)
-          = put_content(:p, milestone.date_start)
+= render 'timeline'
 
 = render 'footer'
