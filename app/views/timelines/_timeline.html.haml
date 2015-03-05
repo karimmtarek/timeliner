@@ -8,5 +8,14 @@
               = "#{milestone.date_start.strftime('%b, %Y')} - #{milestone.date_end.strftime('%b, %Y')}"
             %span.location= milestone.location
           %h3= milestone.title
-          %h4= "at #{milestone.company}"
-          %a{:href => '#'} more details
+          %h4
+            - if milestone.company_url.blank?
+              = "at #{milestone.company}"
+            - else
+              at
+              %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
+
+          - unless milestone.description.blank?
+            .description.hide
+              = markdown(milestone.description)
+            %a{:href => '#', :class => 'trigger-overlay btn', :data => {:id => "#{milestone.id}"}} more details

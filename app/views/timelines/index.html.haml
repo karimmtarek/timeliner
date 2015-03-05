@@ -1,28 +1,30 @@
-= render 'header'
+.wrapper
+  = render 'header'
 
-#about.container.ahoy
-  .row
-    .col-100
-      .about-bubble.wow.bounce
-        .bio= @user.bio
-        .email= "Email me at #{@user.email}"
-        .location= "I live in #{@user.location}"
-        .phone= "Call me at #{@user.phone}"
-      .image
-        = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
-        %a.email.info-icon{:href => '#', :data => {:show => "email"}}
-          %i.fa.fa-envelope-o
-        %a.location.info-icon{:href => '#', :data => {:show => "location"}}
-          %i.fa.fa-map-marker
-        %a.phone.info-icon{:href => '#', :data => {:show => "phone"}}
-          %i.fa.fa-phone
+  #about.container.ahoy
+    .row
+      .col-100
+        .about-bubble.wow.bounce
+          .bio= @user.bio
+          .email= "Email me at #{@user.email}"
+          .location= "I live in #{@user.location}"
+          .phone= "Call me at #{@user.phone}"
+        .image
+          = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
+          %a.email.info-icon{:href => '#', :data => {:show => "email"}}
+            %i.fa.fa-envelope-o
+          %a.location.info-icon{:href => '#', :data => {:show => "location"}}
+            %i.fa.fa-map-marker
+          %a.phone.info-icon{:href => '#', :data => {:show => "phone"}}
+            %i.fa.fa-phone
 
-#skills.container
-  .row
-    .col-100
-      - @user.skills.each do |skill|
-        %span= skill.name
+  #skills.container
+    .row
+      .col-100
+        - @user.skills.each do |skill|
+          %span= skill.name
 
-= render 'timeline'
+  = render 'timeline'
 
-= render 'footer'
+  = render 'footer'
+= render 'overlay'

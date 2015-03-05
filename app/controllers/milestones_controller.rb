@@ -1,7 +1,18 @@
+# require "application_responder"
+
 class MilestonesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:show]
 
   def index
     @milestones = current_user.milestones.all
+  end
+
+  def show
+    # @user = User.find(params[:account_id])
+    @milestone = Milestone.find(params[:id])
+    render :show
+    # binding.pry
   end
 
   def new

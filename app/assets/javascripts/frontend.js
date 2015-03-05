@@ -12,5 +12,7 @@
 //
 //= require opal
 //= require opal_ujs
+//= require overlay
+//= require more
 //= require wow.min
 //= require timelines_view
