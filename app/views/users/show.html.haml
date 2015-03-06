@@ -1,0 +1,29 @@
+.ui.centered.grid
+  .three.wide.column
+    = render 'layouts/backend_side_nav'
+
+  .eleven.wide.column
+    %h1
+      User Information
+      = link_to 'Edit', edit_user_path(@user)
+    %p= "first name: #{@user.first_name}"
+    %p= "last name: #{@user.last_name}"
+    %p= "email: #{@user.email}"
+    %p= "location: #{@user.location}"
+    - unless @user.phone.blank?
+      %p= "phone: #{@user.phone}"
+    %p= "description: #{@user.description}"
+    %p= "username: #{@user.username}"
+    %p= image_tag(@user.image, size: "100x100", alt: @user.username)
+    - unless @user.skills.blank?
+      %hr
+      %h2 Skills
+      %ul
+      - @user.skills.each do |skill|
+        %li= skill.name
+    - unless @user.social_media_links.blank?
+      %hr
+      %h2 Social media links
+      %ul
+      - @user.social_media_links.each do |link|
+        %li= link_to link.name, link.url, target: '_blank'

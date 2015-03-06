@@ -4,10 +4,10 @@
 
   .eleven.wide.column
     %h1
-      Edit Account Information
+      Edit User Information
 
     .ui.form
-      = form_for(@account, url: account_path(@account)) do |f|
+      = form_for(@user, url: user_path(@user)) do |f|
         .field
           = f.label :username
           = f.text_field :username, autofocus: true
@@ -41,4 +41,4 @@
           = f.add_nested_fields_link :social_media_links
         .actions
           = f.submit "Update", class: 'ui submit button'
-          = link_to "Cancel", account_path(@account)
+          = link_to "Cancel", user_path(@user)

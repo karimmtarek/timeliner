@@ -46,12 +46,12 @@ class User < ActiveRecord::Base
   private
 
   def generate_username
-    username = self.username.gsub(' ', '').downcase
+    username = self.username.gsub(' ', '-').downcase
     if User.where(username: username).exists?
-      x = 1
+      new_user_number = 1
       begin
-        self.username = username + "-#{x}"
-        x += 1
+        self.username = username + "-#{new_user_number}"
+        new_user_number += 1
       end while User.where(username: self.username).exists?
     end
   end

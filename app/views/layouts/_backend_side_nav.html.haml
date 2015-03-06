@@ -1,5 +1,5 @@
 .ui.vertical.fluid.menu
-  = link_to 'Account info', account_path(current_user), class: "item #{active_class?('accounts', %w[show edit], 'active teal')}"
+  = link_to 'User info', user_path(current_user), class: "item #{active_class?('accounts', %w[show edit], 'active teal')}"
   = link_to milestones_path, class: "item #{active_class?('milestones',%w[index], 'active teal')}" do
     Milestones
     .ui.label

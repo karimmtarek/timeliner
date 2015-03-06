@@ -1,16 +1,16 @@
-class AccountsController < ApplicationController
+class UsersController < ApplicationController
   def show
-    @account = current_user
+    @user = current_user
   end
 
   def edit
-    @account = current_user
+    @user = current_user
   end
 
   def update
-    @account = current_user
+    @user = current_user
 
-    if @account.update(info_params)
+    if @user.update(info_params)
       redirect_to account_path
     else
       render :edit

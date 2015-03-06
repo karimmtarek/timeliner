@@ -12,12 +12,15 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get 'static_pages/index'
 
-  resources :accounts do
-    resources :timelines, only: [:index]
-  end
+  # resources :users do
+  #   resources :timelines, only: [:index]
+  # end
 
   devise_for :users, :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   }
 
+  resources :users, only: [:show, :edit] do
+    resources :timelines, only: [:index]
+  end
 end
