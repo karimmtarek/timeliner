@@ -12,5 +12,18 @@ Document.ready? do
 
   end
 
+  # nav_link = Element['header nav a']
+
+  # nav_link.on :click do |event|
+
+  #   Element['body'].animate({
+  #     scrollTop: Element[event.current_target.data('scrollto')].offset().top
+  #   }, 2000)
+
+  #   false
+  # end
+
+  `$('#nav').ddscrollSpy();`
+
   `new WOW().init();`
 end

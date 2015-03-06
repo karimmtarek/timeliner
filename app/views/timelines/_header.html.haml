@@ -5,13 +5,11 @@
         %span.name= "#{@user.first_name} #{@user.last_name}"
         %span.description= @user.description
     .col-50.last
-      %nav
+      %nav#nav
         %ul
           %li
-            %a(href='#') about
+            %a{href:'#about', class: 'about-link', data: {scrollto: '#about'}} about
           %li
-            %a(href='#') timeline
+            %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}} timeline
           %li
-            %a(href='#') projects
-          %li
-            %a(href='#') contact
+            %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch

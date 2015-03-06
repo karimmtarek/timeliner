@@ -11,7 +11,7 @@
           .phone= "Call me at #{@user.phone}"
         .image
           = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
-          %a.email.info-icon{:href => '#', :data => {:show => "email"}}
+          %a.email.info-icon{href: '#', data: {show: "email"}}
             %i.fa.fa-envelope-o
           %a.location.info-icon{:href => '#', :data => {:show => "location"}}
             %i.fa.fa-map-marker
@@ -25,6 +25,7 @@
           %span= skill.name
 
   = render 'timeline'
+  = render partial: 'contact', locals: {user: @user}
 
   = render 'footer'
 = render 'overlay'

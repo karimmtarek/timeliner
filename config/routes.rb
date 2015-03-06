@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   put '/milestones/import_linkedin_data', to: "milestones#import_linkedin_data", as: :import_linkedin_data
 
+  post '/timelines/:user_id/contact', to: 'timelines#contact', as: 'contact'
+
   resources :milestones
 
   root "static_pages#index"

@@ -6,4 +6,10 @@ class TimelinesController < ApplicationController
     @milestones = @user.milestones.all
   end
 
+  def contact
+    puts params[:message][:body]
+
+
+  end
+
 end
