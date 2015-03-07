@@ -1,5 +1,15 @@
 .noscroll{
   overflow: hidden;
+  position: relative;
+  .overlay-close{
+    right: 5%;
+    opacity: 0.9;
+    @include transform(rotate(90deg));
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
 
 .overlay {
@@ -8,26 +18,31 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-  // right: 0;
-  // bottom: 0;
+  right: 0;
+  bottom: 0;
   overflow-y: scroll;
 	background: rgba(#34495E, 0.9);
-  .overlay-close {
-    width: 80px;
-    height: 80px;
-    position: fixed;
-    right: 20px;
-    top: 5%;
-    overflow: hidden;
-    border: none;
-    background: image-url('cross.png') no-repeat center center;
-    text-indent: 200%;
-    color: transparent;
-    outline: none;
-    z-index: 100;
-  }
+  padding-bottom: 8%;
 }
 
+.overlay-close {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  right: 0%;
+  opacity: 0;
+  cursor: default;
+  @include transform(rotate(-45deg));
+  top: 5%;
+  overflow: hidden;
+  border: none;
+  background: image-url('cross.png') no-repeat center center;
+  text-indent: 200%;
+  color: transparent;
+  outline: none;
+  z-index: 100;
+  @include transition(all 0.4s $ease-out-quint);
+}
 
 
 #popup{

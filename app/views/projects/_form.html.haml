@@ -37,13 +37,15 @@
     .two.fields
       %h4.ui.dividing.header
         Project screenshot
-      = f.fields_for :images do |images_form|
+      = f.nested_fields_for :images do |images_form|
+        = images_form.remove_nested_fields_link
         .field
           = images_form.label 'Choose image to upload'
           = images_form.file_field :image
         .field
           = images_form.label :description
           = images_form.text_field :description
+      = f.add_nested_fields_link :images
     .actions
       - if @project.new_record?
         = f.submit "Create Project", class: 'ui submit button'
