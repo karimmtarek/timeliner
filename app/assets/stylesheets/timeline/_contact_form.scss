@@ -1,0 +1,74 @@
+// CONTACT FORM
+.contact-form{
+  // border-top: 6px solid #273747;
+  background-color: #18BC9C;
+  padding: 25px 0;
+  h2{
+    @extend .section-head;
+    color: #2C3E50;
+    text-align: center;
+    &:after{
+      background-color: #2C3E50;
+    }
+  }
+  .form-wrapper{
+    position: relative;
+  }
+  .thank-you{
+    position: absolute;
+    display: none;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    background-color: rgba(#000, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    top: 40%;
+    @include transform(translateY(-50%));
+  }
+}
+
+#contact_form{
+  .field{
+    border-bottom: 1px solid rgba(#000, 0.1);
+    margin-bottom: 1em;
+    &:last-child{
+      border: none;
+    }
+  }
+
+  input[type='text'],
+  input[type='email'],
+  textarea{
+    background-color: transparent;
+    padding: 10px 0;
+    border: 0;
+    width: 100%;
+    font-size: 1.2em;
+    color: #fff;
+    outline:none;
+    @include transition(all 0.3s ease-in-out);
+    &:focus{
+      background-color: rgba(#000, 0.1);
+      padding-left: 10px;
+      border: 0;
+    }
+    @include placeholder {
+      color: rgba(#000, 0.1);
+    }
+  }
+
+  textarea{
+    min-height: 8em;
+  }
+
+  input[type='submit']{
+    @extend .btn;
+    font-size: 1em !important;
+    padding: 10px !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+  }
+}

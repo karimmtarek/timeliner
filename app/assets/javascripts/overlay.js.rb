@@ -5,6 +5,7 @@ Document.ready? do
   overlay     = Element[".overlay"]
   popup       = Element[".overlay .popup"]
   close_btn   = Element["button.overlay-close"]
+  body        = Element["body"]
 
   trigger_btn.on :click do |event|
     item_id = event.current_target.data('id')
@@ -27,7 +28,8 @@ Document.ready? do
   close_btn.on :click do |event|
     overlay.remove_class('open').add_class('close')
     wrapper.remove_class('overlay-open')
-    false # event.prevent_default
+    body.remove_class('noscroll')
+    false
   end
 
 end

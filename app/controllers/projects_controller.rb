@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     if @project.update(project_params)
-      milestones_path
+      redirect_to milestones_path
     else
       render :edit
     end

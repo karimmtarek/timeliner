@@ -6,8 +6,8 @@ describe "Milestone" do
     user = User.create!(user_attributes)
     sign_in(user)
 
-    visit account_path(user)
-    expect(current_path).to eq(account_path(user))
+    visit user_path(user)
+    expect(current_path).to eq(user_path(user))
     click_link 'Create milestone'
 
     expect(current_path).to eq(new_milestone_path)

@@ -13,6 +13,7 @@
     - unless @user.phone.blank?
       %p= "phone: #{@user.phone}"
     %p= "description: #{@user.description}"
+    %p= "bio: #{@user.bio}"
     %p= "username: #{@user.username}"
     %p= image_tag(@user.image, size: "100x100", alt: @user.username)
     - unless @user.skills.blank?

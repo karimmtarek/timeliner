@@ -1,0 +1,10 @@
+console.log('overlay triggered!!!');
+overlay = $(".overlay");
+popup = $("#popup");
+wrapper = $(".wrapper");
+
+$("body").addClass('noscroll');
+overlay.addClass('open');
+wrapper.addClass('overlay-open');
+
+$("#popup").html("<%= escape_javascript(render partial: 'milestone', locals: {milestone: @milestone} ) %>");

@@ -2,6 +2,7 @@
 
 #timeline{
   @include clearfix;
+  border-bottom: 6px solid #273747;
   // display: none;
 }
 
@@ -87,6 +88,10 @@
         color: #EDC92C;
         &:hover{
           color: #DBB626;
+        }
+        &:visited,
+        &:active{
+          color: #ffa449;
         }
       }
     }

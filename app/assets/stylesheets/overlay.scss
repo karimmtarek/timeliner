@@ -1,30 +1,36 @@
-/* Overlay style */
+.noscroll{
+  overflow: hidden;
+}
+
 .overlay {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
+  // right: 0;
+  // bottom: 0;
+  overflow-y: scroll;
 	background: rgba(#34495E, 0.9);
+  .overlay-close {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    right: 20px;
+    top: 5%;
+    overflow: hidden;
+    border: none;
+    background: image-url('cross.png') no-repeat center center;
+    text-indent: 200%;
+    color: transparent;
+    outline: none;
+    z-index: 100;
+  }
 }
 
-/* Overlay closing cross */
-.overlay .overlay-close {
-	width: 80px;
-	height: 80px;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	overflow: hidden;
-	border: none;
-	background: image-url('cross.png') no-repeat center center;
-	text-indent: 200%;
-	color: transparent;
-	outline: none;
-	z-index: 100;
-}
 
-.popup{
+
+#popup{
 	position: absolute;
 	top: 80%;
 	left: 50%;
@@ -32,7 +38,7 @@
   border-radius: 10px;
   padding: 15px;
   position: relative;
-  width: 60%;
+  width: 70%;
   opacity: 0;
 	@include transform(translateX(-50%));
   @include transition(all 0.5s $ease-out-circ);
@@ -73,14 +79,17 @@
       &:hover{
       	color: #DBB626;
       }
+      &:visited,
+      &:active{
+        color: #ffa449;
+      }
     }
   }
   .description{
   	position: relative;
-		margin-top: 1em;
+		margin-top: 1.5em;
 		margin-bottom: 0.5em;
-		padding-top: 1em;
-		/*font-size: 0.9em;*/
+		padding-top: 1.5em;
     color: #34495E;
 		&:before{
 			content: '';
@@ -138,11 +147,17 @@
   }
 }
 
+#projects-list{
+  li{
+    padding-left: 0;
+  }
+}
+
 .wrapper {
-	@include transition(transform 0.3s ease-in-out, blur 0.5s ease);
+	@include transition(transform 0.5s ease-in-out, blur 0.5s ease-in-out);
 
 	&.overlay-open {
-		@include transform(scale(0.9));
+		@include transform(scale(0.95));
 
 		-webkit-filter: blur(5px);
 	  -moz-filter: blur(5px);
@@ -162,9 +177,9 @@
 		visibility: visible;
 		@include transform(translateY(0%));
 		@include transition(transform 0.5s $ease-out-expo);
-		.popup{
+		#popup{
 			opacity: 1;
-			top: 20%;
+			top: 5%;
 			@include transition(all 0.5s $ease-out-quart 0.1s);
 		}
 	}
