@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   has_many :social_media_links, dependent: :destroy
   accepts_nested_attributes_for :social_media_links, allow_destroy: true
 
-  before_create :generate_username
+  before_create :generate_username_from_linkedin
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -45,15 +45,16 @@ class User < ActiveRecord::Base
 
   private
 
-  def generate_username
+  def generate_username_from_linkedin
     username = self.username.gsub(' ', '-').downcase
     if User.where(username: username).exists?
       new_user_number = 1
       begin
-        self.username = username + "-#{new_user_number}"
+        username = self.username.gsub(' ', '-').downcase + "-#{new_user_number}"
         new_user_number += 1
-      end while User.where(username: self.username).exists?
+      end while User.where(username: username).exists?
     end
+    self.username = username
   end
 
 end
