@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
   devise :database_authenticatable,
@@ -16,6 +18,8 @@ class User < ActiveRecord::Base
 
   has_many :social_media_links, dependent: :destroy
   accepts_nested_attributes_for :social_media_links, allow_destroy: true
+
+  friendly_id :username, use: :slugged
 
   before_create :generate_username_from_linkedin
 

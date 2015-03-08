@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
+
   def new
     @project = Project.new
-    @project.images.build
+    # @project.images.build
   end
 
   def create
@@ -15,11 +16,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
 
     if @project.update(project_params)
       redirect_to milestones_path
@@ -30,7 +31,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.friendly.find(params[:id])
     @project.destroy
     redirect_to milestones_path
 

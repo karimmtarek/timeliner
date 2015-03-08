@@ -10,7 +10,7 @@ class MilestonesController < ApplicationController
 
   def show
     # @user = User.find(params[:account_id])
-    @milestone = Milestone.find(params[:id])
+    @milestone = Milestone.friendly.find(params[:id])
     render :show
     # binding.pry
   end
@@ -30,11 +30,11 @@ class MilestonesController < ApplicationController
   end
 
   def edit
-    @milestone = Milestone.find(params[:id])
+    @milestone = Milestone.friendly.find(params[:id])
   end
 
   def update
-    @milestone = Milestone.find(params[:id])
+    @milestone = Milestone.friendly.find(params[:id])
 
     if @milestone.update(milestone_params)
       redirect_to milestones_path, notice: 'Mile stone updated!'
@@ -44,7 +44,7 @@ class MilestonesController < ApplicationController
   end
 
   def destroy
-    @milestone = Milestone.find(params[:id])
+    @milestone = Milestone.friendly.find(params[:id])
 
     @milestone.destroy
     redirect_to :back

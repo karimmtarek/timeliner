@@ -195,6 +195,8 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     guard (2.12.1)
@@ -266,9 +268,6 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.10.1)
-    neat (1.6.0)
-      bourbon (>= 3.1)
-      sass (>= 3.3)
     nenv (0.2.0)
     nested_form_fields (0.6.1)
       rails (>= 3.2.0)
@@ -454,6 +453,7 @@ DEPENDENCIES
   faker
   figaro
   fog
+  friendly_id (~> 5.1.0)
   guard-livereload (~> 2.4)
   guard-rspec
   haml-rails (~> 0.8)
@@ -461,7 +461,6 @@ DEPENDENCIES
   jquery-turbolinks
   linkedin
   mini_magick
-  neat
   nested_form_fields
   omniauth
   omniauth-linkedin

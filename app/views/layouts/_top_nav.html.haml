@@ -19,7 +19,7 @@
           = link_to edit_user_registration_path, class: 'item' do
             %i.setting.icon
             Settings
-          = link_to user_timelines_path(current_user), class: 'item', target: '_blank' do
+          = link_to timeline_path(current_user), class: 'item', target: '_blank' do
             %i.file.outline.icon
             Visit timeline
           = link_to destroy_user_session_path, class: 'item', method: :delete do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306211137) do
+ActiveRecord::Schema.define(version: 20150308214740) do
 
   create_table "images", force: :cascade do |t|
     t.string   "description"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 20150306211137) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.boolean  "present"
+    t.string   "slug"
   end
 
+  add_index "milestones", ["slug"], name: "index_milestones_on_slug", unique: true
   add_index "milestones", ["user_id"], name: "index_milestones_on_user_id"
 
   create_table "projects", force: :cascade do |t|
@@ -50,9 +52,11 @@ ActiveRecord::Schema.define(version: 20150306211137) do
     t.string   "link_source"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "slug"
   end
 
   add_index "projects", ["milestone_id"], name: "index_projects_on_milestone_id"
+  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
@@ -99,9 +103,11 @@ ActiveRecord::Schema.define(version: 20150306211137) do
     t.string   "access_secret"
     t.text     "bio"
     t.integer  "message_counter",        default: 0
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
 end

@@ -39,7 +39,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'nested_form_fields'
 gem 'bourbon'
-gem 'neat'
+gem 'friendly_id', '~> 5.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

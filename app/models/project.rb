@@ -1,5 +1,8 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
   belongs_to :milestone
+  friendly_id :title, use: :slugged
+
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images,
     allow_destroy: true,
