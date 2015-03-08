@@ -1,0 +1,5 @@
+%ul.social-links
+  - @user.social_media_links.each do |link|
+    %li
+      = link_to link.url, title: link.name, target: '_blank' do
+        %i{class: 'fa fa-' + link.name.gsub(' ', '-')}

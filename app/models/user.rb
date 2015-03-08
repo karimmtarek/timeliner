@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   private
 
   def generate_username_from_linkedin
-    username = self.username.gsub(' ', '-').downcase
+
     if User.where(username: username).exists?
       new_user_number = 1
       begin

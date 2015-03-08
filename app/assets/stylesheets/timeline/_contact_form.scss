@@ -31,7 +31,7 @@
 
 #contact_form{
   .field{
-    border-bottom: 1px solid rgba(#000, 0.1);
+    border-bottom: 1px solid rgba(#000, 0.2);
     margin-bottom: 1em;
     &:last-child{
       border: none;
@@ -55,7 +55,7 @@
       border: 0;
     }
     @include placeholder {
-      color: rgba(#000, 0.1);
+      color: rgba(#000, 0.2);
     }
   }
 

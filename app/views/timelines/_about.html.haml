@@ -1,0 +1,18 @@
+#about.container.ahoy
+  .row
+    .col-100
+      - unless @user.bio.blank?
+        .about-bubble.wow.bounce
+          .bio= @user.bio
+          .email= "Email me at #{@user.email}"
+          .location= "I live in #{@user.location}"
+          .phone= "Call me at #{@user.phone}"
+      .image
+        = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
+        -# %a.email.info-icon{href: '#', data: {show: "email"}}
+        -#   %i.fa.fa-envelope-o
+        -# %a.location.info-icon{:href => '#', :data => {:show => "location"}}
+        -#   %i.fa.fa-map-marker
+        -# %a.phone.info-icon{:href => '#', :data => {:show => "phone"}}
+        -#   %i.fa.fa-phone
+      = render 'social_media_links' unless @user.social_media_links.blank?

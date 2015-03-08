@@ -144,8 +144,8 @@
 #projects{
   position: relative;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
   padding-top: 1.5em;
+  // margin-bottom: 0.5em;
   &:before{
     content: '';
     position: absolute;
@@ -172,8 +172,8 @@
   > li{
     padding-left: 0;
     width: 100%;
-    padding-bottom: 1.5em;
-    margin-bottom: 1.5em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
     border-bottom: 2px solid rgba(#000, 0.1);
     font-size: 0.9em;
     color: #fff;
@@ -194,7 +194,7 @@
       }
       .copy{
        float: right;
-       padding-left: 2%;
+       padding-left: 5%;
       }
     }
     &:last-child{
@@ -204,14 +204,17 @@
     }
   }
   .screenshot{
-    width: 48%;
+    width: 45%;
     img{
       width: 100%;
       height: auto;
+      // padding: 5px;
+      background-color: rgba(#000, 0.1);
+      border-radius: 10px;
     }
   }
   .copy{
-    width: 52%;
+    width: 55%;
     ul{
       margin: 0;
       padding: 0;
@@ -249,7 +252,7 @@
     padding-bottom: 0.5em;
     margin-bottom: .5em;
     color: #34495E;
-    border-bottom: 2px solid rgba(#000, 0.1);
+    // border-bottom: 2px solid rgba(#000, 0.1);
     strong{
       font-size: 0.9em;
 

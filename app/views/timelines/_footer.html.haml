@@ -1,12 +1,9 @@
 %footer.container
   .row
-    .col-100.center.social-media
-      %h2 you should check those out
-      %ul
-        - @user.social_media_links.each do |link|
-          %li
-            = link_to link.url, title: link.name, target: '_blank' do
-              %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
+    - unless @user.social_media_links.blank?
+      .col-100.center.social-media
+        %h2 you should check those out
+        = render 'social_media_links'
     .col-100.center
       %p.copyrights
         All copyrights reserved - Timeliner &copy;
