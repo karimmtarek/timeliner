@@ -2,9 +2,9 @@
   .time-location
     %span.time= format_time_period(milestone)
     %span.location= milestone.location
-  %h2.title= milestone.title
+  %h1.title= milestone.title
 
-  %h3.company
+  %h2.company
     at
     - if milestone.company_url.blank?
       = milestone.company

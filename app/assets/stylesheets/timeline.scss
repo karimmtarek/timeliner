@@ -75,6 +75,38 @@ li{
   }
 }
 
+.btn-inline{
+
+}
+
+.list-item{
+  position: relative;
+  margin-bottom: .5em;
+  padding-left: 20px;
+  line-height: 1.4em;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 4px;
+    left: 0;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+}
+
 .center{
   text-align: center;
+}
+
+.link{
+  color: #ed5a64;
+  @include transition(color 0.3s ease-in-out);
+  &:hover,
+  &:active,
+  &:visited{
+    color: #c94047;
+  }
 }

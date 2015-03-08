@@ -2,17 +2,22 @@
   .screenshot
     = image_for(project)
     .links
-      = link_to 'Live', project.link_live
-      = link_to 'Source', project.link_source
-  %h3= project.title
-  %strong
-    client:
-    %span= project.client
-  %strong
-    year:
-    %span= project.published_on.year
+      = link_to project.link_live, target: '_blank' do
+        %i.fa.fa-arrow-right
+        Live
+      = link_to project.link_source, target: '_blank' do
+        %i.fa.fa-arrow-right
+        Source
+  .copy
+    %h3= project.title
+    .info
+      %strong
+        client:
+        %span= project.client
+      %strong
+        | year:
+        %span= project.published_on.year
+    %p= markdown(project.description)
 
-  %p= markdown(project.description)
-
-  %strong Role
-  = markdown(project.role)
+    %strong.role My role:
+    = markdown(project.role)

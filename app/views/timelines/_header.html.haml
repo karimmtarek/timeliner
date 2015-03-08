@@ -9,7 +9,8 @@
         %ul
           %li
             %a{href:'#about', class: 'about-link', data: {scrollto: '#about'}} about
-          %li
-            %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}} timeline
+          - unless @user.milestones.blank?
+            %li
+              %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}} timeline
           %li
             %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch

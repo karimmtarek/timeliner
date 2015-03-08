@@ -31,6 +31,8 @@
               %p= project.title
               = image_for(project)
               %br
+              = image_tag(project.images.first.image.thumb.url) unless project.images.blank?
+              %br
               = link_to 'Edit', edit_project_path(project)
               |
               = link_to 'Delete', project_path(project), method: :delete

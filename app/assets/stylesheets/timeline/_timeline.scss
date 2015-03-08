@@ -3,6 +3,9 @@
 #timeline{
   @include clearfix;
   border-bottom: 6px solid #273747;
+  // width: 90%;
+  // max-width: 1200px;
+  // margin: 0 auto;
   // display: none;
 }
 
@@ -15,7 +18,7 @@
   padding-bottom: 50px;
   .event {
     position: relative;
-    width: 90%;
+    width: 100%;
     // padding: 0 25px;
     &:before{
       position: absolute;
