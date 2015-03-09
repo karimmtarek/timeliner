@@ -1,4 +1,4 @@
 #projects
-  %h2 #{pluralize(projects.size, 'Selected Project')}
+  %h2 #{pluralize_without_count(projects.size, 'Sample Project')}
   %ul#projects-list
     = render partial: 'project', collection: projects

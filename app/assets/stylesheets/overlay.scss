@@ -174,29 +174,29 @@
     width: 100%;
     padding-bottom: 2em;
     margin-bottom: 2em;
-    border-bottom: 2px solid rgba(#000, 0.1);
+    // border-bottom: 2px solid rgba(#000, 0.1);
     font-size: 0.9em;
     color: #fff;
     @include clearfix;
-    &:nth-child(odd){
-      // background-color: rgba(#000, 0.1);
-      .screenshot{
-        float: right;
-      }
-      .copy{
-       float: left;
-       padding-right: 2%;
-      }
+    .screenshot{
+      float: right;
     }
-    &:nth-child(even){
-      .screenshot{
-        float: left;
-      }
-      .copy{
-       float: right;
-       padding-left: 5%;
-      }
+    .copy{
+     float: left;
+     padding-right: 2%;
     }
+    // &:nth-child(odd){
+    //   // background-color: rgba(#000, 0.1);
+    // }
+    // &:nth-child(even){
+    //   .screenshot{
+    //     float: left;
+    //   }
+    //   .copy{
+    //    float: right;
+    //    padding-left: 5%;
+    //   }
+    // }
     &:last-child{
       margin-bottom: 0;
       padding-bottom: 0;
