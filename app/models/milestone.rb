@@ -9,15 +9,16 @@ class Milestone < ActiveRecord::Base
   def self.create_from_position(client, user)
     positions = client.profile(:fields => ["positions"])
     positions[:positions][:all].each do |position|
+      # binding.pry
       milestone = self.create(
         user_id: user.id,
         title: position.title,
         company: position.company.name,
-        date_start: Date.new(position.start_date.year, position.start_date.month),
+        date_start: set_date(position, :start_date),
         present: position.is_current,
         description: position.summary
       )
-      milestone.update(date_end: Date.new(position.end_date.year, position.end_date.month)) unless position.end_date.nil?
+      milestone.update( date_end: set_date(position, :end_date) ) unless position.end_date.nil?
     end
   end
 
@@ -28,11 +29,20 @@ class Milestone < ActiveRecord::Base
         user_id: user.id,
         title: education.field_of_study,
         company: education.school_name,
-        date_start: Date.new(education.start_date.year),
-        date_end: Date.new(education.end_date.year),
+        date_start: set_date(education, :start_date),
+        date_end: set_date(education, :end_date),
         present: education.is_current,
         description: education.notes
       )
     end
   end
+
+  def self.set_date(obj, date_attr)
+    if obj[date_attr][:month].blank?
+      Date.new( obj[date_attr][:year] )
+    else
+      Date.new( obj[date_attr][:year], obj[date_attr][:month] )
+    end
+  end
+
 end

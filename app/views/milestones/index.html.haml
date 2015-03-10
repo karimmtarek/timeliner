@@ -13,8 +13,8 @@
       - @milestones.each do |milestone|
         .title
           %i.dropdown.icon
-
-          = "#{milestone.title} (#{milestone.date_start.strftime('%b, %Y')} - #{milestone.present ? 'Present' : milestone.date_end.strftime('%b, %Y')})"
+          = "#{milestone.company} (#{format_date(milestone.date_start)}"
+          = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)})"
           = link_to 'Delete', milestone_path(milestone), method: :delete
           = link_to 'Edit', edit_milestone_path(milestone)
         .content

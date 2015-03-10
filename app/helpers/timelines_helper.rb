@@ -1,9 +1,9 @@
 module TimelinesHelper
-  def format_time_period(milestone)
+  def format_time_period(milestone, format='%B %Y')
     if milestone.present
-      "#{milestone.date_start.strftime('%b, %Y')} - Present"
+      (format_date(milestone.date_start, format) + ' &mdash; ' + "Present").html_safe
     else
-      "#{milestone.date_start.strftime('%b, %Y')} - #{milestone.date_end.strftime('%b, %Y')}"
+      (format_date(milestone.date_start, format) + ' &mdash; ' + format_date(milestone.date_end, format)).html_safe
     end
   end
 

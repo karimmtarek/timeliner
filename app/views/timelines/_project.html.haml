@@ -13,10 +13,8 @@
     .info
       %strong
         client:
-        %span= project.client
-      %strong
-        | year:
-        %span= project.published_on.year
+        %span= "#{project.client} (#{project.published_on.year})"
+
     %p= markdown(project.description)
 
     %strong.role My role:

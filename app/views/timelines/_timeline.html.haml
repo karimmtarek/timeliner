@@ -7,7 +7,7 @@
             .bubble
               .time-location
                 %span.time
-                  = format_time_period(milestone)
+                  = format_time_period(milestone, '%b %Y')
                 %span.location= milestone.location
               %h3= milestone.title
               %h4
