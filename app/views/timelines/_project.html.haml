@@ -15,7 +15,5 @@
         client:
         %span= "#{project.client} (#{project.published_on.year})"
 
-    %p= markdown(project.description)
-
-    %strong.role My role:
+    = markdown(project.description)
     = markdown(project.role)
