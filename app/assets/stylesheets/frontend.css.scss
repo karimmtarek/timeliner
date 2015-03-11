@@ -1,7 +1,7 @@
 @import "normalize";
 @import "font-awesome/font-awesome";
 @import "bourbon";
-@import "animate";
-@import "grid";
-@import "timeline";
-@import "overlay";
+@import "timeline/animate";
+@import "timeline/grid";
+@import "timeline/timeline-all";
+@import "timeline/overlay";

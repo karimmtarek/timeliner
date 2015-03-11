@@ -10,10 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require opal
-//= require opal_ujs
-//= require semantic-ui
+//= require jquery
+//= require jquery_ujs
+//= require ../plugins/boostrapv3/js/bootstrap.min
+//= require ../plugins/breakpoints
+//= require ../plugins/jquery-unveil/jquery.unveil.min
+//= require ../plugins/jquery-block-ui/jqueryblockui
+//= require ../plugins/jquery-scrollbar/jquery.scrollbar.min
+//= require ../plugins/pace/pace.min
+//= require ../plugins/jquery-numberAnimate/jquery.animateNumbers
+
+//= require backend/core
+//= require backend/demo
+
 //= require nested_form_fields
-//= require static_pages_view
-//= require wow.min
-//= require timelines_view

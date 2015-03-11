@@ -1,8 +1,9 @@
-@import "semantic-ui";
-@import "nav";
-@import "static_page";
-@import "milestone";
-
-.field.center-this{
-  text-align: center;
-}
+@import '../plugins/pace/pace-theme-flash';
+@import '../plugins/jquery-scrollbar/jquery.scrollbar';
+@import '../plugins/boostrapv3/css/bootstrap.min';
+@import '../plugins/boostrapv3/css/bootstrap-theme.min';
+@import "font-awesome/font-awesome";
+@import 'timeline/animate';
+@import 'backend/style';
+@import 'backend/responsive';
+@import 'backend/custom-icon-set';

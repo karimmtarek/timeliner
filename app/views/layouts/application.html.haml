@@ -1,8 +1,12 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title Timeliner
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+
     - if controller_name == 'timelines'
       = stylesheet_link_tag    'frontend', media: 'all'
       = javascript_include_tag 'frontend'
@@ -11,11 +15,8 @@
       = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = semantic_flash
 
     - unless controller_name == 'timelines'
-      .ui.centered.vertically.padded.grid
-        .fourteen.wide.column
-          = render 'layouts/top_nav'
+      = render 'layouts/header'
 
     = yield

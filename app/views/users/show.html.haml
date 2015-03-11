@@ -1,30 +1,76 @@
-.ui.centered.grid
-  .three.wide.column
-    = render 'layouts/backend_side_nav'
+.page-container.row-fluid
+  / BEGIN SIDEBAR
+  / BEGIN MENU
+  #main-menu.page-sidebar
+    #main-menu-wrapper.page-sidebar-wrapper.scrollbar-dynamic
 
-  .eleven.wide.column
-    %h1
-      User Information
-      = link_to 'Edit', edit_user_path(@user)
-    %p= "first name: #{@user.first_name}"
-    %p= "last name: #{@user.last_name}"
-    %p= "email: #{@user.email}"
-    %p= "location: #{@user.location}"
-    - unless @user.phone.blank?
-      %p= "phone: #{@user.phone}"
-    %p= "description: #{@user.description}"
-    %p= "bio: #{@user.bio}"
-    %p= "username: #{@user.username}"
-    %p= image_tag(@user.image, size: "100x100", alt: @user.username)
-    - unless @user.skills.blank?
-      %hr
-      %h2 Skills
-      %ul
-      - @user.skills.each do |skill|
-        %li= skill.name
-    - unless @user.social_media_links.blank?
-      %hr
-      %h2 Social media links
-      %ul
-      - @user.social_media_links.each do |link|
-        %li= link_to link.name, link.url, target: '_blank'
+      / BEGIN MINI-PROFILE
+      = render 'layouts/mini_profile'
+      / END MINI-PROFILE
+
+      / BEGIN SIDEBAR MENU
+      = render 'layouts/sidebar_menu'
+      / END SIDEBAR MENU
+
+      / BEGIN SIDEBAR WIDGETS
+      -# = render 'layouts/sidebar_widgets'
+      / END SIDEBAR WIDGETS
+
+  / BEGIN SCROLL UP HOVER
+  %a.scrollup{:href => "#"} Scroll
+  / END SCROLL UP HOVER
+  / END MENU
+
+  / BEGIN SIDEBAR FOOTER WIDGET
+  = render 'layouts/sidebar_footer_widget'
+  / END SIDEBAR FOOTER WIDGET
+  / END SIDEBAR
+  / BEGIN PAGE CONTAINER
+  .page-content
+    .content
+      / BEGIN PAGE TITLE
+      .page-title
+        %h3 Master Page
+      / END PAGE TITLE
+      / BEGIN PlACE PAGE CONTENT HERE
+      / END PLACE PAGE CONTENT HERE
+  / END PAGE CONTAINER
+  / BEGIN CHAT
+  -# = render 'layouts/chat_window'
+  / END CHAT
+/ END CONTENT
+
+
+
+
+
+-# .ui.centered.grid
+-#   .three.wide.column
+-#     = render 'layouts/backend_side_nav'
+
+-#   .eleven.wide.column
+-#     %h1
+-#       User Information
+-#       = link_to 'Edit', edit_user_path(@user)
+-#     %p= "first name: #{@user.first_name}"
+-#     %p= "last name: #{@user.last_name}"
+-#     %p= "email: #{@user.email}"
+-#     %p= "location: #{@user.location}"
+-#     - unless @user.phone.blank?
+-#       %p= "phone: #{@user.phone}"
+-#     %p= "description: #{@user.description}"
+-#     %p= "bio: #{@user.bio}"
+-#     %p= "username: #{@user.username}"
+-#     %p= image_tag(@user.image, size: "100x100", alt: @user.username)
+-#     - unless @user.skills.blank?
+-#       %hr
+-#       %h2 Skills
+-#       %ul
+-#       - @user.skills.each do |skill|
+-#         %li= skill.name
+-#     - unless @user.social_media_links.blank?
+-#       %hr
+-#       %h2 Social media links
+-#       %ul
+-#       - @user.social_media_links.each do |link|
+-#         %li= link_to link.name, link.url, target: '_blank'

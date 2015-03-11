@@ -10,9 +10,25 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require opal
-//= require opal_ujs
-//= require overlay
-//= require wow.min
-//= require ddscrollspy
-//= require timelines_view
+//= require jquery
+//= require jquery_ujs
+//= require frontend/wow.min
+//= require frontend/ddscrollspy
+
+new WOW().init();
+
+
+$(function(){
+  close_btn   = $("button.overlay-close")
+  wrapper     = $(".wrapper")
+  overlay     = $(".overlay")
+  body        = $("body")
+
+  close_btn.on('click', function(e){
+    overlay.removeClass('open').addClass('close');
+    wrapper.removeClass('overlay-open');
+    body.removeClass('noscroll');
+    e.preventDefault();
+  });
+});
+

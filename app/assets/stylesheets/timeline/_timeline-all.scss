@@ -1,0 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #34495E;
+}
+
+
+li{
+  list-style-type: none;
+}
+
+@import 'timeline/header';
+@import 'timeline/about';
+@import 'timeline/timeline';
+@import 'timeline/contact_form';
+@import 'timeline/footer';
+
+// SKILLS
+
+#skills{
+  display: none;
+}
+
+
+// BACKGROUND PATTERNS
+
+.escape-flight{
+  background-image: image-url('escape-flight.png');
+}
+
+.ahoy{
+  background-image: image-url('ahoy.jpg');
+}
+
+.science{
+  background-image: image-url('science.png');
+}
+
+// SHARED
+
+.section-head{
+  text-transform: uppercase;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5%;
+    height: 4px;
+    width: 10%;
+  }
+}
+
+.btn{
+  position: relative;
+  left: 50%;
+  @include transform(translateX(-50%));
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ed5a64;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: .8em;
+  border-bottom: 2px solid #c94047;
+  @include transition(background 0.3s ease-in-out);
+  &:hover{
+    background-color: #c94047;
+  }
+}
+
+.btn-inline{
+
+}
+
+.list-item{
+  position: relative;
+  margin-bottom: .5em;
+  padding-left: 1em;
+  line-height: 1.4em;
+  &:before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 8px;
+    left: 0;
+    background-color: #fff;
+    // border: 2px solid #fff;
+    border-radius: 50%;
+  }
+}
+
+.center{
+  text-align: center;
+}
+
+.link{
+  color: #ed5a64;
+  @include transition(color 0.3s ease-in-out);
+  &:hover,
+  &:active,
+  &:visited{
+    color: #c94047;
+  }
+}
+
+.social-links{
+  position: relative;
+  display: inline-block;
+  padding-left: 0;
+  li{
+    display: inline-block;
+  }
+  a{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 13px 0 0 0;
+    text-align: center;
+    @include transition(all 0.3s ease-in-out);
+  }
+  i.fa{
+    font-size: 24px;
+  }
+}

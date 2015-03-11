@@ -1,0 +1,13 @@
+.user-info-wrapper
+  .profile-wrapper
+    = image_tag('theme/profiles/avatar.jpg', alt: '', width: '69', height: '69', data: {'src': image_path('theme/profiles/avatar.jpg'), 'src-retina': image_path('theme/profiles/avatar2x.jpg')})
+  .user-info
+    .greeting Welcome
+    .username
+      John
+      %span.semi-bold Smith
+    .status
+      Status
+      %a{:href => "#"}
+        .status-icon.green>
+        Online

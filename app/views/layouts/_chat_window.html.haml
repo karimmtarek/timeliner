@@ -1,0 +1,138 @@
+.chat-window-wrapper
+  #main-chat-wrapper.inner-content
+    #chat-users.chat-window-wrapper.scroller.scrollbar-dynamic
+      / BEGIN CHAT HEADER
+      .chat-header
+        / BEGIN CHAT SEARCH BAR
+        .pull-left
+          %input{:placeholder => "search", :type => "text"}/
+        / END CHAT SEARCH BAR
+        / BEGIN CHAT QUICKLINKS
+        .pull-right
+          %a{:href => "#"}
+            .iconset.top-settings-dark
+        / END CHAT QUICKLINKS
+      / END CHAT HEADER
+      / BEGIN GROUP WIDGET
+      .side-widget
+        .side-widget-title group chats
+        .side-widget-content
+          #groups-list
+            %ul.groups
+              %li
+                %a{:href => "#"}
+                  .status-icon.green>
+                  Group Chat 1
+      / END GROUP WIDGET
+      / BEGIN FAVORITES WIDGET
+      .side-widget
+        .side-widget-title favorites
+        .side-widget-content
+          / BEGIN SAMPLE CHAT
+          .user-details-wrapper.active{"data-chat-status" => "online", "data-chat-user-pic" => "assets/img/profiles/d.jpg", "data-chat-user-pic-retina" => "assets/img/profiles/d2x.jpg", "data-user-name" => "Jane Smith"}
+            / BEGIN PROFILE PIC
+            .user-profile
+              %img{:alt => "", "data-src" => "assets/img/profiles/d.jpg", "data-src-retina" => "assets/img/profiles/d2x.jpg", :height => "35", :src => "assets/img/profiles/d.jpg", :width => "35"}/
+            / END PROFILE PIC
+            / BEGIN MESSAGE
+            .user-details
+              .user-name Jane Smith
+              .user-more Message...
+            / END MESSAGE
+            / BEGIN MESSAGES BADGE
+            .user-details-status-wrapper
+              %span.badge.badge-important 3
+            / END MESSAGES BADGE
+            / BEGIN STATUS
+            .user-details-count-wrapper
+              .status-icon.green
+            / END STATUS
+            .clearfix
+          / END SAMPLE CHAT
+      / END FAVORITES WIDGET
+      / BEGIN MORE FRIENDS WIDGET
+      .side-widget
+        .side-widget-title more friends
+        #friends-list.side-widget-content
+          / BEGIN SAMPLE CHAT
+          .user-details-wrapper{"data-chat-status" => "online", "data-chat-user-pic" => "assets/img/profiles/d.jpg", "data-chat-user-pic-retina" => "assets/img/profiles/d2x.jpg", "data-user-name" => "Jane Smith"}
+            / BEGIN PROFILE PIC
+            .user-profile
+              %img{:alt => "", "data-src" => "assets/img/profiles/d.jpg", "data-src-retina" => "assets/img/profiles/d2x.jpg", :height => "35", :src => "assets/img/profiles/d.jpg", :width => "35"}/
+            / END PROFILE PIC
+            / BEGIN MESSAGE
+            .user-details
+              .user-name Jane Smith
+              .user-more Message...
+            / END MESSAGE
+            / BEGIN MESSAGES BADGE
+            .user-details-status-wrapper
+              %span.badge.badge-important 3
+            / END MESSAGES BADGE
+            / BEGIN STATUS
+            .user-details-count-wrapper
+              .status-icon.green
+            / END STATUS
+            .clearfix
+          / END SAMPLE CHAT
+      / END MORE FRIENDS WIDGET
+    / BEGIN DUMMY CHAT CONVERSATION
+    #messages-wrapper.chat-window-wrapper{:style => "display:none"}
+      / BEGIN CHAT HEADER BAR
+      .chat-header
+        / BEGIN SEARCH BAR
+        .pull-left
+          %input{:placeholder => "search", :type => "text"}/
+        / END SEARCH BAR
+        / BEGIN CLOSE TOGGLE
+        .pull-right
+          %a{:href => "#"}
+            .iconset.top-settings-dark
+        / END CLOSE TOGGLE
+      .clearfix
+      / END CHAT HEADER BAR
+      / BEGIN CHAT BODY
+      .chat-messages-header
+        .status.online
+        %span.semi-bold Jane Smith(Typing..)
+        %a.chat-back{:href => "#"}
+          %i.icon-custom-cross
+      / BEGIN CHAT MESSAGES CONTAINER
+      .chat-messages.scrollbar-dynamic.clearfix
+        / BEGIN TIME STAMP EXAMPLE
+        .sent_time Yesterday 11:25pm
+        / END TIME STAMP EXAMPLE
+        / BEGIN EXAMPLE CHAT MESSAGE
+        .user-details-wrapper
+          / BEGIN MESSENGER PROFILE
+          .user-profile
+            %img{:alt => "", "data-src" => "assets/img/profiles/d.jpg", "data-src-retina" => "assets/img/profiles/d2x.jpg", :height => "35", :src => "assets/img/profiles/d.jpg", :width => "35"}/
+          / END MESSENGER PROFILE
+          / BEGIN MESSENGER MESSAGE
+          .user-details
+            .bubble Hello, You there?
+          / END MESSENGER MESSAGE
+          .clearfix
+          / BEGIN TIMESTAMP ON CLICK TOGGLE
+          .sent_time.off Yesterday 11:25pm
+          / END TIMESTAMP ON CLICK TOGGLE
+        / END EXAMPLE CHAT MESSAGE
+        / BEGIN TIME STAMP EXAMPLE
+        .sent_time Today 11:25pm
+        / BEGIN TIME STAMP EXAMPLE
+        / BEGIN EXAMPLE CHAT MESSAGE (FROM SELF)
+        .user-details-wrapper.pull-right
+          / BEGIN MESSENGER MESSAGE
+          .user-details
+            .bubble.sender Let me know when you free
+          / END MESSENGER MESSAGE
+          .clearfix
+          / BEGIN TIMESTAMP ON CLICK TOGGLE
+          .sent_time.off Sent On Tue, 2:45pm
+          / END TIMESTAMP ON CLICK TOGGLE
+        / END EXAMPLE CHAT MESSAGE (FROM SELF)
+      / END CHAT MESSAGES CONTAINER
+    .chat-input-wrapper{:style => "display:none"}
+      %textarea#chat-message-input{:placeholder => "Type your message", :rows => "1"}
+    .clearfix
+    / END DUMMY CHAT CONVERSATION
