@@ -38,9 +38,11 @@ class Milestone < ActiveRecord::Base
   end
 
   def self.set_date(obj, date_attr)
-    if obj[date_attr][:month].blank?
+    if obj[date_attr].blank? || obj[date_attr][:year].blank?
+      ''
+    elsif obj[date_attr][:month].blank?
       Date.new( obj[date_attr][:year] )
-    else
+    elsif
       Date.new( obj[date_attr][:year], obj[date_attr][:month] )
     end
   end
