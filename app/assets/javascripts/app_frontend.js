@@ -1,0 +1,14 @@
+//= require jquery
+//= require jquery_ujs
+//= require ../plugins/rs-plugin/js/jquery.themepunch.plugins.min
+//= require ../plugins/rs-plugin/js/jquery.themepunch.revolution.min
+//= require ../plugins/boostrapv3/js/bootstrap.min
+//= require ../plugins/pace/pace.min
+//= require ../plugins/jquery-unveil/jquery.unveil.min
+//= require ../plugins/owl-carousel/owl.carousel.min
+//= require ../plugins/waypoints.min
+//= require ../plugins/parrallax/js/jquery.parallax-1.1.3
+//= require ../plugins/jquery-nicescroll/jquery.nicescroll.min
+//= require ../plugins/jquery-appear/jquery.appear
+//= require ../plugins/jquery-numberAnimate/jquery.animateNumbers
+//= require app-frontend/core

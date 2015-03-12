@@ -4,6 +4,7 @@
 @import '../plugins/boostrapv3/css/bootstrap-theme.min';
 @import "font-awesome/font-awesome";
 @import 'timeline/animate';
-@import 'backend/style';
-@import 'backend/responsive';
-@import 'backend/custom-icon-set';
+@import 'app-backend/style';
+@import 'app-backend/responsive';
+@import 'app-backend/custom-icon-set';
+@import 'app-backend/customization';

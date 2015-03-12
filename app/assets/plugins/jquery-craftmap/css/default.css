@@ -47,7 +47,8 @@ text-decoration:none;
 
 
 .preloader {
-background:url(../img/loader.gif) no-repeat center #fff;
+
+background:url(assets_path('plugins/jquery-craftmap/img/loader.gif')) no-repeat center #fff;
 }
 
 
@@ -130,7 +131,7 @@ background:url(../img/loader.gif) no-repeat center #fff;
 .controls .active {
 	background:#118b81 !important;
 	color:#fff;
-}	
+}
 
 .popup {
 	padding-bottom: 15px;

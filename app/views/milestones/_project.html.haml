@@ -1,0 +1,21 @@
+.col-md-4
+  .widget-item
+    .controller.overlay.right
+      = link_to 'Delete', project_path(project), method: :delete, class: 'btn btn-danger btn-xs btn-mini'
+      = link_to 'Edit', edit_project_path(project), class: 'btn btn-warning btn-xs btn-mini'
+
+    .tiles.green.overflow-hidden.full-height{:style => "max-height:180px"}
+      = image_for(project, 'lazy hover-effect-img image-responsive-width')
+    .tiles.white
+      .tiles-body
+        .row
+          .col-md-12
+            %h4.semi-bold= project.title
+            .info
+              %strong
+                client:
+                %span= "#{project.client} (#{project.published_on.year})"
+            = markdown(project.description)
+            = markdown(project.role)
+            = link_to 'Live', project.link_live, target: '_blank', class: 'hashtags m-b-5'
+            = link_to 'Source', project.link_source, target: '_blank', class: 'hashtags m-b-5'

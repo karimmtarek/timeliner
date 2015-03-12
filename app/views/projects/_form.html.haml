@@ -1,54 +1,68 @@
-.ui.form.project
+.col-md-12
   = form_for(@project) do |f|
-    .two.fields
-      .field
-        = f.label :title
-        = f.text_field :title, autofocus: true
-      .field
-        = label_tag 'Belongs to'
-        = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
-    .two.fields
-      .field
-        = f.label :client
-        = f.text_field :client
-      .field.date_selector
-        = f.label :published_on
-        = date_select(:project, :published_on, start_year: 1995,
-                                               discard_day: true,
-                                               order: [:month, :year])
-    .two.fields
-      .field
-        = f.label :link_live
-        .ui.labeled.input
-          .ui.label http://
-          = f.text_field :link_live, :placeholder => "domain.com"
-      .field
-        = f.label :link_source
-        .ui.labeled.input
-          .ui.label http://
-          = f.text_field :link_source, :placeholder => "domain.com"
-    .two.fields
-      .field
-        = f.label :description
-        = f.text_area :description
-      .field
-        = f.label :role
-        = f.text_area :role
-    .two.fields
-      %h4.ui.dividing.header
-        Project screenshot
-      = f.nested_fields_for :images do |images_form|
-        = images_form.remove_nested_fields_link
-        .field
-          = images_form.label 'Choose image to upload'
-          = images_form.file_field :image
-        .field
-          = images_form.label :description
-          = images_form.text_field :description
-      = f.add_nested_fields_link :images
-    .actions
+    = render 'shared/errors', object: @project
+    .row
+      .col-md-6
+        .form-group
+          = f.label :title, class: 'form-label'
+          .controls
+            = f.text_field :title, class: 'form-control',autofocus: true
+      .col-md-6
+        .form-group
+          = label_tag 'Belongs to', nil, class: 'form-label'
+          .controls
+            = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
+    .row
+      .col-md-6
+        .form-group
+          = f.label :client, class: 'form-label'
+          .controls
+            = f.text_field :client, class: 'form-control'
+      .col-md-6
+        .form-group
+          = f.label :published_on
+          .controls
+            = date_select(:project, :published_on, start_year: 1995,
+                                                   discard_day: true,
+                                                   order: [:month, :year])
+    .row
+      .col-md-6
+        .form-group
+          = f.label :link_live, class: 'form-label'
+          .controls
+            = f.text_field :link_live, :placeholder => "domain.com", class: 'form-control'
+      .col-md-6
+        .form-group
+          = f.label :link_source, class: 'form-label'
+          .controls
+            = f.text_field :link_source, :placeholder => "domain.com", class: 'form-control'
+
+    .row
+      .col-md-6
+        .form-group
+          = f.label :description, class: 'form-label'
+          .controls
+            = f.text_area :description, rows: 5,class: 'form-control'
+      .col-md-6
+        .form-group
+          = f.label :role, class: 'form-label'
+          .controls
+            = f.text_area :role, rows: 5,class: 'form-control'
+
+    .form-group
+    = f.nested_fields_for :images do |images_form|
+      = images_form.remove_nested_fields_link
+      .form-group
+        = images_form.label 'Choose image to upload', class: 'form-label'
+        = images_form.file_field :image
+      .form-group
+        = images_form.label :description, class: 'form-label'
+        = images_form.text_field :description, class: 'form-control'
+    = f.add_nested_fields_link :images
+
+    .form-actions
       - if @project.new_record?
-        = f.submit "Create Project", class: 'ui submit button'
+        = f.submit "Create Project", class: 'btn btn-success btn-cons'
       - else
-        = f.submit "Update Project", class: 'ui submit button'
-      = link_to "Cancel", milestones_path
+        = f.submit "Update Project", class: 'btn btn-success btn-cons'
+      = link_to "Cancel", milestones_path, class: 'btn btn-white btn-cons'

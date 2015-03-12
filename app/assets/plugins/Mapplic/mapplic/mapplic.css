@@ -37,7 +37,7 @@ svg a {
 
 /* Preloader */
 .mapplic-element.mapplic-loading {
-	background: #f8f8f8 url(images/loader.gif) no-repeat center;
+	background: #f8f8f8 url(assets_path('plugins/Mapplic/mapplic/images/loader.gif')) no-repeat center;
 }
 
 .mapplic-element > * {

@@ -26,11 +26,11 @@ module ApplicationHelper
     end
   end
 
-  def image_for(project)
+  def image_for(project, css_class='')
     if project.images.blank?
-      image_tag('http://placehold.it/350x150', alt: 'Placeholder')
+      image_tag('http://placehold.it/350x150', alt: 'Placeholder', class: css_class)
     else
-      image_tag(project.images.first.image.url, alt: project.images.first.description)
+      image_tag(project.images.first.image.url, alt: project.images.first.description, class: css_class)
     end
   end
 

@@ -1,43 +1,55 @@
-.ui.form.milestone
-
+.col-md-12
   = form_for(@milestone) do |f|
     = render 'shared/errors', object: @milestone
-    .two.fields
-      .field
-        = f.label :title
-        = f.text_field :title, autofocus: true#, required: true
-      .field
-        = f.label :location
-        = f.text_field :location
-    .two.fields
-      .field
-        = f.label :company
-        = f.text_field :company
-      .field
-        = f.label :company_url
-        .ui.labeled.input
-          .ui.label http://
-          = f.text_field :company_url, :placeholder => "domain.com"
-    .two.fields
-      .field.date_selector
-        = f.label 'Start date'
-        = date_select(:milestone, :date_start, start_year: 1995,
-                                               discard_day: true,
-                                               order: [:month, :year])
-      .field.date_selector
-        = f.label 'End date'
-        = date_select(:milestone, :date_end, start_year: 1995,
-                                               discard_day: true,
-                                               order: [:month, :year])
-        .ui.checkbox
-          = f.check_box :present
-          = f.label :present
-    .field
-      = f.label :description
-      = f.text_area :description
-    .actions
+    .row
+      .col-md-6
+        .form-group
+          = f.label :title, class: 'form-label'
+          = f.text_field :title, autofocus: true, required: true, class: 'form-control'
+      .col-md-6
+        .form-group
+          = f.label :location, class: 'form-label'
+          = f.text_field :location, class: 'form-control'
+
+    .row
+      .col-md-6
+        .form-group
+          = f.label :company, class: 'form-label'
+          .controls
+            = f.text_field :company, class: 'form-control'
+      .col-md-6
+        .form-group
+          = f.label :company_url, class: 'form-label'
+          .controls
+            = f.text_field :company_url, :placeholder => "domain.com", class: 'form-control'
+
+    .row
+      .col-md-6
+        .form-group
+          = f.label 'Start date', class: 'form-label'
+          .controls
+            = date_select(:milestone, :date_start, start_year: 1995,
+                                                   discard_day: true,
+                                                   order: [:month, :year])
+      .col-md-6
+        .form-group
+          = f.label 'End date', class: 'form-label'
+          .controls
+            = date_select(:milestone, :date_end, start_year: 1995,
+                                                   discard_day: true,
+                                                   order: [:month, :year])
+          .checkbox.check-default
+            = f.check_box :present
+            = f.label :present
+    .row
+      .col-md-6
+        = f.label :description, class: 'form-label'
+        .controls
+          = f.text_area :description, rows:5, class: 'form-control'
+
+    .form-actions
       - if @milestone.new_record?
-        = f.submit "Create Milestone", class: 'ui submit button'
+        = f.submit "Create Milestone", class: 'btn btn-success btn-cons'
       - else
-        = f.submit "Update Milestone", class: 'ui submit button'
-      = link_to "Cancel", milestones_path
+        = f.submit "Update Milestone", class: 'btn btn-success btn-cons'
+      = link_to "Cancel", milestones_path, class: 'btn btn-white btn-cons'

@@ -1,9 +1,9 @@
-.ui.centered.grid
-  .three.wide.column
-    = render 'layouts/backend_side_nav'
-
-  .eleven.wide.column
-    %h1
-      Edit Milestone
-
-    = render 'form'
+.page-title
+  %h3 Edit Milestone
+.row
+  .col-md-12
+    .grid.simple
+      .grid-title.no-border
+      .grid-body.no-border
+        .row
+          = render 'form'

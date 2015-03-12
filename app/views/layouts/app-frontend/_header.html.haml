@@ -1,0 +1,26 @@
+%header#ha-header.ha-header.ha-header-hide
+  .ha-header-perspective
+    .ha-header-front.navbar.navbar-default
+      .compressed
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand.compressed{:href => "#"}
+            = image_tag("app-frontend/logo_condensed.png", alt: '', width: '119', height: '22')
+
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "index.html"} Home
+            %li
+              %a{:href => "tour.html"} Tour
+            %li
+              %a{:href => "pricing.html"} Pricing
+            %li
+              %a{:href => "portfolio.html"} Portfolio
+            %li
+              %a{:href => "contact.html"} Contact
+        / /.nav-collapse

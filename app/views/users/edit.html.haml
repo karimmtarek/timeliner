@@ -1,47 +1,15 @@
-.ui.centered.grid
-  .three.wide.column
-    = render 'layouts/backend_side_nav'
-
-  .eleven.wide.column
-    %h1
-      Edit User Information
-
-    .ui.form
-      = form_for(@user, url: user_path(@user)) do |f|
-        .field
-          = f.label :username
-          = f.text_field :username, autofocus: true
-        .field
-          = f.label :first_name
-          = f.text_field :first_name
-        .field
-          = f.label :last_name
-          = f.text_field :last_name
-        .field
-          = f.label :location
-          = f.text_field :location
-        .field
-          = f.label :phone
-          = f.text_field :phone
-        .field
-          = f.label :description
-          = f.text_area :description
-        .field
-          = f.label :bio
-          = f.text_area :bio
-        .field
-          %h2 Edit skills
-          = f.nested_fields_for :skills do |sf|
-            = sf.remove_nested_fields_link
-            = sf.text_field :name
-          = f.add_nested_fields_link :skills
-        .field
-          %h2 Edit Social media links
-          = f.nested_fields_for :social_media_links do |smlf|
-            = smlf.remove_nested_fields_link
-            = smlf.text_field :name
-            = smlf.text_field :url
-          = f.add_nested_fields_link :social_media_links
-        .actions
-          = f.submit "Update", class: 'ui submit button'
-          = link_to "Cancel", user_path(@user)
+.page-title
+  %h3
+    Edit
+    %span.semi-bold Your Information
+.row
+  .col-md-12
+    .grid.simple
+      .grid-title.no-border
+        %h4
+          Simple
+          %span.semi-bold Elemets
+      .grid-body.no-border
+        .row
+          .col-md-12
+            = render 'form'

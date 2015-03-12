@@ -1,0 +1,28 @@
+/ BEGIN SIDEBAR MENU
+%p.menu-title
+  BROWSE
+  %span.pull-right
+    %a{:href => "javascript:;"}
+      %i.fa.fa-refresh
+%ul
+  %li{class: "start #{active_class?('users', %w[show edit])}"}
+    = link_to user_path(current_user) do
+      %i.fa.fa-user
+      %span.title User info
+
+  %li{class: "item #{active_class?('milestones',%w[index], 'active teal')}"}
+    = link_to milestones_path do
+      %i.fa.fa-bullhorn
+      %span.title Milestones
+      %span.badge.badge-disable.pull-right= current_user.milestones.size
+
+  %li
+    %a{:href => "javascript:;"}
+      %i.fa.fa-plus
+      %span.title Create new
+      %span.arrow
+    %ul.sub-menu
+      %li{class: "item #{active_class?('milestones', %w[new edit])}"}
+        = link_to 'Create milestone', new_milestone_path
+      %li{class: "item #{active_class?('projects', %w[new edit])}"}
+        = link_to 'Create project', new_project_path

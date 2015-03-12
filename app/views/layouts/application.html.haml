@@ -10,13 +10,27 @@
     - if controller_name == 'timelines'
       = stylesheet_link_tag    'frontend', media: 'all'
       = javascript_include_tag 'frontend'
+    - elsif controller_name == 'static_pages'
+      = stylesheet_link_tag    'app_frontend', media: 'all'
+      = javascript_include_tag 'app_frontend'
     -else
       = stylesheet_link_tag    'application', media: 'all'
       = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
 
-    - unless controller_name == 'timelines'
-      = render 'layouts/header'
+    - if controller_name != 'timelines' && controller_name != 'static_pages'
+      = render 'layouts/backend/header'
+      .page-container.row-fluid
+        #main-menu.page-sidebar
+          #main-menu-wrapper.page-sidebar-wrapper.scrollbar-dynamic
+            = render 'layouts/backend/mini_profile'
+            = render 'layouts/backend/sidebar_menu'
+            -# = render 'layouts/backend/sidebar_widgets'
+        %a.scrollup{:href => "#"} Scroll
 
-    = yield
+        .page-content
+          .content
+            = yield
+    - else
+      = yield

@@ -1,32 +1,38 @@
-.ui.centered.grid
-  .three.wide.column
-    = render 'layouts/backend_side_nav'
-
-  .eleven.wide.column
-    %h1
-      Edit #{resource_name.to_s.humanize}
-    .ui.form
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :email
-          = f.email_field :email, autofocus: true
-        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-          %div
-            Currently waiting confirmation for: #{resource.unconfirmed_email}
-        .field
-          = f.label :password
-          %i (leave blank if you don't want to change it)
-          = f.password_field :password, autocomplete: "off"
-        .field
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, autocomplete: "off"
-        .field
-          = f.label :current_password
-          %i (we need your current password to confirm your changes)
-          = f.password_field :current_password, autocomplete: "off"
-        .actions
-          = f.submit "Update"
-      %h3 Cancel my account
-      %p
-        Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+.page-title
+  %h3
+    Delete
+    %span.semi-bold My Account
+.row
+  .col-md-12
+    .grid.simple
+      .grid-title.no-border
+        %h4
+          Are you sure you want to delete your
+          %span.semi-bold account?
+      .grid-body.no-border
+        .row
+          .col-md-12
+            -# = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            -#   = devise_error_messages!
+            -#   .field
+            -#     = f.label :email
+            -#     = f.email_field :email, autofocus: true
+            -#   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            -#     %div
+            -#       Currently waiting confirmation for: #{resource.unconfirmed_email}
+            -#   .field
+            -#     = f.label :password
+            -#     %i (leave blank if you don't want to change it)
+            -#     = f.password_field :password, autocomplete: "off"
+            -#   .field
+            -#     = f.label :password_confirmation
+            -#     = f.password_field :password_confirmation, autocomplete: "off"
+            -#   .field
+            -#     = f.label :current_password
+            -#     %i (we need your current password to confirm your changes)
+            -#     = f.password_field :current_password, autocomplete: "off"
+            -#   .actions
+            -#     = f.submit "Update"
+            -# %h3 Cancel my account
+            = link_to "YES. Delete my account.", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger btn-cons'
+            = link_to "No. Maybe later.", milestones_path, class: 'btn btn-default btn-cons'

@@ -1,38 +1,31 @@
-.ui.centered.grid
-  .three.wide.column
-    = render 'layouts/backend_side_nav'
+.page-title
+  %h2 Milestones
 
-  .eleven.wide.column
-    %h1
-      Milestones
-      = @milestones.size unless @milestones.blank?
-    %p
-      import your linkedin data to create your milestones
-      = link_to 'Import data', import_linkedin_data_path,  method: :put
-    .ui.accordion.styled.fluid
-      - @milestones.each do |milestone|
-        .title
-          %i.dropdown.icon
-          = "#{milestone.company} (#{format_date(milestone.date_start)}"
-          = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)})"
-          = link_to 'Delete', milestone_path(milestone), method: :delete
-          = link_to 'Edit', edit_milestone_path(milestone)
-        .content
-          %p
-            at
-            - if milestone.company_url.blank?
-              %strong= milestone.company
-            - else
-              = link_to milestone.company, milestone.company_url, :target => '_blank'
-            = milestone.location ? "| #{milestone.location}" : ''
-          = markdown(milestone.description) unless milestone.description.blank?
+.row
+  .col-md-12
+    = render 'import_linkedin_note'
+
+- @milestones.each do |milestone|
+  .row
+    .col-md-12
+      .grid.simple
+        .grid-title.no-border
+          .action.pull-right
+            = link_to 'Delete', milestone_path(milestone), method: :delete, class: 'btn btn-danger btn-sm btn-small'
+            = link_to 'Edit', edit_milestone_path(milestone), class: 'btn btn-warning btn-sm btn-small'
+          %h3
+            = milestone.title
+            %h4
+              At
+              =  print_company(milestone)
+              = "(#{print_location(milestone)} #{format_date(milestone.date_start)}"
+              = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)})"
+        .grid-body.no-border
+          .row
+            .col-md-12
+              = markdown(milestone.description) unless milestone.description.blank?
+
           - unless milestone.projects.blank?
-            - milestone.projects.each do |project|
-              %p= project.title
-              = image_for(project)
-              %br
-              = image_tag(project.images.first.image.thumb.url) unless project.images.blank?
-              %br
-              = link_to 'Edit', edit_project_path(project)
-              |
-              = link_to 'Delete', project_path(project), method: :delete
+            .row.projects
+              %h3 Related projects
+              = render partial: 'project', collection: milestone.projects
