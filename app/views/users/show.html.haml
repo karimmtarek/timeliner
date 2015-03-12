@@ -33,10 +33,10 @@
         .row
           .col-md-6
             %h5 Description
-            %p4 @user.description
+            %p4= markdown(@user.description) unless @user.description.blank?
           .col-md-6
             %h5 Bio
-            %p4 @user.bio
+            %p4= markdown(@user.bio) unless @user.bio.blank?
         .row
           .col-md-6
             - unless @user.social_media_links.blank?

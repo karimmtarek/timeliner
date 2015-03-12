@@ -393,7 +393,7 @@ $(document).ready(function () {
     $('#layout-condensed-toggle').click(function () {
         if ($('#main-menu').attr('data-inner-menu') == '1') {
             //Do nothing
-            console.log("Menu is already condensed");
+            //console.log("Menu is already condensed");
         } else {
             if ($('#main-menu').hasClass('mini')) {
                 $('body').removeClass('grey');

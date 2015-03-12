@@ -15,15 +15,16 @@
             = link_to 'Edit', edit_milestone_path(milestone), class: 'btn btn-warning btn-sm btn-small'
           %h3
             = milestone.title
-            %h4
+            %h5
               At
               =  print_company(milestone)
-              = "(#{print_location(milestone)} #{format_date(milestone.date_start)}"
+              = "(#{print_location(milestone)}#{format_date(milestone.date_start)}"
               = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)})"
-        .grid-body.no-border
-          .row
-            .col-md-12
-              = markdown(milestone.description) unless milestone.description.blank?
+        - unless milestone.description.blank?
+          .grid-body.no-border
+            .row
+              .col-md-12
+                = markdown(milestone.description)
 
           - unless milestone.projects.blank?
             .row.projects

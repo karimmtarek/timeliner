@@ -35,7 +35,7 @@ module ApplicationHelper
   end
 
   def format_date(date, format='%B %Y')
-    date.strftime(format)
+    date.strftime(format) unless date.nil?
   end
 
   def put_content(tag, object)

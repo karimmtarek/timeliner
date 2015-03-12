@@ -16,3 +16,7 @@
     top: 5px;
   }
 }
+
+#main-menu{
+  @include transition(all 0.3s ease-in-out);
+}

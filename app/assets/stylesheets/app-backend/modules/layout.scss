@@ -503,8 +503,9 @@ body{
     height: 100%;
     font-family: $base-font-family-two;
     -webkit-backface-visibility: hidden;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: transform 0.3s ease;
+    // -webkit-transition: -webkit-transform 0.3s ease;
+    // transition: transform 0.3s ease;
+    @include transition(all 0.3s ease-in-out);
     .outer-tab-nav-section {
         display: inline-block;
         width: 45px;
