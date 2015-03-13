@@ -1,9 +1,9 @@
 / BEGIN SIDEBAR MENU
 %p.menu-title
-  BROWSE
-  %span.pull-right
-    %a{:href => "javascript:;"}
-      %i.fa.fa-refresh
+  Sections
+  -# %span.pull-right
+  -#   %a{:href => "javascript:;"}
+  -#     %i.fa.fa-refresh
 %ul
   %li{class: "start #{active_class?('users', %w[show edit])}"}
     = link_to user_path(current_user) do

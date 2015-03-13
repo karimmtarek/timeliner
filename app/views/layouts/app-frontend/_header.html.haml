@@ -14,13 +14,6 @@
         .navbar-collapse.collapse
           %ul.nav.navbar-nav.navbar-right
             %li
-              %a{:href => "index.html"} Home
+              = link_to 'Sign up', user_omniauth_authorize_path(:linkedin)
             %li
-              %a{:href => "tour.html"} Tour
-            %li
-              %a{:href => "pricing.html"} Pricing
-            %li
-              %a{:href => "portfolio.html"} Portfolio
-            %li
-              %a{:href => "contact.html"} Contact
-        / /.nav-collapse
+              = link_to 'Sign in', user_omniauth_authorize_path(:linkedin)

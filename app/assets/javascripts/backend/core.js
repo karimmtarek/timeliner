@@ -390,7 +390,7 @@ $(document).ready(function () {
     //***********************************END Function calls *****************************
 
     //***********************************BEGIN Main Menu Toggle *****************************
-    $('#layout-condensed-toggle').click(function () {
+    $('#layout-condensed-toggle').click(function (e) {
         if ($('#main-menu').attr('data-inner-menu') == '1') {
             //Do nothing
             //console.log("Menu is already condensed");
@@ -415,6 +415,7 @@ $(document).ready(function () {
                 $('.main-menu-wrapper').scrollbar('destroy');
             }
         }
+        e.preventDefault();
     });
 
     $('#horizontal-menu-toggle').click(function () {

@@ -17,6 +17,18 @@
   }
 }
 
-#main-menu{
-  @include transition(all 0.3s ease-in-out);
+.grid.simple .grid-body h4{
+
+}
+
+.flash{
+  position: absolute;
+  top: 6em;
+  right: 2em;
+  width: auto;
+  z-index: 1000;
+  background: rgba(#000, 0.6);;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
 }

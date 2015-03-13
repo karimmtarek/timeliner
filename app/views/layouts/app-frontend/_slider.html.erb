@@ -16,7 +16,7 @@
           data-endspeed="300"
           data-endeasing="Power1.easeIn"
           data-captionhidden="off"
-          style="z-index: 6"><h2 class="text-white custom-font title ">WE'VE DESIGN<br> EVERYTHING JUST FOR YOU</h2>
+          style="z-index: 6"><h2 class="text-white custom-font title ">ONE JOURNEY. ONE PAGE.<br>ALL ABOUT YOU.</h2>
         </div>
         <div class="tp-caption sfb slider tp-resizeme slider"
           data-x="center"
@@ -42,7 +42,8 @@
           data-endspeed="300"
           data-endeasing="Power1.easeIn"
           data-captionhidden="off"
-          style="z-index: 6"> <a href="#" class="text-white m-r-10">or subscribe to newsletter</a>
+          style="z-index: 6">
+            <%= link_to 'Sign in with LinkedIn', user_omniauth_authorize_path(:linkedin), class: 'text-white m-r-10' %>
         </div>
       </li>
     </ul>

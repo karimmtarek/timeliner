@@ -34,5 +34,11 @@ module Timeliner
     config.active_record.raise_in_transactional_callbacks = true
 
     # config.assets.paths << Rails.root.join("app", "assets", "plugins")
+
+    config.assets.configure do |env|
+      if Rails.env.development? || Rails.env.test?
+        env.cache = ActiveSupport::Cache.lookup_store(:memory_store)
+      end
+    end
   end
 end

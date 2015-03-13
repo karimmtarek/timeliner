@@ -13,3 +13,5 @@
 //= require backend/demo
 
 //= require nested_form_fields
+
+setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);

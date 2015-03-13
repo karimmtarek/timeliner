@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show]
 
   def index
-    @milestones = current_user.milestones.all
+    @milestones = current_user.milestones.current + current_user.milestones.older
   end
 
   def show

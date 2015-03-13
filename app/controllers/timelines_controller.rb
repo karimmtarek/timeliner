@@ -3,7 +3,7 @@ class TimelinesController < ApplicationController
 
   def index
     @user = User.friendly.find(params[:user_id])
-    @milestones = @user.milestones.all
+    @milestones = @user.milestones.current + @user.milestones.older
   end
 
   def show_overlay
