@@ -3,13 +3,14 @@ class TimelinesController < ApplicationController
 
   def index
     @user = User.friendly.find(params[:user_id])
-    @milestones = @user.milestones.current + @user.milestones.older
+    # @milestones = @user.milestones.current + @user.milestones.older
+    @milestones = @user.milestones.load.order(date_start: :desc)
   end
 
   def show_overlay
     @milestone = Milestone.friendly.find(params[:milestone_id])
     # binding.pry
-    puts 'triggered overlay!!!'
+    # puts 'triggered overlay!!!'
   end
 
   def contact

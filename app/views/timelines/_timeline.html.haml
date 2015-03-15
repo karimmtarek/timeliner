@@ -3,19 +3,20 @@
     .row
       .timeline
         - @milestones.each_with_index do |milestone, index|
-          .event
-            .bubble
-              .time-location
-                %span.time
-                  = format_time_period(milestone, '%b %Y')
-                %span.location= milestone.location
-              %h3= milestone.title
-              %h4
-                - if milestone.company_url.blank?
-                  = "at #{milestone.company}"
-                - else
-                  at
-                  %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
+          - unless milestone.title.blank?
+            .event
+              .bubble
+                .time-location
+                  %span.time
+                    = format_time_period(milestone, '%b %Y')
+                  %span.location= milestone.location
+                %h3= milestone.title
+                %h4
+                  - if milestone.company_url.blank?
+                    = "at #{milestone.company}"
+                  - else
+                    at
+                    %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
 
-              - unless milestone.description.blank?
-                = link_to 'more details', show_overlay_path(@user, milestone), remote: true, class: 'btn'
+                - unless milestone.description.blank?
+                  = link_to 'more details', show_overlay_path(@user, milestone), remote: true, class: 'btn'

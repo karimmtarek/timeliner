@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/timelines/:user_id/show_overlay/:milestone_id', to: 'timelines#show_overlay', as: 'show_overlay'
 
+  get '/zohoverify/verifyforzoho.html', to: 'static_pages#verifyforzoho'
+
   resources :milestones
 
   root "static_pages#index"

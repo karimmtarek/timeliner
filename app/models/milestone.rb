@@ -4,10 +4,13 @@ class Milestone < ActiveRecord::Base
   has_many :projects, dependent: :destroy
   friendly_id :title, use: :slugged
 
-  validates :title, presence: true
+  # validates :title, presence: true
 
   scope :current, -> {where(present: true).order(date_start: :desc)}
   scope :older, -> {where(present: false).order(date_start: :desc)}
+
+  after_initialize :default_present
+
 
   def self.create_from_position(client, user)
     positions = client.profile(:fields => ["positions"])
@@ -28,13 +31,12 @@ class Milestone < ActiveRecord::Base
   def self.create_from_education(client, user)
     education = client.profile(:fields => ["educations"])
     education[:educations][:all].each do |education|
-      self.create(
+      milestone = self.create(
         user_id: user.id,
         title: education.field_of_study,
         company: education.school_name,
         date_start: set_date(education, :start_date),
         date_end: set_date(education, :end_date),
-        present: education.is_current,
         description: education.notes
       )
     end
@@ -50,9 +52,8 @@ class Milestone < ActiveRecord::Base
     end
   end
 
-  def self.sort_it
-    where(present: true).order("date_start DESC")
-    # all.order("date_start DESC")
+  def default_present
+    self.present ||= false if self.present.nil?
   end
 
 end

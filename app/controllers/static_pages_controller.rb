@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
   def index
   end
 
-  def auth_failure
+  def verifyforzoho
   end
 end
