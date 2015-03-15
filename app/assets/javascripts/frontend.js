@@ -6,11 +6,14 @@
 new WOW().init();
 
 
-$(function(){
-  close_btn   = $("button.overlay-close")
-  wrapper     = $(".wrapper")
-  overlay     = $(".overlay")
-  body        = $("body")
+jQuery(function($){
+
+  $('#nav').ddscrollSpy();
+
+  var close_btn = $("button.overlay-close"),
+      wrapper   = $(".wrapper"),
+      overlay   = $(".overlay"),
+      body      = $("body");
 
   close_btn.on('click', function(e){
     overlay.removeClass('open').addClass('close');

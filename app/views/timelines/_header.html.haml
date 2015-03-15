@@ -4,8 +4,8 @@
       %h1
         %span.name= "#{@user.first_name} #{@user.last_name}"
         %span.description= @user.description
-        - unless @user.location.blank?
-          %span.description Based in #{@user.location}
+        -# - unless @user.location.blank?
+        -#   %span.description Based in #{@user.location}
     .col-50.last
       %nav#nav
         %ul
