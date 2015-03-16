@@ -20,11 +20,11 @@ class Milestone < ActiveRecord::Base
         user_id: user.id,
         title: position.title,
         company: position.company.name,
-        date_start: set_date(position, :start_date),
+        date_start: create_date(position[:start_date]),
         present: position.is_current,
         description: position.summary
       )
-      milestone.update( date_end: set_date(position, :end_date) ) unless position.end_date.nil?
+      milestone.update( date_end: create_date(position[:end_date]) ) unless position.end_date.nil?
     end
   end
 
@@ -35,21 +35,23 @@ class Milestone < ActiveRecord::Base
         user_id: user.id,
         title: education.field_of_study,
         company: education.school_name,
-        date_start: set_date(education, :start_date),
-        date_end: set_date(education, :end_date),
+        date_start: create_date(education[:start_date]),
+        date_end: create_date(education[:end_date]),
         description: education.notes
       )
     end
   end
 
-  def self.set_date(obj, date_attr)
-    unless obj[date_attr].blank?
-      if obj[date_attr][:month].blank?
-        Date.new( obj[date_attr][:year] )
-      else
-        Date.new( obj[date_attr][:year], obj[date_attr][:month] )
-      end
-    end
+  def self.create_date(date_hash)
+    return if date_hash.blank?
+
+    Date.new *[date_hash[:year], date_hash[:month]].compact
+
+    # if date_hash[:month].blank?
+    #  Date.new( date_hash[:year] )
+    # else
+    #   Date.new( date_hash[:year], date_hash[:month] )
+    # end
   end
 
   def default_present
