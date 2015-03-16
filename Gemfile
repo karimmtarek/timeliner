@@ -44,6 +44,7 @@ gem 'fog'
 gem 'nested_form_fields'
 gem 'bourbon'
 gem 'friendly_id', '~> 5.1.0'
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
