@@ -10,8 +10,13 @@
 //= require ../plugins/jquery-numberAnimate/jquery.animateNumbers
 
 //= require backend/core
-//= require backend/demo
+//= require backend/extra
 
 //= require nested_form_fields
 
 setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+
+
+
+
+

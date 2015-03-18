@@ -27,19 +27,19 @@
       .col-md-6
         .form-group
           = f.label 'Start date', class: 'form-label'
-          .controls
+          .controls.date-select
             = date_select(:milestone, :date_start, start_year: 1995,
                                                    discard_day: true,
                                                    order: [:month, :year])
       .col-md-6
         .form-group
           = f.label 'End date', class: 'form-label'
-          .controls
+          %div{class:"controls date-select #{'hide' if @milestone.present}", id:'end_date'}
             = date_select(:milestone, :date_end, start_year: 1995,
                                                    discard_day: true,
                                                    order: [:month, :year])
-          .checkbox.check-default
-            = f.check_box :present
+          %div
+            = f.check_box :present, id: 'present'
             = f.label :present
     .row
       .col-md-6

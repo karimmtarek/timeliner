@@ -1,9 +1,10 @@
 .page-title
   %h2 Milestones
 
-.row
-  .col-md-12
-    = render 'import_linkedin_note'
+- unless @milestones.any?
+  .row
+    .col-md-12
+      = render 'import_linkedin_note'
 
 - @milestones.each do |milestone|
   .row

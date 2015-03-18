@@ -24,7 +24,7 @@ class Milestone < ActiveRecord::Base
         present: position.is_current,
         description: position.summary
       )
-      milestone.update( date_end: create_date(position[:end_date]) ) unless position.end_date.nil?
+      milestone.update( date_end: create_date(position[:end_date]) ) unless position.end_date.blank?
     end
   end
 
@@ -55,7 +55,7 @@ class Milestone < ActiveRecord::Base
   end
 
   def default_present
-    self.present ||= false if self.present.nil?
+    self.present ||= false if self.present.blank?
   end
 
 end

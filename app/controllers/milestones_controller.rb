@@ -24,7 +24,7 @@ class MilestonesController < ApplicationController
     @milestone = current_user.milestones.new(milestone_params)
 
     if @milestone.save
-      redirect_to milestones_path, notice: 'done!'
+      redirect_to milestones_path, notice: 'Milestone created!'
     else
       render :new
     end
@@ -38,7 +38,7 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.friendly.find(params[:id])
 
     if @milestone.update(milestone_params)
-      redirect_to milestones_path, notice: 'Mile stone updated!'
+      redirect_to milestones_path, notice: 'Milestone updated!'
     else
       render :edit
     end
@@ -48,7 +48,8 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.friendly.find(params[:id])
 
     @milestone.destroy
-    redirect_to :back
+    redirect_to :back, notice: 'Milestone destroyed!'
+    # flash.now[:notice] =
   end
 
   def import_linkedin_data
@@ -68,7 +69,7 @@ class MilestonesController < ApplicationController
   private
 
   def milestone_params
-    params.require(:milestone).permit(:title, :company, :company_url, :location, :description, :date_start, :date_end)
+    params.require(:milestone).permit(:title, :company, :company_url, :location, :description, :date_start, :date_end, :present)
   end
 
 end

@@ -32,15 +32,25 @@
       .form-group
         = f.label :bio, class: 'form-label'
         = f.text_area :bio, rows: 5, class: 'form-control'
+
   .row
     .col-md-12
-      .form-group
-        %h2 Edit Social media links
-        = f.nested_fields_for :social_media_links do |smlf|
+      %h3.title-border
+        Edit Social media links
+  = f.nested_fields_for :social_media_links do |smlf|
+    .row
+      .col-md-4
+        .form-group
+          = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
+      .col-md-7
+        .form-group
+          = smlf.text_field :url, class: 'form-control'
+      .col-md-1
+        .form-group
           = smlf.remove_nested_fields_link
-          = smlf.text_field :name
-          = smlf.text_field :url
-        = f.add_nested_fields_link :social_media_links
+  .row
+    .col-md-12
+      = f.add_nested_fields_link :social_media_links
   -# .row
   -#   .col-md-12
   -#     .form-group

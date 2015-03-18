@@ -32,3 +32,44 @@
   border-radius: 8px;
   color: #fff;
 }
+
+#end_date{
+  &.hide{
+    display: none;
+  }
+}
+
+.date-select{
+  select{
+    width: 45%;
+    margin-bottom: 5px;
+  }
+}
+
+.nested_fields{
+  position: relative;
+}
+
+.remove_nested_fields_link{
+  @extend .btn;
+  @extend .btn-danger;
+  @extend .btn-sm;
+  @extend .btn-small;
+}
+
+.add_nested_fields_link{
+  margin-top: 10px;
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-xs;
+  @extend .btn-mini;
+  // position: absolute;
+  // right: 0;
+}
+
+.title-border{
+  border-bottom: 1px solid #D7DBE0;
+  @include clearfix;
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+}
