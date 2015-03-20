@@ -1,37 +1,22 @@
 !!!
 %html
   %head
-    %title Timeliner
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
-    %meta{:content => "", :name => "description"}
-    %meta{:content => "", :name => "author"}
-
-    - if controller_name == 'timelines'
-      = stylesheet_link_tag    'frontend', media: 'all'
-      = javascript_include_tag 'frontend'
-    - elsif controller_name == 'static_pages'
-      = stylesheet_link_tag    'app_frontend', media: 'all'
-      = javascript_include_tag 'app_frontend'
-    -else
-      = stylesheet_link_tag    'application', media: 'all'
-      = javascript_include_tag 'application'
+    = render 'layouts/other/head_tags'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     = render 'layouts/other/ga' if Rails.env.production?
   %body
     = render 'layouts/flash'
-    - if controller_name != 'timelines' && controller_name != 'static_pages'
-      = render 'layouts/backend/header'
-      .page-container.row-fluid
-        #main-menu.page-sidebar
-          #main-menu-wrapper.page-sidebar-wrapper.scrollbar-dynamic
-            = render 'layouts/backend/mini_profile'
-            = render 'layouts/backend/sidebar_menu'
-            -# = render 'layouts/backend/sidebar_widgets'
-        %a.scrollup{:href => "#"} Scroll
+    = render 'layouts/backend/header'
+    .page-container.row-fluid
+      #main-menu.page-sidebar
+        #main-menu-wrapper.page-sidebar-wrapper.scrollbar-dynamic
+          = render 'layouts/backend/mini_profile'
+          = render 'layouts/backend/sidebar_menu'
+      %a.scrollup{:href => "#"} Scroll
 
-        .page-content
-          .content
-            = yield
-    - else
-      = yield
+      .page-content
+        .content
+          = yield
+

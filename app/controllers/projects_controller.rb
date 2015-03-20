@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :set_user
 
   def new
     @project = Project.new

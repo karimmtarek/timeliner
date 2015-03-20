@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+private
+  def set_user
+    @user = User.friendly.find(current_user.id)
+  end
 end

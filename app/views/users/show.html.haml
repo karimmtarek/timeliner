@@ -1,7 +1,9 @@
+= content_for(:title) do
+  = "User Information - #{@user.first_name} #{@user.last_name} | Timeliner"
 .page-title
   = link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning btn-sm btn-small pull-right'
   %h3
-    Your
+    User
     %span.semi-bold Information
 
 .row

@@ -21,7 +21,10 @@ class TimelinesController < ApplicationController
     ContactMailer.contact_form_email(@user, @sender_email, @message_body).deliver_now
     @user.update(message_counter: @user.message_counter+1)
     puts @user.message_counter
-
   end
 
+private
+  def set_user
+    @user = current_user
+  end
 end

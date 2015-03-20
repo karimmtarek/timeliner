@@ -1,8 +1,7 @@
-# require "application_responder"
-
 class MilestonesController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:show]
+  before_action :set_user
 
   def index
     # @milestones = current_user.milestones.current + current_user.milestones.older
@@ -71,5 +70,4 @@ class MilestonesController < ApplicationController
   def milestone_params
     params.require(:milestone).permit(:title, :company, :company_url, :location, :description, :date_start, :date_end, :present)
   end
-
 end
