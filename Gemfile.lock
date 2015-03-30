@@ -186,6 +186,8 @@ GEM
     fog-xml (0.1.1)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -422,6 +424,7 @@ DEPENDENCIES
   faker
   figaro
   fog
+  font-awesome-rails
   friendly_id (~> 5.1.0)
   guard-livereload (~> 2.4)
   guard-rspec

@@ -1,0 +1,89 @@
+a{
+  text-decoration: none;
+}
+
+.link{
+  position: relative;
+  @include transition(all 0.3s ease-in-out);
+
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    @include transition(all 0.2s ease-in-out);
+  }
+
+  &:hover{
+    &:after{
+      width: 100%;
+    }
+  }
+
+  &.white{
+    color: $white;
+
+    &:after{
+      background-color: shade($white, 10%);
+    }
+
+    &:hover{
+      color: shade($white, 10%);
+    }
+  }
+
+  &.blue{
+    color: $blue;
+
+    &:after{
+      background-color: shade($blue, 10%);
+    }
+
+    &:hover{
+      color: shade($blue, 10%);
+    }
+  }
+}
+
+.btn{
+  font-family: $font-montserrat;
+  text-transform: uppercase;
+  border-bottom: 3px solid;
+  display: inline-block;
+  margin-right: 5px;
+  @include transition(background-color 0.3s ease-in-out);
+}
+
+.medium{
+  font-size: 14px;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.x-large{
+  font-size: 18px;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.in{
+  color: $white;
+  background-color: $linkedin-blue;
+  border-color: shade($linkedin-blue, 25%);
+
+  &:hover{
+    background-color: lighten($linkedin-blue, 2%);
+  }
+}
+
+.default{
+  color: $white;
+  background-color: $blue;
+  border-color: shade($blue, 25%);
+
+  &:hover{
+    background-color: lighten($blue, 2%);
+  }
+}

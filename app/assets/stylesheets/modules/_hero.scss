@@ -1,0 +1,42 @@
+.hero{
+  background-color: $dark-blue;
+  background-image: image-url('bg-hero.png');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 835px;
+  padding-top: 220px;
+  @include brdr-btm(5px, $yellow);
+}
+
+.intro{
+  h2{
+    font-size: 36px;
+    color: $white;
+    margin-bottom: 30px;
+
+    .emphasize{
+      color: $yellow;
+    }
+  }
+
+  p, span{
+    font-family: $font-montserrat;
+  }
+
+  p{
+    font-size: 18px;
+    color: $white;
+    margin-bottom: 30px;
+  }
+
+  span{
+    color: $white;
+  }
+
+  .link{
+    font-size: 14px;
+    // text-decoration: underline;
+  }
+}
+

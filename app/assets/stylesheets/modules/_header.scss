@@ -1,0 +1,18 @@
+.header{
+  position: absolute;
+  top: 0;
+  padding-top: 30px;
+
+  .link{
+    font-family: $font-montserrat;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.logo{
+  background: image-url('logo.png') top center no-repeat;
+  width: 193px;
+  height: 69px;
+  text-indent: -9999px;
+}

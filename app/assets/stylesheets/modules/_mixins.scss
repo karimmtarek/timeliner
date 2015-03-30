@@ -1,0 +1,3 @@
+@mixin brdr-btm($weight, $color){
+  border-bottom: $weight solid $color;
+}

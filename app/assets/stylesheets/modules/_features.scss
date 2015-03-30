@@ -1,0 +1,40 @@
+.features{
+  background-image: image-url('bg-imac.png');
+  background-position: left 100px;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  @include brdr-btm(5px, $blue);
+
+  li{
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 30px;
+  }
+
+  .fa{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: $yellow;
+    color: $white;
+
+    &:before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translateY(-50%) translateX(-50%));
+    }
+  }
+
+  h3{
+    color: $yellow;
+    margin-bottom: 5px;
+  }
+
+  p{
+    color: $dark-gray;
+  }
+}

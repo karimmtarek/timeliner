@@ -1,0 +1,54 @@
+*{
+  @include box-sizing(border-box);
+}
+
+.container{
+  width: 100%;
+}
+
+.row{
+  width: 90%;
+  max-width: 1230px;
+  margin: 0 auto;
+  @include clearfix;
+}
+
+.tbl {
+  display: table;
+  > div{
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
+}
+
+
+.col{
+  float: left;
+
+  &.w-100{
+    width: 100%;
+  }
+
+  &.w-50{
+    width: 50%;
+  }
+
+  &.w-33{
+    width: 33.33%;
+  }
+
+  &.pull-right{
+    float: right;
+  }
+
+  &.center{
+    text-align: center;
+  }
+}
+
+
+
+.align-r{
+  text-align: right;
+}

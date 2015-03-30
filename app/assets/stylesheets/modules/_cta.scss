@@ -1,0 +1,15 @@
+.cta{
+  background-color: $light-gray;
+  padding: 80px 0;
+  @include brdr-btm(5px, $yellow);
+
+  h2{
+    font-size: 30px;
+    color: $yellow;
+  }
+
+  span{
+    display: block;
+    color: $blue;
+  }
+}
