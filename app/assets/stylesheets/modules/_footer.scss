@@ -1,0 +1,75 @@
+footer{
+  padding: 80px 0;
+  background-color: $dark-blue;
+
+  h3{
+    color: $white;
+  }
+
+  .newsletter{
+    p{
+      color: $white;
+      font-family: $font-montserrat;
+      font-size: 14px;
+    }
+
+    .text-field{
+      margin-right: 5px;
+      border-color: #5d799d;
+      color: $white;
+
+      @include placeholder {
+        color: #5d799d;
+      }
+    }
+
+    .response{
+      font-family: $font-roboto;
+      font-size: 11px;
+      color: $yellow;
+      line-height: 1.5;
+      background-color: #23497a;
+      border-radius: 5px;
+      padding: 5px;
+      margin-top: 5px;
+
+      a{
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .social-media{
+
+  }
+
+  .copyrights{
+    p, small{
+      font-weight: 300;
+      color: $white;
+      letter-spacing: 0.5px;
+    }
+
+    p{
+      font-size: 12px;
+    }
+
+    small{
+      font-size: 10px;
+    }
+
+    .fa{
+      color: $yellow;
+    }
+
+  }
+
+  .logo-footer{
+    background-image: image-url('logo-sml.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 134px;
+    height: 48px;
+  }
+}

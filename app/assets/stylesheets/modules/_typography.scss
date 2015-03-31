@@ -12,18 +12,52 @@ p{
 
 .underline{
   position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
+
+  &.center{
+    &:after{
+      left: 50%;
+      @include transform(translateX(-50%));
+    }
+  }
+
+  &.left{
+    &:after{
+      left: 0;
+    }
+  }
+
+  &.thick{
+    margin-bottom: 20px;
+    &:after{
+      height: 3px;
+    }
+  }
+
+  &.thin{
+    margin-bottom: 10px;
+    &:after{
+      height: 2px;
+    }
+  }
+
+
+  &.yellow{
+    &:after{
+      background-color: $yellow;
+    }
+  }
+
+  &.white{
+    &:after{
+      background-color: $white;
+    }
+  }
 
   &:after{
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    @include transform(translateX(-50%));
-    height: 3px;
     width: 60px;
-    background-color: $yellow;
   }
 }

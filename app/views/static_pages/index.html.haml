@@ -56,7 +56,7 @@
 %section.container.cta
   .row
     .col.w-100.center
-      %h2.underline Take control of your resume
+      %h2.underline.yellow.thick.center Take control of your resume
       = link_to 'Sign up for free now!', user_omniauth_authorize_path(:linkedin), class: 'btn medium default'
       %span
         or
@@ -65,12 +65,27 @@
 %footer.container.footer
   .row
     .col.w-33.newsletter
-      = render 'layouts/app-frontend/newsletter'
+      %h3.underline.white.left.thin Stay informed
+      %p Subscribe to our newsletter!
+      = render 'layouts/app-frontend/mailchimp_form'
     .col.w-33.social-media
-      YOU can find us on
+      %h3.underline.white.left.thin You can find us on
+      %ul.sm-icons
+        %li
+          = link_to '#', class: 'sm-icon' do
+            = fa_icon "linkedin"
+        %li
+          = link_to '#', class: 'sm-icon' do
+            = fa_icon "twitter"
+        %li
+          = link_to '#', class: 'sm-icon' do
+            = fa_icon "facebook"
     .col.w-33.copyrights
+      = image_tag('logo-sml.png', alt: '')
       %p
-        Timeliner, created by Karim Tarek, with
+        Timeliner, created by
+        = link_to 'Karim Tarek', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link-white'
+        , with
         = fa_icon "heart"
         from Montreal, Canada.
       %small Copyright © 2015 Timeliner. All screenshots © their respective owners.
