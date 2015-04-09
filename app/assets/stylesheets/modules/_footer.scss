@@ -11,6 +11,7 @@ footer{
       color: $white;
       font-family: $font-montserrat;
       font-size: 14px;
+      margin-bottom: 5px;
     }
 
     .text-field{
@@ -21,6 +22,10 @@ footer{
       @include placeholder {
         color: #5d799d;
       }
+    }
+
+    .btn{
+      margin-top: 5px;
     }
 
     .response{
@@ -45,6 +50,10 @@ footer{
   }
 
   .copyrights{
+    img{
+      margin-bottom: 5px;
+    }
+
     p, small{
       font-weight: 300;
       color: $white;
@@ -61,6 +70,7 @@ footer{
 
     .fa{
       color: $yellow;
+      font-size: 10px;
     }
 
   }

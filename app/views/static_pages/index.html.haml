@@ -64,11 +64,11 @@
 
 %footer.container.footer
   .row
-    .col.w-33.newsletter
+    .col.w-30.gutter.newsletter
       %h3.underline.white.left.thin Stay informed
       %p Subscribe to our newsletter!
       = render 'layouts/app-frontend/mailchimp_form'
-    .col.w-33.social-media
+    .col.w-30.gutter.social-media
       %h3.underline.white.left.thin You can find us on
       %ul.sm-icons
         %li
@@ -80,7 +80,7 @@
         %li
           = link_to '#', class: 'sm-icon' do
             = fa_icon "facebook"
-    .col.w-33.copyrights
+    .col.w-40.copyrights
       = image_tag('logo-sml.png', alt: '')
       %p
         Timeliner, created by

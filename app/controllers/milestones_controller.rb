@@ -4,7 +4,6 @@ class MilestonesController < ApplicationController
   before_action :set_user
 
   def index
-    # @milestones = current_user.milestones.current + current_user.milestones.older
     @milestones = current_user.milestones.load.order(date_start: :desc)
   end
 

@@ -34,8 +34,20 @@
     width: 50%;
   }
 
+  &.w-40{
+    width: 40%;
+  }
+
   &.w-33{
     width: 33.33%;
+  }
+
+  &.w-30{
+    width: 30%;
+  }
+
+  &.gutter{
+    padding-right: 1em;
   }
 
   &.pull-right{

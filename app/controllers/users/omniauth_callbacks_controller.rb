@@ -4,7 +4,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   # You should also create an action method in this controller like this:
   def linkedin
-
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?
       #this will throw if @user is not activated
@@ -14,6 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.linkedin_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+    # binding.pry
   end
 
   # More info at:
