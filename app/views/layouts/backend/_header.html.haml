@@ -1,61 +1,8 @@
-/ BEGIN HEADER
-.header.navbar.navbar-inverse
-  / BEGIN TOP NAVIGATION BAR
-  .navbar-inner
-    / BEGIN NAVIGATION HEADER
-    .header-seperation
-      / BEGIN MOBILE HEADER
-      %ul#main-menu-toggle-wrapper.nav.pull-left.notifcation-center{:style => "display:none"}
-        %li.dropdown
-          %a#main-menu-toggle{:href => "#main-menu"}
-            %i.fa.fa-bars
-      / END MOBILE HEADER
-      / BEGIN LOGO
-      %a{:href => "#"}
-        = image_tag('app-backend/logo.png', class: 'logo', alt: '', width: '106', height: '21')
-      / END LOGO
-
-    / END NAVIGATION HEADER
-    / BEGIN CONTENT HEADER
-    .header-quick-nav
-      / BEGIN HEADER LEFT SIDE SECTION
-      .pull-left
-        / BEGIN SLIM NAVIGATION TOGGLE
-        %ul.nav.quick-section
-          %li.quicklinks
-            %a#layout-condensed-toggle{:href => "#"}
-              %i.fa.fa-bars
-        / END SLIM NAVIGATION TOGGLE
-      / END HEADER LEFT SIDE SECTION
-      / BEGIN HEADER RIGHT SIDE SECTION
-      .pull-right
-        .chat-toggler
-          / BEGIN NOTIFICATION CENTER
-          -# %a#my-task-list.dropdown-toggle{"data-content" => "", "data-original-title" => "Notifications", "data-placement" => "bottom", "data-toggle" => "dropdown", :href => "#"}
-          -#   .user-details
-          -#     .username
-          -#       = current_user.first_name
-          -#       %span.bold= current_user.last_name
-          -#   .iconset.top-down-arrow
-          -# #notification-list{:style => "display:none"}
-          -#   %div{:style => "width:300px"}
-              / BEGIN NOTIFICATION MESSAGE
-              -# = render 'layouts/backend/notification_message'
-
-          .profile-pic
-            = image_tag(current_user.image, alt: current_user.username, width: '35', height: '35')
-
-        %ul.nav.quick-section
-          %li.quicklinks
-            %a#user-options.dropdown-toggle.pull-right{"data-toggle" => "dropdown", :href => "#"}
-              %i.fa.fa-cog
-            %ul.dropdown-menu.pull-right{"aria-labelledby" => "user-options", :role => "menu"}
-              %li
-                = link_to 'Visit timeline', timeline_path(current_user), target: '_blank'
-              %li
-                = link_to 'Delete account', edit_user_registration_path
-              %li.divider
-              %li
-                = link_to destroy_user_session_path, class: 'item', method: :delete do
-                  %i.fa.fa-power-off
-                  Sign out
+%header.container.header
+  .row.tbl
+    .col.w-50
+      %h1.logo Timeliner
+    .col.w-50.align-r
+      = link_to destroy_user_session_path, class: 'item', method: :delete do
+        %i.fa.fa-power-off
+        Sign out

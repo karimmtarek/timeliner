@@ -9,14 +9,12 @@
   %body
     = render 'layouts/flash'
     = render 'layouts/backend/header'
-    .page-container.row-fluid
-      #main-menu.page-sidebar
-        #main-menu-wrapper.page-sidebar-wrapper.scrollbar-dynamic
-          = render 'layouts/backend/mini_profile'
+    .container
+      .row
+        .col.w-20
           = render 'layouts/backend/sidebar_menu'
-      %a.scrollup{:href => "#"} Scroll
-
-      .page-content
-        .content
+        .col.w-80
           = yield
+
+    = render 'layouts/backend/footer'
 

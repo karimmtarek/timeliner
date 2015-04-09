@@ -3,52 +3,49 @@
 .page-title
   = link_to 'Edit', edit_user_path(@user), class: 'btn btn-warning btn-sm btn-small pull-right'
   %h3
-    User
-    %span.semi-bold Information
+    User Information
 
-.row
-  .col-md-12
-    .grid.simple
-      .grid-title.no-border
-      .grid-body.no-border
-        .row
-          .col-md-6
-            %h5 First name
-            %h4.semi-bold= @user.first_name
-          .col-md-6
-            %h5 Last name
-            %h4.semi-bold= @user.last_name
-        .row
-          .col-md-6
-            %h5 Username
-            %h4.semi-bold= @user.username
-          .col-md-6
-            %h5 Email
-            %h4.semi-bold= @user.email
-        .row
-          .col-md-6
-            %h5 Phone
-            %h4.semi-bold= @user.phone ? @user.phone : '-'
-          .col-md-6
-            %h5 Location
-            %h4.semi-bold= @user.location
-        .row
-          .col-md-6
-            %h5 Description
-            %p4= markdown(@user.description) unless @user.description.blank?
-          .col-md-6
-            %h5 Bio
-            %p4= markdown(@user.bio) unless @user.bio.blank?
-        .row
-          .col-md-6
-            - unless @user.social_media_links.blank?
-              %h4 Social media links
-              %ul
-              - @user.social_media_links.each do |link|
-                %li= link_to link.name, link.url, target: '_blank'
-            -# - unless @user.skills.blank?
-            -#   %hr
-            -#   %h2 Skills
-            -#   %ul
-            -#   - @user.skills.each do |skill|
-            -#     %li= skill.name
+  .container
+    .row
+      .col.w-50
+        %h5 First name
+        %h4.semi-bold= @user.first_name
+      .col.w-50
+        %h5 Last name
+        %h4.semi-bold= @user.last_name
+    .row
+      .col.w-50
+        %h5 Username
+        %h4.semi-bold= @user.username
+      .col.w-50
+        %h5 Email
+        %h4.semi-bold= @user.email
+    .row
+      .col.w-50
+        %h5 Phone
+        %h4.semi-bold= @user.phone ? @user.phone : '-'
+      .col.w-50
+        %h5 Location
+        %h4.semi-bold= @user.location
+
+    .row
+      .col.w-50
+        %h5 Description
+        %p= markdown(@user.description) unless @user.description.blank?
+      .col.w-50
+        %h5 Bio
+        %p= markdown(@user.bio) unless @user.bio.blank?
+
+    .row
+      - unless @user.social_media_links.blank?
+        .col.w-50
+          %h4 Social media links
+          %ul
+          - @user.social_media_links.each do |link|
+            %li= link_to link.name, link.url, target: '_blank'
+      - unless @user.skills.blank?
+        .col.w-50
+          %h4 Skills
+          %ul
+          - @user.skills.each do |skill|
+            %li= skill.name
