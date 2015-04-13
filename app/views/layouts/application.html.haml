@@ -6,14 +6,14 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     = render 'layouts/other/ga' if Rails.env.production?
-  %body
+  %body.app
     = render 'layouts/flash'
     = render 'layouts/backend/header'
     .container
-      .row
-        .col.w-20
-          = render 'layouts/backend/sidebar_menu'
-        .col.w-80
+      .sidebar
+        = render 'layouts/backend/sidebar_menu'
+      .row.clearfix
+        .col.w-75.content.pull-right
           = yield
 
     = render 'layouts/backend/footer'

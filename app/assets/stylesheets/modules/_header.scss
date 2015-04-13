@@ -16,3 +16,23 @@
   height: 69px;
   text-indent: -9999px;
 }
+
+.app{
+  .header{
+    padding: 20px 0;
+    position: relative;
+    background-color: $dark-blue;
+    border-bottom: 3px solid $yellow;
+
+    .link{
+      color: $white;
+    }
+  }
+
+  .logo{
+    background: image-url('app-logo.png') top center no-repeat;
+    width: 134px;
+    height: 48px;
+    text-indent: -9999px;
+  }
+}

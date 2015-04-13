@@ -4,13 +4,22 @@
 
 .container{
   width: 100%;
+  position: relative;
+}
+
+.sub-container{
+  background-color: $light-gray;
+  margin-bottom: 10px;
 }
 
 .row{
   width: 90%;
   max-width: 1230px;
   margin: 0 auto;
-  @include clearfix;
+  // @include clearfix;
+  &.full{
+    width: 100%;
+  }
 }
 
 .tbl {
@@ -33,6 +42,10 @@
     width: 80%;
   }
 
+  &.w-75{
+    width: 75%;
+  }
+
   &.w-50{
     width: 50%;
   }
@@ -47,6 +60,10 @@
 
   &.w-30{
     width: 30%;
+  }
+
+  &.w-25{
+    width: 25%;
   }
 
   &.w-20{
@@ -64,8 +81,24 @@
   &.center{
     text-align: center;
   }
+
+  &.content{
+    margin-top: 30px;
+  }
 }
 
 .align-r{
   text-align: right;
+}
+
+.gutter-right{
+  padding-right: 1em;
+}
+
+.gutter-left{
+  padding-left: 1em;
+}
+
+.clearfix{
+  @include clearfix;
 }

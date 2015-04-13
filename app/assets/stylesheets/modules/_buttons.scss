@@ -107,6 +107,16 @@ a{
   }
 }
 
+.warning{
+  color: $white;
+  background-color: $orange;
+  border-color: shade($orange, 25%);
+
+  &:hover{
+    background-color: lighten($orange, 2%);
+  }
+}
+
 .sm-icons{
   @include clearfix;
 

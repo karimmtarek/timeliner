@@ -25,7 +25,7 @@
           = link_to 'Sign in with LinkedIn', user_omniauth_authorize_path(:linkedin), class: 'link white'
 
 %section.container.features
-  .row
+  .row.clearfix
     .col.w-50.pull-right
       %ul
         %li
@@ -54,7 +54,7 @@
           %p Add your social media links, so poeple can connect with you easily, plus they can messege you directly using the contact form on your page.
 
 %section.container.cta
-  .row
+  .row.clearfix
     .col.w-100.center
       %h2.underline.yellow.thick.center Take control of your resume
       = link_to 'Sign up for free now!', user_omniauth_authorize_path(:linkedin), class: 'btn medium default'
@@ -63,7 +63,7 @@
         = link_to 'see an example', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link blue'
 
 %footer.container.footer
-  .row
+  .row.clearfix
     .col.w-30.gutter.newsletter
       %h3.underline.white.left.thin Stay informed
       %p Subscribe to our newsletter!
