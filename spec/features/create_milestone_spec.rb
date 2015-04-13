@@ -4,7 +4,12 @@ require 'rails_helper'
 describe "Milestone" do
   let(:user) { User.create!(user_attributes) }
 
-  xit 'Create' do
+  before do
+    # request.env['omniauth.auth'] = auth_mock
+    sign_in user
+  end
+
+  it 'Create' do
     visit user_path(user)
     expect(current_path).to eq(user_path(user))
     click_link 'Create milestone'

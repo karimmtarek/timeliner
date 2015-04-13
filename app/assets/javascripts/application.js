@@ -1,12 +1,16 @@
 //= require jquery
 //= require jquery_ujs
-//= require backend/extra
 
 //= require nested_form_fields
 
-setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+$(document).ready(function () {
 
+  $("#present").change(function(){
+    $("#end_date").toggleClass("hide");
+  });
 
+  // setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+});
 
 
 
