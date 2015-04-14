@@ -12,9 +12,9 @@
     .container
       .sidebar
         = render 'layouts/backend/sidebar_menu'
-      .row.clearfix
-        .col.w-75.content.pull-right
+      .row.full.app-main.clearfix
+        .col.w-100.content
           = yield
-
-    = render 'layouts/backend/footer'
-
+      .row.full.app-main.footer.clearfix
+        %footer.col.w-100
+          = render 'layouts/backend/footer'

@@ -1,7 +1,11 @@
-footer{
-  padding: 80px 0;
-  background-color: $dark-blue;
+.landing{
+  footer{
+    padding: 80px 0;
+    background-color: $dark-blue;
+  }
+}
 
+footer{
   h3{
     color: $white;
   }
@@ -81,5 +85,34 @@ footer{
     background-repeat: no-repeat;
     width: 134px;
     height: 48px;
+  }
+}
+
+.app{
+  .footer{
+    background-color: $light-gray;
+    margin-top: 50px;
+  }
+
+  footer{
+    height: 65px;
+    padding-top: 20px;
+    text-align: center;
+    color: $dark-gray;
+    font-size: 12px;
+    font-weight: 300;
+
+    i{
+      color: $red;
+    }
+
+    a{
+      color: $dark-gray;
+      text-decoration: underline;
+    }
+
+    small{
+      display: block;
+    }
   }
 }

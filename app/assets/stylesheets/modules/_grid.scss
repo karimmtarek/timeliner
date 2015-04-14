@@ -8,6 +8,7 @@
 }
 
 .sub-container{
+  padding: 1.5em 0;
   background-color: $light-gray;
   margin-bottom: 10px;
 }
@@ -16,9 +17,14 @@
   width: 90%;
   max-width: 1230px;
   margin: 0 auto;
+  position: relative;
   // @include clearfix;
   &.full{
     width: 100%;
+  }
+  &.app-main{
+    padding-left: 280px;
+    padding-right: 5%;
   }
 }
 
@@ -85,6 +91,17 @@
   &.content{
     margin-top: 30px;
   }
+
+  &.wrapper{
+    padding: 1.5em;
+    background-color: $light-gray;
+    &:nth-child(1){
+      border-right: 5px solid $white;
+    }
+    &:nth-child(2){
+      border-left: 5px solid $white;
+    }
+  }
 }
 
 .align-r{
@@ -101,4 +118,10 @@
 
 .clearfix{
   @include clearfix;
+}
+
+.app{
+  .row{
+    max-width: 100%;
+  }
 }

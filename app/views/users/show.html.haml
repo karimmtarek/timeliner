@@ -36,16 +36,17 @@
         %h5 Bio
         %p= markdown(@user.bio) unless @user.bio.blank?
 
-  .row.clearfix
+.container
+  .row.full.clearfix
     - unless @user.social_media_links.blank?
-      .col.w-50
-        %h4 Social media links
+      .col.w-50.wrapper
+        %h4.dark.underline.left.thin.yellow Social media links
         %ul
         - @user.social_media_links.each do |link|
           %li= link_to link.name, link.url, target: '_blank'
     - unless @user.skills.blank?
-      .col.w-50
-        %h4 Skills
+      .col.w-50.wrapper
+        %h4.dark.underline.left.thin.yellow Skills
         %ul
         - @user.skills.each do |skill|
           %li= skill.name

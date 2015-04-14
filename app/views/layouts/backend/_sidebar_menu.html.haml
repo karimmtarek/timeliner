@@ -1,37 +1,52 @@
-.user-profile
+.section.user-profile.brdr-btm.clearfix
   .pic
-    = image_tag(current_user.image, alt: current_user.username, width: '69', height: '69')
+    = image_tag(current_user.image, alt: current_user.username)
   .greeting
-    Welcome
-    = "#{current_user.first_name} #{current_user.last_name}"
+    Hello!
+    %span= "#{current_user.first_name} #{current_user.last_name}"
+    = link_to timeline_path(current_user), class: 'link-icon' do
+      View timeline
+      %i.fa.fa-external-link
 
-.profile-status
-  %h4 Timeline status
-  .switch
-    online <switch> offline
-    .note
-      Your timeline is visible to the whole world.
+.section.profile-status.brdr-btm
+  %h5 Timeline status
+  .switch-wrapper
+    %span.lable online
+    %span.switch.on
+      %span.indicator
+    %span.lable offline
+    %p.note
+      -# Your timeline is visible to the whole world.
+      Your timeline is invisible, you still can see it, though everyone else can't.
 
-%ul
-  %li{class: "start #{active_class?('users', %w[show edit])}"}
-    = link_to user_path(current_user) do
-      %i.fa.fa-user
-      %span.title User info
+.section
+  %ul
+    %li{class: "start #{active_class?('users', %w[show edit])}"}
+      = link_to user_path(current_user) do
+        %i.fa.fa-user
+        %span.title User info
 
-  %li{class: "item #{active_class?('milestones', %w[index])}"}
-    = link_to milestones_path do
-      %i.fa.fa-bullhorn
-      %span.title Milestones
-  %li{class: "item #{active_class?('projects', %w[index])}"}
-    = link_to projects_path do
-      %i.fa.fa-bullhorn
-      %span.title Projects
-  %li
-    %a{:href => "javascript:;"}
-      %i.fa.fa-plus
-      %span.title Create new
-    %ul.sub-menu
-      %li{class: "item #{active_class?('milestones', %w[new edit])}"}
-        = link_to 'Milestone', new_milestone_path
-      %li{class: "item #{active_class?('projects', %w[new edit])}"}
-        = link_to 'Project', new_project_path
+    %li{class: "item #{active_class?('milestones', %w[index])}"}
+      = link_to milestones_path do
+        %i.fa.fa-bullhorn
+        %span.title Milestones
+    %li{class: "item #{active_class?('projects', %w[index])}"}
+      = link_to projects_path do
+        %i.fa.fa-bullhorn
+        %span.title Projects
+    %li
+      %a{:href => "javascript:;"}
+        %i.fa.fa-plus
+        %span.title Create new
+      %ul.sub-menu
+        %li{class: "item #{active_class?('milestones', %w[new edit])}"}
+          = link_to 'Milestone', new_milestone_path
+        %li{class: "item #{active_class?('projects', %w[new edit])}"}
+          = link_to 'Project', new_project_path
+
+.delete-account
+  %i.fa.fa-exclamation-circle
+  %strong You hate it?
+  %p
+    No problem,
+    = link_to 'delete your account.', edit_user_registration_path

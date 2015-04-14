@@ -1,4 +1,18 @@
-h1, h2, h3, h4{
+body{
+  font-family: $font-roboto;
+  position: relative;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5{
   font-family: $font-montserrat;
   text-transform: uppercase;
   margin: 0;
