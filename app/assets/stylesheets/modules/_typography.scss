@@ -33,7 +33,35 @@ h1, h2, h3, h4, h5{
 p{
   margin: 0;
   line-height: 1.6;
+
+  &.textbox{
+    font-size: 24px;
+    line-height: 1.2em;
+    margin-bottom: 1em;
+    color: $dark-blue;
+  }
+
+  &.textarea{
+    font-size: 14px;
+    color: $dark-blue;
+  }
 }
+
+div{
+  &.textarea{
+    font-size: 14px;
+    color: $dark-blue;
+  }
+}
+
+span{
+  &.lable{
+    color: #979797;
+    font-size: 13px;
+    font-weight: 300;
+  }
+}
+
 
 .underline{
   position: relative;

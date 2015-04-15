@@ -65,6 +65,7 @@
     height: 11px;
     background-color: #23497a;
     border-radius: 5px;
+    cursor: pointer;
 
     &.on{
       .indicator{
@@ -98,6 +99,63 @@
     padding: .5em;
   }
 }
+
+.menu{
+  padding: 1.5em 0;
+
+  .fa{
+    width: 20px;
+  }
+
+  a{
+    display: block;
+    color: $white;
+  }
+
+  li{
+    font-weight: 300;
+    font-size: 13px;
+    color: $white;
+    padding: 11px 20px 10px 20px;
+    text-transform: uppercase;
+
+    li{
+      text-transform: none;
+    }
+  }
+
+  .sub-menu{
+    padding: 11px 0 10px 0;
+
+    .title{
+      padding: 0 20px;
+    }
+
+    ul{
+      padding-top: 5px;
+    }
+
+    li{
+      padding: 6px 40px 5px 40px;
+
+      .fa{
+        width: 10px;
+      }
+    }
+  }
+
+  .item{
+    &:hover,
+    &.active{
+      background-color: $yellow;
+      a{
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+
 
 .delete-account{
   color: $white;

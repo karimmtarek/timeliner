@@ -67,10 +67,16 @@ a{
 }
 
 .small{
-  font-size: 10px;
+  font-size: 12px;
   border-radius: 4px;
   padding: 6px 8px 4px 8px;
   border-bottom: 2px solid;
+  text-transform: none;
+}
+
+.x-small{
+  @extend .small;
+  font-size: 10px;
 }
 
 .medium{
@@ -104,6 +110,16 @@ a{
 
   &:hover{
     background-color: lighten($blue, 2%);
+  }
+}
+
+.ok{
+  color: $white;
+  background-color: $green;
+  border-color: shade($green, 25%);
+
+  &:hover{
+    background-color: lighten($green, 2%);
   }
 }
 

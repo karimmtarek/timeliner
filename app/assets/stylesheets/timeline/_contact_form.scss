@@ -47,7 +47,7 @@
     width: 100%;
     font-size: 1.2em;
     color: #fff;
-    outline:none;
+    outline: none;
     @include transition(all 0.3s ease-in-out);
     &:focus{
       background-color: rgba(#000, 0.1);

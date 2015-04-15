@@ -20,11 +20,11 @@ footer{
 
     .text-field{
       margin-right: 5px;
-      border-color: #5d799d;
+      border-color: $blue;
       color: $white;
 
       @include placeholder {
-        color: #5d799d;
+        color: $blue;
       }
     }
 

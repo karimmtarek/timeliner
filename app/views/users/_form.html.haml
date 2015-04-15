@@ -1,64 +1,75 @@
-= form_for(@user, url: user_path(@user)) do |f|
+= form_for(@user, url: user_path(@user), class: 'form') do |f|
   = render 'shared/errors', object: @user
-  .row
-    .col-md-12
-      .form-group
-        = f.label :username, class: 'form-label'
-        = f.text_field :username, autofocus: true, class: 'form-control'
-  .row
-    .col-md-6
-      .form-group
-        = f.label :first_name, class: 'form-label'
-        = f.text_field :first_name, class: 'form-control'
-    .col-md-6
-      .form-group
-        = f.label :last_name, class: 'form-label'
-        = f.text_field :last_name, class: 'form-control'
-  .row
-    .col-md-6
-      .form-group
-        = f.label :location, class: 'form-label'
-        = f.text_field :location, class: 'form-control'
-    .col-md-6
-      .form-group
-        = f.label :phone, class: 'form-label'
-        = f.text_field :phone, class: 'form-control'
-  .row
-    .col-md-6
-      .form-group
-        = f.label :description, class: 'form-label'
-        = f.text_area :description, rows: 5, class: 'form-control'
-    .col-md-6
-      .form-group
-        = f.label :bio, class: 'form-label'
-        = f.text_area :bio, rows: 5, class: 'form-control'
+  .form
+    .sub-container
+      .row.clearfix
+        .col.w-50
+          = f.label :first_name, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :first_name, class: 'form-control'
+        .col.w-50
+          = f.label :last_name, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :last_name, class: 'form-control'
 
-  .row
-    .col-md-12
-      %h3.title-border
-        Edit Social media links
-  = f.nested_fields_for :social_media_links do |smlf|
-    .row
-      .col-md-4
-        .form-group
-          = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
-      .col-md-7
-        .form-group
-          = smlf.text_field :url, class: 'form-control'
-      .col-md-1
-        .form-group
-          = smlf.remove_nested_fields_link
-  .row
-    .col-md-12
-      = f.add_nested_fields_link :social_media_links
-  -# .row
-  -#   .col-md-12
-  -#     .form-group
-  -#       %h2 Edit skills
-  -#       = f.nested_fields_for :skills do |sf|
-  -#         = sf.remove_nested_fields_link
-  -#         = sf.text_field :name
-  -#       = f.add_nested_fields_link :skills
-  .form-actions
-    = f.submit "Update information", class: 'btn btn-success btn-cons'
-    = link_to "Cancel", user_path(@user)
+      .row.clearfix
+        .col.w-50
+          = f.label :username, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :username, class: 'form-control'
+        .col.w-50
+          = f.label :email, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :email, class: 'form-control'
+
+      .row.clearfix
+        .col.w-50
+          = f.label :phone, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :phone, class: 'form-control'
+        .col.w-50
+          = f.label :location, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :location, class: 'form-control'
+
+      .row.clearfix
+        .col.w-50
+          = f.label :description, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :description, rows: 5, class: 'form-control textarea'
+        .col.w-50
+          = f.label :bio, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :bio, rows: 5, class: 'form-control textarea'
+
+    .container
+      .row.full.clearfix
+        .col.w-50.wrapper
+          %h4.dark.underline.left.thin.yellow Social media links
+          = f.nested_fields_for :social_media_links do |smlf|
+            = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
+            = smlf.text_field :url, class: 'form-control'
+            = smlf.remove_nested_fields_link
+          = f.add_nested_fields_link :social_media_links
+
+        .col.w-50.wrapper
+          %h4.dark.underline.left.thin.yellow Skills
+          = f.nested_fields_for :skills do |sf|
+            = sf.remove_nested_fields_link
+            = sf.text_field :name
+            = sf.remove_nested_fields_link
+          = f.add_nested_fields_link :skills
+
+    .container
+      .row.full
+        .col.w-100
+          = f.submit "Update", class: 'btn small ok'
+          = link_to "Cancel", user_path(@user)

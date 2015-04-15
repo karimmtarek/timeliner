@@ -17,6 +17,12 @@
   text-indent: -9999px;
 }
 
+.landing{
+  .header{
+    z-index: 10;
+  }
+}
+
 .app{
   .header{
     padding: 20px 0;

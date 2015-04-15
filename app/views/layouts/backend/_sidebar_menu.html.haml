@@ -4,7 +4,7 @@
   .greeting
     Hello!
     %span= "#{current_user.first_name} #{current_user.last_name}"
-    = link_to timeline_path(current_user), class: 'link-icon' do
+    = link_to timeline_path(current_user), target: '_blank', class: 'link-icon' do
       View timeline
       %i.fa.fa-external-link
 
@@ -16,33 +16,37 @@
       %span.indicator
     %span.lable offline
     %p.note
-      -# Your timeline is visible to the whole world.
-      Your timeline is invisible, you still can see it, though everyone else can't.
+      Your timeline is visible to the whole world.
+      -# Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.
 
-.section
+.menu
   %ul
-    %li{class: "start #{active_class?('users', %w[show edit])}"}
+    %li{class: "item #{active_class?('users', %w[show edit])}"}
       = link_to user_path(current_user) do
-        %i.fa.fa-user
+        %i.fa.fa-smile-o
         %span.title User info
 
     %li{class: "item #{active_class?('milestones', %w[index])}"}
       = link_to milestones_path do
-        %i.fa.fa-bullhorn
+        %i.fa.fa-map-marker
         %span.title Milestones
     %li{class: "item #{active_class?('projects', %w[index])}"}
       = link_to projects_path do
-        %i.fa.fa-bullhorn
+        %i.fa.fa-eye
         %span.title Projects
-    %li
-      %a{:href => "javascript:;"}
-        %i.fa.fa-plus
-        %span.title Create new
-      %ul.sub-menu
+    %li.sub-menu
+      %span.title
+        %i.fa.fa-magic
+        Create
+      %ul
         %li{class: "item #{active_class?('milestones', %w[new edit])}"}
-          = link_to 'Milestone', new_milestone_path
+          = link_to new_milestone_path do
+            %i.fa.fa-angle-right
+            Milestone
         %li{class: "item #{active_class?('projects', %w[new edit])}"}
-          = link_to 'Project', new_project_path
+          = link_to new_project_path do
+            %i.fa.fa-angle-right
+            Project
 
 .delete-account
   %i.fa.fa-exclamation-circle

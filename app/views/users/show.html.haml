@@ -9,44 +9,48 @@
   .sub-container
     .row.clearfix
       .col.w-50
-        %h5 First name
-        %h4.semi-bold= @user.first_name
+        %span.lable First name
+        %p.textbox= @user.first_name
       .col.w-50
-        %h5 Last name
-        %h4.semi-bold= @user.last_name
+        %span.lable Last name
+        %p.textbox= @user.last_name
     .row.clearfix
       .col.w-50
-        %h5 Username
-        %h4.semi-bold= @user.username
+        %span.lable Username
+        %p.textbox= @user.username
       .col.w-50
-        %h5 Email
-        %h4.semi-bold= @user.email
+        %span.lable Email
+        %p.textbox= @user.email
     .row.clearfix
       .col.w-50
-        %h5 Phone
-        %h4.semi-bold= @user.phone ? @user.phone : '-'
+        %span.lable Phone
+        %p.textbox= @user.phone ? @user.phone : '-'
       .col.w-50
-        %h5 Location
-        %h4.semi-bold= @user.location
+        %span.lable Location
+        %p.textbox= @user.location
     .row.clearfix
       .col.w-50
-        %h5 Description
-        %p= markdown(@user.description) unless @user.description.blank?
+        %span.lable Description
+        %p.textarea
+          = @user.description unless @user.description.blank?
       .col.w-50
-        %h5 Bio
-        %p= markdown(@user.bio) unless @user.bio.blank?
+        %span.lable Bio
+        %p.textarea
+          = @user.bio unless @user.bio.blank?
 
 .container
   .row.full.clearfix
     - unless @user.social_media_links.blank?
       .col.w-50.wrapper
         %h4.dark.underline.left.thin.yellow Social media links
-        %ul
-        - @user.social_media_links.each do |link|
-          %li= link_to link.name, link.url, target: '_blank'
+        %ul.tags.social-media
+          - @user.social_media_links.each do |link|
+            %li
+              %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
+              = link_to link.name, link.url, target: '_blank'
     - unless @user.skills.blank?
       .col.w-50.wrapper
         %h4.dark.underline.left.thin.yellow Skills
-        %ul
-        - @user.skills.each do |skill|
-          %li= skill.name
+        %ul.tags.skills
+          - @user.skills.each do |skill|
+            %li= skill.name

@@ -18,10 +18,11 @@
   max-width: 1230px;
   margin: 0 auto;
   position: relative;
-  // @include clearfix;
+
   &.full{
     width: 100%;
   }
+
   &.app-main{
     padding-left: 280px;
     padding-right: 5%;
@@ -36,6 +37,7 @@
     vertical-align: middle;
   }
 }
+
 
 .col{
   float: left;
@@ -54,6 +56,14 @@
 
   &.w-50{
     width: 50%;
+
+    &:first-child{
+      padding-right: 2.5%;
+    }
+
+    &:last-child{
+      padding-left: 2.5%;
+    }
   }
 
   &.w-40{

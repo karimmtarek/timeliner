@@ -3,10 +3,72 @@
   padding: 5px 0;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid $edit-gray;
   font-family: $font-roboto;
+  outline: none;
+
+  &:focus{
+    color: $dark-blue;
+    // background-color: rgba(#000, 0.1);
+    padding-left: 10px;
+    border-color: $yellow;
+  }
 
   @include placeholder {
-    color: red;
+    color: $edit-gray;
+  }
+}
+
+.form{
+  .form-label{
+    color: #979797;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .form-control{
+    @extend .text-field;
+
+    display: block;
+    width: 100%;
+    color: $edit-gray;
+    font-size: 18px;
+    margin-bottom: 1em;
+
+    &.textarea{
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.field-icon{
+  position: relative;
+
+  .form-control{
+    padding-right: 15px;
+  }
+
+  .fa{
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    @include transform(translateY(-50%));
+    color: $yellow;
+    font-size: 14px;
+  }
+
+  &.textarea{
+    .fa{
+      top: 0;
+      @include transform(translateY(+50%));
+    }
+  }
+
+  &.show-icon{
+    .fa{
+      opacity: 1;
+    }
   }
 }

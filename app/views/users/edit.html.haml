@@ -1,14 +1,10 @@
 = content_for(:title) do
   = "Edit Your Information - #{@user.first_name} #{@user.last_name} | Timeliner"
-.page-title
-  %h3
-    Edit
-    %span.semi-bold Your Information
-.row
-  .col-md-12
-    .grid.simple
-      .grid-title.no-border
-      .grid-body.no-border
-        .row
-          .col-md-12
-            = render 'form'
+
+.container
+  .row.full.page-title.clearfix
+    %h2.dark.underline.left.thick.yellow
+      User Information
+      %span - edit
+
+  = render 'form'

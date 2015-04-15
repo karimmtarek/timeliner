@@ -1,0 +1,43 @@
+.tags{
+  @include clearfix;
+
+  .fa{
+    background-color: $blue;
+    color: $white;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    top: 0;
+    left: 0;
+    @include transform(translateX(-50%));
+    border-radius: 50%;
+
+    &:before{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include transform(translateX(-50%) translateY(-50%));
+    }
+  }
+
+  li{
+    position: relative;
+    font-size: 14px;
+    color: $dark-blue;
+    font-weight: 300;
+    background-color: $darker-gray;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 10px 10px 0 0;
+    float: left;
+  }
+
+  &.social-media{
+    li{
+      padding-left: 20px;
+      margin-left: 16px;
+    }
+  }
+}
+
+
