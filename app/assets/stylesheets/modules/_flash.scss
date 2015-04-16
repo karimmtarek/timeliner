@@ -1,0 +1,13 @@
+.flash{
+  color: $white;
+  font-size: 12px;
+  // font-weight: 300;
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  display: inline-block;
+  z-index: 100;
+  background-color: rgba(#000, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}

@@ -105,10 +105,12 @@
   &.wrapper{
     padding: 1.5em;
     background-color: $light-gray;
-    &:nth-child(1){
+
+    &:nth-child(odd){
       border-right: 5px solid $white;
     }
-    &:nth-child(2){
+
+    &:nth-child(even){
       border-left: 5px solid $white;
     }
   }

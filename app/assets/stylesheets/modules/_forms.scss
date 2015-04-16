@@ -9,7 +9,6 @@
 
   &:focus{
     color: $dark-blue;
-    // background-color: rgba(#000, 0.1);
     padding-left: 10px;
     border-color: $yellow;
   }
@@ -28,7 +27,6 @@
 
   .form-control{
     @extend .text-field;
-
     display: block;
     width: 100%;
     color: $edit-gray;
@@ -38,6 +36,20 @@
     &.textarea{
       font-size: 14px;
       line-height: 1.5em;
+    }
+  }
+
+  .action{
+    text-align: right;
+
+    &.group{
+      background-color: $light-gray;
+      margin-top: 10px;
+      padding: 1.5em;
+    }
+
+    &.solo{
+      margin-top: 10px;
     }
   }
 }
@@ -71,4 +83,89 @@
       opacity: 1;
     }
   }
+}
+
+.nested_fields{
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  @include clearfix;
+
+  select, .field-icon{
+    float: left;
+  }
+
+  select{
+    width: 25%;
+  }
+
+  .field-icon{
+    width: 60%;
+    margin: 0 2%;
+
+    .fa{
+      top: 0;
+      @include transform(translateY(+50%));
+    }
+  }
+
+  .form-control{
+    font-size: 12px;
+  }
+
+  .remove_nested_fields_link{
+    display: table-cell;
+    float: right;
+
+    &.fa{
+      background-color: $edit-gray;
+      color: $white;
+      height: 28px;
+      width: 28px;
+      font-size: 14px;
+      border-radius: 50%;
+
+      &:before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translateX(-50%) translateY(-50%));
+      }
+
+      &:hover{
+        background-color: $red;
+      }
+    }
+  }
+
+  &.nested_user_skills{
+    width: 50%;
+    float: left;
+
+    .field-icon{
+      width: 75%;
+    }
+
+    &:nth-child(odd){
+      padding-right: 2%;
+    }
+
+    &:nth-child(even){
+      padding-left: 2%;
+    }
+  }
+}
+
+.stick-it-up{
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  z-index: 1;
+  display: inline-block;
+}
+
+.clear{
+  clear: both;
 }

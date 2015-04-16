@@ -16,7 +16,14 @@ $(document).ready(function () {
   $('.form-control').focusout(function() {
     $(this).parent().removeClass('show-icon');
   });
-  // setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+
+  setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+
+  // setTimeout(function(){
+  //   $('.flash').addClass('animated bounceOutRight');
+  // }, 3000);
+
+
 });
 
 

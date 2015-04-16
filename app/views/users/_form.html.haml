@@ -1,6 +1,10 @@
 = form_for(@user, url: user_path(@user), class: 'form') do |f|
   = render 'shared/errors', object: @user
   .form
+    .stick-it-up
+      = f.submit "Update", class: 'btn small ok'
+      = link_to "Cancel", user_path(@user), class: 'btn x-small actionless'
+
     .sub-container
       .row.clearfix
         .col.w-50
@@ -56,20 +60,26 @@
           %h4.dark.underline.left.thin.yellow Social media links
           = f.nested_fields_for :social_media_links do |smlf|
             = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
-            = smlf.text_field :url, class: 'form-control'
-            = smlf.remove_nested_fields_link
-          = f.add_nested_fields_link :social_media_links
+            .field-icon
+              %i.fa.fa-pencil
+              = smlf.text_field :url, class: 'form-control'
+            = smlf.remove_nested_fields_link '', class: 'fa fa-trash'
+          .action.solo
+            = f.add_nested_fields_link :social_media_links, 'Add a link', class: 'btn small warning'
 
         .col.w-50.wrapper
           %h4.dark.underline.left.thin.yellow Skills
-          = f.nested_fields_for :skills do |sf|
-            = sf.remove_nested_fields_link
-            = sf.text_field :name
-            = sf.remove_nested_fields_link
-          = f.add_nested_fields_link :skills
+          .clearfix
+            = f.nested_fields_for :skills do |sf|
+              .field-icon
+                %i.fa.fa-pencil
+                = sf.text_field :name, class: 'form-control'
+              = sf.remove_nested_fields_link '', class: 'fa fa-trash'
+          .action.solo
+            = f.add_nested_fields_link :skills, 'Add a skill', class: 'btn small warning'
 
     .container
-      .row.full
+      .row.full.action.group.clearfix
         .col.w-100
           = f.submit "Update", class: 'btn small ok'
-          = link_to "Cancel", user_path(@user)
+          = link_to "Cancel", user_path(@user), class: 'btn x-small actionless'

@@ -113,6 +113,16 @@ a{
   }
 }
 
+.actionless{
+  color: shade($darker-gray, 25%);
+  background-color: $darker-gray;
+  border-color: shade($darker-gray, 25%);
+
+  &:hover{
+    background-color: lighten($darker-gray, 2%);
+  }
+}
+
 .ok{
   color: $white;
   background-color: $green;
