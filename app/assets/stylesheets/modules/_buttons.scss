@@ -143,6 +143,16 @@ a{
   }
 }
 
+.danger{
+  color: $white;
+  background-color: $red;
+  border-color: shade($red, 25%);
+
+  &:hover{
+    background-color: lighten($red, 2%);
+  }
+}
+
 .sm-icons{
   @include clearfix;
 

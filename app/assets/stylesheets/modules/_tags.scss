@@ -40,4 +40,44 @@
   }
 }
 
+.ribbon-wrapper{
+  margin-bottom: 17px;
+  margin-top: -1.5em;
+}
 
+.ribbon{
+  position: relative;
+  font-family: $font-montserrat;
+  font-size: 14px;
+  color: $white;
+  background-color: $blue;
+  display: inline-block;
+  padding: 6px 0 0;
+  width: 24px;
+  text-align: center;
+  margin-top: -5px;
+
+  &.base{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &:before{
+    @extend .base;
+    left: -5px;
+    top: 0;
+    border-width: 5px 5px 0 0;
+    border-color: transparent $dark-blue transparent transparent;
+  }
+
+  &:after{
+    @extend .base;
+    left: 0;
+    bottom: -6px;
+    border-width: 6px 12px 0 12px;
+    border-color: $blue transparent transparent transparent;
+  }
+}

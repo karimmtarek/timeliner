@@ -1,37 +1,36 @@
 = content_for(:title) do
   = "Milestones - #{@user.first_name} #{@user.last_name} | Timeliner"
-.page-title
-  %h2 Milestones
 
-- unless @milestones.any?
-  .row
-    .col-md-12
-      = render 'import_linkedin_note'
+.container
+  .row.full.page-title.clearfix
+    = link_to 'New', edit_user_path(@user), class: 'btn small default pull-right'
+    %h2.dark.underline.left.thick.yellow
+      Milestone
 
-- @milestones.each do |milestone|
-  .row
-    .col-md-12
-      .grid.simple
-        .grid-title.no-border
-          .action.pull-right
-            = link_to 'Delete', milestone_path(milestone), method: :delete, class: 'btn btn-danger btn-sm btn-small'
-            = link_to 'Edit', edit_milestone_path(milestone), class: 'btn btn-warning btn-sm btn-small'
-          %h3
+-# - unless @milestones.any?
+  -# = render 'import_linkedin_note'
+
+- @milestones.each_with_index do |milestone, index|
+  .container.milestone
+    .row.full.clearfix
+      .col.w-100.wrapper
+        .ribbon-wrapper
+          %span.ribbon
+            = index + 1
+        .title
+          .btn-group.pull-right
+            = link_to 'Delete', milestone_path(milestone), method: :delete, class: 'btn danger x-small'
+            = link_to 'Edit', edit_milestone_path(milestone), class: 'btn warning x-small'
+          %h4
             = milestone.title.blank? ? 'Edit to add a title' : milestone.title
-            %h5
-              At
-              =  print_company(milestone)
+          .company-n-date
+            At
+            =  print_company(milestone)
+            %span
               = "(#{print_location(milestone)}#{format_date(milestone.date_start)}"
-              - unless milestone.date_end.blank?
-                = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)}"
+              -# - unless milestone.date_end.blank?
+              = '&mdash;'.html_safe + " #{milestone.present ? 'Present' : format_date(milestone.date_end)}"
               )
         - unless milestone.description.blank?
-          .grid-body.no-border
-            .row
-              .col-md-12
-                = markdown(milestone.description)
-
-          - unless milestone.projects.blank?
-            .row.projects
-              %h3 Related projects
-              = render partial: 'project', collection: milestone.projects
+          .copy
+            = markdown(milestone.description)

@@ -27,8 +27,80 @@ h1, h2, h3, h4, h5{
   h2{
     width: 90%;
   }
+
+  .heighlight {
+    color: $yellow;
+  }
 }
 
+.wrapper{
+  .title{
+    color: $dark-blue;
+    margin-bottom: 15px;
+  }
+
+  h4{
+    font-size: 24px;
+    font-family: $font-roboto;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: .2em;
+  }
+}
+
+.company-n-date{
+  color: $copy-gray;
+  font-size: 18px;
+
+  strong{
+    font-weight: 500;
+    color: $dark-blue;
+
+    a{
+      color: $dark-blue;
+    }
+  }
+
+  span{
+    font-size: 14px;
+  }
+}
+
+.copy{
+  p{
+    color: $copy-gray;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4em;
+    margin-bottom: 1em;
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  li{
+    color: $copy-gray;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.3em;
+    margin-bottom: 0.5em;
+    padding-left: 15px;
+    position: relative;
+
+
+    &:before{
+      content: "\f105";
+      position: absolute;
+      top: 3px;
+      left: 0;
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      color: $blue;
+    }
+  }
+}
 
 p{
   margin: 0;
