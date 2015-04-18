@@ -61,7 +61,7 @@ class MilestonesController < ApplicationController
       raise 'You must re-sync with linkedin'
     end
 
-    redirect_to milestones_path
+    redirect_to milestones_path, notice: 'Milestones imported sucsusfully!'
   end
 
   private

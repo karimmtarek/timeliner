@@ -19,6 +19,11 @@ $(document).ready(function () {
 
   setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
 
+  $('.alert-close').on('click', function(e){
+    e.preventDefault();
+    $(this).closest('.alert').fadeOut('slow');
+  });
+
   // setTimeout(function(){
   //   $('.flash').addClass('animated bounceOutRight');
   // }, 3000);

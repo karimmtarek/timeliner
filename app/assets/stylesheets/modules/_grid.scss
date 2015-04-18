@@ -116,6 +116,14 @@
   }
 }
 
+.milestone{
+  .wrapper{
+    &:nth-child(odd){
+      border: none;
+    }
+  }
+}
+
 .align-r{
   text-align: right;
 }

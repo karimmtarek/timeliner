@@ -1,0 +1,39 @@
+.alert{
+  padding: 1em;
+  margin-bottom: 20px;
+
+  &.cool{
+    // background-color: $light-gray;
+    border: 5px solid $blue;
+
+    .alert-heading{
+      color: $blue;
+    }
+
+    p{
+      color: $copy-gray;
+      font-size: 16px;
+      // font-weight: 300;
+    }
+
+    a{
+      color: $dark-blue;
+      text-decoration: underline;
+    }
+  }
+
+  ul{
+    margin-top: .5em;
+  }
+
+  .btn{
+    margin-top: 1em;
+  }
+
+  .alert-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $blue;
+  }
+}

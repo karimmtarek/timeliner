@@ -34,21 +34,22 @@
             = f.text_field :company_url, :placeholder => "domain.com", class: 'form-control'
 
       .row.clearfix
-        .col.w-25
-          = f.label 'Start date', class: 'form-label'
-          .select-field.date-select
-            = date_select(:milestone, :date_start, start_year: 1995,
-                                                   discard_day: true,
-                                                   order: [:month, :year])
-        .col.w-25
-          = f.label 'End date', class: 'form-label'
-          %div{class:"select-field date-select #{'hide' if @milestone.present}", id:'end_date'}
-            = date_select(:milestone, :date_end, start_year: 1995,
-                                                   discard_day: true,
-                                                   order: [:month, :year])
-          %div
-            = f.check_box :present, id: 'present'
-            = f.label :present
+        .col.w-50
+          .col.w-50
+            = f.label 'Start date', class: 'form-label'
+            .select-field.date-select
+              = date_select(:milestone, :date_start, start_year: 1995,
+                                                     discard_day: true,
+                                                     order: [:month, :year])
+          .col.w-50
+            = f.label 'End date', class: 'form-label'
+            %div{class:"select-field date-select end-date #{'hide' if @milestone.present}", id:'end_date'}
+              = date_select(:milestone, :date_end, start_year: 1995,
+                                                     discard_day: true,
+                                                     order: [:month, :year])
+            %div.checkbox
+              = f.check_box :present, id: 'present'
+              = f.label :present, for: 'present'
 
         .col.w-50
           = f.label :description, class: 'form-label'

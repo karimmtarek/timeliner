@@ -1,11 +1,15 @@
-.alert.alert-block.alert-info.fade.in
-  %button.close{"data-dismiss" => "alert", :type => "button"}
-  .row
-    .col-md-8
+.container.alert.cool
+  .row.full.clearfix
+    .col.w-100
+      -# %a.alert-close(href='#')
+      -#   %i.fa.fa-times
       %h4.alert-heading Data Import
-      %p Import your data from linkedin to start creating your milestones.
-    .col-md-4
-      .button-set
-        = link_to import_linkedin_data_path,  method: :put, class: 'btn btn-success btn-cons' do
-          %i.fa.fa-linkedin
-          Import data
+      %p You can start adding milestones by:
+      %ul.list-ul
+        %li
+          = link_to 'Importing data', import_linkedin_data_path,  method: :put
+          from LinkedIn, or
+        %li
+          Create your first milestone manually,
+          = link_to 'click here', new_milestone_path
+          to start.

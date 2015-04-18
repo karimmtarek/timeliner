@@ -3,12 +3,12 @@
 
 .container
   .row.full.page-title.clearfix
-    = link_to 'New', edit_user_path(@user), class: 'btn small default pull-right'
+    = link_to 'New', new_milestone_path, class: 'btn small default pull-right'
     %h2.dark.underline.left.thick.yellow
       Milestone
 
--# - unless @milestones.any?
-  -# = render 'import_linkedin_note'
+- unless @milestones.any?
+  = render 'import_linkedin_note'
 
 - @milestones.each_with_index do |milestone, index|
   .container.milestone

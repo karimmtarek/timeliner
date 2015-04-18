@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5{
 .copy{
   p{
     color: $copy-gray;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.4em;
     margin-bottom: 1em;
@@ -79,20 +79,26 @@ h1, h2, h3, h4, h5{
     }
   }
 
+  ul{
+    @extend .list-ul;
+  }
+}
+
+.list-ul{
   li{
     color: $copy-gray;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.3em;
     margin-bottom: 0.5em;
-    padding-left: 15px;
+    padding-left: 12px;
     position: relative;
 
 
     &:before{
       content: "\f105";
       position: absolute;
-      top: 3px;
+      top: 1px;
       left: 0;
       display: inline-block;
       font: normal normal normal 14px/1 FontAwesome;
@@ -101,6 +107,7 @@ h1, h2, h3, h4, h5{
     }
   }
 }
+
 
 p{
   margin: 0;
