@@ -1,1 +1,30 @@
-= render partial: 'project', collection: milestone.projects
+= content_for(:title) do
+  = "Projects - #{current_user.first_name} #{current_user.last_name} | Timeliner"
+-# = render partial: 'project', collection: milestone.projects
+
+.container
+  .row.full.page-title.clearfix
+    = link_to 'New', new_project_path, class: 'btn small default pull-right'
+    %h2.dark.underline.left.thick.yellow
+      Projects
+
+- unless @projects.any?
+  Start adding projects
+
+- @projects.each_with_index do |project, index|
+  .container.milestone
+    .row.full.clearfix
+      .col.w-100.wrapper
+        .ribbon-wrapper
+          %span.ribbon
+            = index + 1
+        .title
+          .btn-group.pull-right
+            = link_to 'Delete', project_path(project), method: :delete, class: 'btn danger x-small'
+            = link_to 'Edit', edit_project_path(project), class: 'btn warning x-small'
+          %h4
+            = project.title
+        .screenshots
+          %ul
+            - project.images.each do |image|
+              %li= image_tag(image.image, alt: image.description, class: '')

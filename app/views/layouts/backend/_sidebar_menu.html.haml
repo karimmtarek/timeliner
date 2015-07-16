@@ -1,6 +1,6 @@
 .section.user-profile.brdr-btm.clearfix
   .pic
-    = image_tag(current_user.image, alt: current_user.username)
+    = image_tag(current_user.gravatar_url, alt: current_user.username)
   .greeting
     Hello!
     %span= "#{current_user.first_name} #{current_user.last_name}"

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   extend FriendlyId
-
+  include Gravtastic
+  gravtastic
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable
   devise :database_authenticatable,
@@ -12,6 +13,7 @@ class User < ActiveRecord::Base
          :omniauthable,
          :omniauth_providers => [:linkedin]
   has_many :milestones, dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   has_many :skills, dependent: :destroy
   accepts_nested_attributes_for :skills, allow_destroy: true
@@ -21,7 +23,7 @@ class User < ActiveRecord::Base
 
   friendly_id :username, use: :slugged
 
-  before_create :generate_username_from_linkedin
+  # before_create :generate_username_from_linkedin
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

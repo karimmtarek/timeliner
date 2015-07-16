@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
-  belongs_to :milestone
+  belongs_to :user
   friendly_id :title, use: :slugged
 
   has_many :images, dependent: :destroy

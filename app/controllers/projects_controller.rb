@@ -1,30 +1,33 @@
 class ProjectsController < ApplicationController
   before_action :set_user
 
+  def index
+    @projects = current_user.projects.all
+  end
+
   def new
     @project = Project.new
-    # @project.images.build
   end
 
   def create
-    @project   = Project.new(project_params)
+    @project   = current_user.projects.new(project_params)
 
     if @project.save
-      redirect_to milestones_path, notice: "Project #{@project.title} created!"
+      redirect_to projects_path, notice: "Project #{@project.title} created!"
     else
       render :new
     end
   end
 
   def edit
-    @project = Project.friendly.find(params[:id])
+    @project = current_user.projects.friendly.find(params[:id])
   end
 
   def update
-    @project = Project.friendly.find(params[:id])
+    @project = current_user.projects.friendly.find(params[:id])
 
     if @project.update(project_params)
-      redirect_to milestones_path
+      redirect_to projects_path
     else
       render :edit
     end
@@ -32,16 +35,15 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.friendly.find(params[:id])
+    @project = current_user.projects.friendly.find(params[:id])
     @project.destroy
     redirect_to milestones_path
-
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :role, :client, :published_on, :link_live, :link_source, :milestone_id, images_attributes: [:id, :image, :description, :_destroy])
+    params.require(:project).permit(:title, :description, :role, :client, :published_on, :link_live, :link_source, images_attributes: [:id, :image, :description, :_destroy])
   end
 
 end

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -30,13 +30,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem "haml-rails", "~> 0.8"
+gem 'gravtastic'
+gem 'haml-rails', '~> 0.8'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'linkedin'
-gem 'pry-rails'
-gem "figaro"
-# gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass', branch: 'v1.0beta'
+gem 'figaro'
 gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
@@ -45,7 +44,7 @@ gem 'nested_form_fields'
 gem 'bourbon'
 gem 'friendly_id', '~> 5.1.0'
 gem 'newrelic_rpm'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -68,7 +67,10 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  gem 'pry-rails'
   gem 'rubocop', '0.30.0'
+  gem 'factory_girl_rails'
+  # gem 'jazz_fingers'
 end
 
 group :development do
@@ -82,7 +84,6 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'simplecov', require: false
 end
 

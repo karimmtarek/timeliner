@@ -10,9 +10,10 @@
     = render 'layouts/flash'
     = render 'layouts/backend/header'
     .container
-      .sidebar
-        = render 'layouts/backend/sidebar_menu'
-      .row.full.app-main.clearfix
+      - if current_user
+        .sidebar
+          = render 'layouts/backend/sidebar_menu'
+      .row.full.app-main.body.clearfix
         .col.w-100.content
           = yield
       .row.full.app-main.footer.clearfix

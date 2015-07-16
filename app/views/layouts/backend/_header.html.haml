@@ -2,6 +2,7 @@
   .row.tbl
     .col.w-50
       %h1.logo Timeliner
-    .col.w-50.align-r
-      = link_to destroy_user_session_path, class: 'link', method: :delete do
-        %i.fa.fa-sign-out
+    - if current_user
+      .col.w-50.align-r
+        = link_to destroy_user_session_path, class: 'link', method: :delete do
+          %i.fa.fa-sign-out

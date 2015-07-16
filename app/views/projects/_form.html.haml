@@ -1,68 +1,78 @@
-.col-md-12
-  = form_for(@project) do |f|
-    = render 'shared/errors', object: @project
-    .row
-      .col-md-6
-        .form-group
+= form_for(@project) do |f|
+  = render 'shared/errors', object: @project
+  .form
+    .stick-it-up
+      - if @project.new_record?
+        = f.submit "Create", class: 'btn small default'
+      - else
+        = f.submit "Update", class: 'btn small ok'
+      = link_to "Cancel", projects_path, class: 'btn x-small actionless'
+    .sub-container
+      .row.clearfix
+        .col.w-50
           = f.label :title, class: 'form-label'
-          .controls
-            = f.text_field :title, class: 'form-control',autofocus: true
-      .col-md-6
-        .form-group
-          = label_tag 'Belongs to', nil, class: 'form-label'
-          .controls
-            = f.select(:milestone_id ,options_from_collection_for_select(current_user.milestones.all, :id, :title))
-    .row
-      .col-md-6
-        .form-group
-          = f.label :client, class: 'form-label'
-          .controls
-            = f.text_field :client, class: 'form-control'
-      .col-md-6
-        .form-group
-          = f.label :published_on
-          .controls
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :title, required: true, placeholder: "Project title", class: 'form-control'
+        .col.w-50
+          = f.label :published_on, class: 'form-label'
+          .select-field.date-select
             = date_select(:project, :published_on, start_year: 1995,
                                                    discard_day: true,
                                                    order: [:month, :year])
-    .row
-      .col-md-6
-        .form-group
+      .row.clearfix
+        .col.w-50
+          = f.label :client, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :client, placeholder: "Client name", class: 'form-control'
+        .col.w-50
+          = f.label :client_url, class: 'form-label'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :client_url, placeholder: "http://www.client-url.com", class: 'form-control'
+
+      .row.clearfix
+        .col.w-50
           = f.label :link_live, class: 'form-label'
-          .controls
-            = f.text_field :link_live, :placeholder => "domain.com", class: 'form-control'
-      .col-md-6
-        .form-group
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :link_live, placeholder: "http://www.project-live-link.com", class: 'form-control'
+        .col.w-50
           = f.label :link_source, class: 'form-label'
-          .controls
-            = f.text_field :link_source, :placeholder => "domain.com", class: 'form-control'
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :link_source, placeholder: "http://www.project-source-link.com", class: 'form-control'
 
-    .row
-      .col-md-6
-        .form-group
+      .row.clearfix
+        .col.w-50
           = f.label :description, class: 'form-label'
-          .controls
-            = f.text_area :description, rows: 5,class: 'form-control'
-      .col-md-6
-        .form-group
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :description, rows: 5, placeholder: 'Descripe the project...', class: 'form-control textarea'
+        .col.w-50
           = f.label :role, class: 'form-label'
-          .controls
-            = f.text_area :role, rows: 5,class: 'form-control'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :role, rows: 5, placeholder: 'What did you do, technologies used, stuff like that...', class: 'form-control textarea'
 
-    .form-group
-    = f.nested_fields_for :images do |images_form|
-      = images_form.remove_nested_fields_link
-      .form-group
-        = images_form.label 'Choose image to upload', class: 'form-label'
-        = images_form.file_field :image
-      .form-group
-        = images_form.label :description, class: 'form-label'
-        = images_form.text_field :description, class: 'form-control'
-    = f.add_nested_fields_link :images
+      .row.clearfix
+        %h4.dark.underline.left.thin.yellow screenshots
+        = f.nested_fields_for :images do |images_form|
+          = images_form.remove_nested_fields_link '', class: 'fa fa-trash'
+          .col.w-50
+            = images_form.label 'Choose an image to upload', class: 'form-label'
+            = images_form.file_field :image
+          .col.w-50
+            = images_form.label :description, class: 'form-label'
+            = images_form.text_field :description, class: 'form-control'
+        = f.add_nested_fields_link :images, 'Add a screenshot', class: 'btn small warning'
 
-    .form-actions
-      - if @project.new_record?
-        = f.submit "Create Project", class: 'btn btn-success btn-cons'
-      - else
-        = f.submit "Update Project", class: 'btn btn-success btn-cons'
-      = link_to "Cancel", milestones_path, class: 'btn btn-white btn-cons'
+    .container
+      .row.full.action.group.clearfix
+        .col.w-100
+          - if @project.new_record?
+            = f.submit "Create", class: 'btn small default'
+          - else
+            = f.submit "Update", class: 'btn small ok'
+          = link_to "Cancel", projects_path, class: 'btn x-small actionless'

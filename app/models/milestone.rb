@@ -1,7 +1,6 @@
 class Milestone < ActiveRecord::Base
   extend FriendlyId
   belongs_to :user
-  has_many :projects, dependent: :destroy
   friendly_id :title, use: :slugged
 
   # validates :title, presence: true
