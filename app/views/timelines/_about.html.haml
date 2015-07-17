@@ -5,11 +5,5 @@
         .about-bubble.wow.bounce
           .bio= @user.bio
       .image
-        = image_tag(@user.image, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
-        -# %a.email.info-icon{href: '#', data: {show: "email"}}
-        -#   %i.fa.fa-envelope-o
-        -# %a.location.info-icon{:href => '#', :data => {:show => "location"}}
-        -#   %i.fa.fa-map-marker
-        -# %a.phone.info-icon{:href => '#', :data => {:show => "phone"}}
-        -#   %i.fa.fa-phone
+        = image_tag(@user.gravatar_url, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
       = render 'social_media_links' unless @user.social_media_links.blank?
