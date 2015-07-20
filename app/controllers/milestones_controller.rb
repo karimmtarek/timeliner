@@ -50,20 +50,6 @@ class MilestonesController < ApplicationController
     # flash.now[:notice] =
   end
 
-  def import_linkedin_data
-    client = LinkedIn::Client.new(ENV['LINKEDIN_KEY'], ENV['LINKEDIN_SECRET'])
-
-    if current_user.access_key && current_user.access_secret
-      client.authorize_from_access(current_user.access_key, current_user.access_secret)
-      Milestone.create_from_position(client, current_user)
-      Milestone.create_from_education(client, current_user)
-    else
-      raise 'You must re-sync with linkedin'
-    end
-
-    redirect_to milestones_path, notice: 'Milestones imported sucsusfully!'
-  end
-
   private
 
   def milestone_params
