@@ -9,7 +9,7 @@
     .col.w-50
       %h1.logo Timeliner
     .col.w-50.align-r
-      = link_to 'Sign in', user_omniauth_authorize_path(:linkedin), class: 'link white'
+      = link_to 'Sign in', new_user_session_path, class: 'link white'
 
 .container.hero
   .row
@@ -19,10 +19,10 @@
           Your professional journey in
           %span.emphasize one page
         %p Create a good-looking online resume, in 5 minutes or less, using your existing LinkedIn account.
-        = link_to 'Sign up with linkedin', user_omniauth_authorize_path(:linkedin), class: 'btn x-large in'
+        = link_to 'Sign up', new_user_registration_path, class: 'btn x-large in'
         %span
           or
-          = link_to 'Sign in with LinkedIn', user_omniauth_authorize_path(:linkedin), class: 'link white'
+          = link_to 'Sign in', new_user_session_path, class: 'link white'
 
 %section.container.features
   .row.clearfix
@@ -57,7 +57,7 @@
   .row.clearfix
     .col.w-100.center
       %h2.underline.yellow.thick.center Take control of your resume
-      = link_to 'Sign up for free now!', user_omniauth_authorize_path(:linkedin), class: 'btn medium default'
+      = link_to 'Sign up for free now!', new_user_registration_path, class: 'btn medium default'
       %span
         or
         = link_to 'see an example', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link blue'
