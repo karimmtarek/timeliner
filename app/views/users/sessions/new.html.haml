@@ -1,32 +1,18 @@
-.ui.centered.grid
-  .four.wide.column
-    .ui.attached.message
-      .header
-        Log in
+- content_for(:title) do
+  Timeliner | Create a good-looking resume, in five minutes or less
 
-    .ui.form.attached.fluid.segment
-      .field.center-this
-        = link_to user_omniauth_authorize_path(:linkedin), class: 'ui linkedin button' do
-          %i.linkedin.square.icon
-          with Linkedin
-      .ui.horizontal.divider or
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          = f.label :email
-          .ui.icon.input
-            = f.email_field :email, autofocus: true
-            %i.mail.icon
-        .field
-          = f.label :password
-          .ui.icon.input
-            = f.password_field :password, autocomplete: "off"
-            %i.lock.icon
-        - if devise_mapping.rememberable?
-          .inline.field
-            .ui.checkbox
-              = f.check_box :remember_me
-              = f.label :remember_me
-        .actions
-          = f.submit "Log in", class: 'ui submit button'
+- content_for(:description) do
+  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+
+= render 'static_pages/header'
+
+.container.hero
+  .row
+    .col.w-100
+      Sign in
+      = render 'form'
+
     .ui.bottom.attached.message
       = render "users/shared/links"
+
+= render 'static_pages/footer'

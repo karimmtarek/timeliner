@@ -1,18 +1,18 @@
-.ui.centered.grid
-  .four.wide.column
-    .ui.attached.message
-      .header
-        Forgot your password?
+- content_for(:title) do
+  Timeliner | Create a good-looking resume, in five minutes or less
 
-    .ui.form.attached.fluid.segment
-      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :email
-          .ui.icon.input
-            = f.email_field :email, autofocus: true
-            %i.mail.icon
-        .actions
-          = f.submit "Send me reset password instructions", class: 'ui submit button'
+- content_for(:description) do
+  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+
+= render 'static_pages/header'
+
+.container.hero
+  .row
+    .col.w-100
+      Forgot your password?
+      = render 'form'
+
     .ui.bottom.attached.message
       = render "users/shared/links"
+
+= render 'static_pages/footer'

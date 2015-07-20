@@ -1,0 +1,10 @@
+.ui.form.attached.fluid.segment
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      .ui.icon.input
+        = f.email_field :email, autofocus: true
+        %i.mail.icon
+    .actions
+      = f.submit "Send me reset password instructions", class: 'ui submit button'

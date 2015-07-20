@@ -1,43 +1,19 @@
-.ui.centered.grid
-  .four.wide.column
-    .ui.attached.message
-      .header
-        Sign up
-      %p Fill out the form below to sign-up for a new account or just sign-up with your LinkedIn account
-    .ui.form.attached.fluid.segment
-      .field.center-this
-        = link_to user_omniauth_authorize_path(:linkedin), class: 'ui linkedin button' do
-          %i.linkedin.square.icon
-          with Linkedin
-      .ui.horizontal.divider or
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
-        .field
-          = f.label :email
-          .ui.icon.input
-            = f.email_field :email, autofocus: true
-            %i.mail.icon
-        .field
-          = f.label :username
-          .ui.icon.input
-            = f.text_field :username
-            %i.user.icon
-        .field
-          = f.label :password
-          - if @validatable
-            %em
-              (#{@minimum_password_length} characters minimum)
-          .ui.icon.input
-            = f.password_field :password, autocomplete: "off"
-            %i.lock.icon
-        .field
-          = f.label :password_confirmation
-          .ui.icon.input
-            = f.password_field :password_confirmation, autocomplete: "off"
-            %i.lock.icon
-        .actions
-          = f.submit "Sign up", class: 'ui submit button'
-        .field
+- content_for(:title) do
+  Timeliner | Create a good-looking resume, in five minutes or less
+
+- content_for(:description) do
+  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+
+= render 'static_pages/header'
+
+.container.hero
+  .row
+    .col.w-100
+      Sign up
+      %p Fill out the form below to sign-up for a new account
+      = render 'form'
 
     .ui.bottom.attached.message
       = render "users/shared/links"
+
+= render 'static_pages/footer'

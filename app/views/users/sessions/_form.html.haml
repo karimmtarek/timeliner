@@ -1,0 +1,24 @@
+.ui.form.attached.fluid.segment
+  .field.center-this
+    = link_to user_omniauth_authorize_path(:linkedin), class: 'ui linkedin button' do
+      %i.linkedin.square.icon
+      with Linkedin
+  .ui.horizontal.divider or
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email
+      .ui.icon.input
+        = f.email_field :email, autofocus: true
+        %i.mail.icon
+    .field
+      = f.label :password
+      .ui.icon.input
+        = f.password_field :password, autocomplete: "off"
+        %i.lock.icon
+    - if devise_mapping.rememberable?
+      .inline.field
+        .ui.checkbox
+          = f.check_box :remember_me
+          = f.label :remember_me
+    .actions
+      = f.submit "Log in", class: 'ui submit button'
