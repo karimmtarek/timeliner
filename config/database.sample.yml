@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  username: username
+  password: password
+  pool: 5
+
+development:
+  <<: *default
+  database: timeliner_development
+
+test:
+  <<: *default
+  database: timeliner_test
+
+production:
+  <<: *default
+  database:
+  username:
+  password:
