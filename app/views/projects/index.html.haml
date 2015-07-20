@@ -9,7 +9,7 @@
       Projects
 
 - unless @projects.any?
-  Start adding projects
+  = render 'first_project'
 
 - @projects.each_with_index do |project, index|
   .container.milestone
