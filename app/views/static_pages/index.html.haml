@@ -4,12 +4,7 @@
 - content_for(:description) do
   Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
 
-%header.container.header
-  .row
-    .col.w-50
-      %h1.logo Timeliner
-    .col.w-50.align-r
-      = link_to 'Sign in', new_user_session_path, class: 'link white'
+= render 'header'
 
 .container.hero
   .row
@@ -62,30 +57,4 @@
         or
         = link_to 'see an example', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link blue'
 
-%footer.container.footer
-  .row.clearfix
-    .col.w-30.gutter.newsletter
-      %h3.underline.white.left.thin Stay informed
-      %p Subscribe to our newsletter!
-      = render 'layouts/app-frontend/mailchimp_form'
-    .col.w-30.gutter.social-media
-      %h3.underline.white.left.thin You can find us on
-      %ul.sm-icons
-        %li
-          = link_to '#', class: 'sm-icon' do
-            = fa_icon "linkedin"
-        %li
-          = link_to '#', class: 'sm-icon' do
-            = fa_icon "twitter"
-        %li
-          = link_to '#', class: 'sm-icon' do
-            = fa_icon "facebook"
-    .col.w-40.copyrights
-      = image_tag('logo-sml.png', alt: '')
-      %p
-        Timeliner, created by
-        = link_to 'Karim Tarek', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link-white'
-        , with
-        = fa_icon "heart"
-        from Montreal, Canada.
-      %small Copyright © 2015 Timeliner. All screenshots © their respective owners.
+= render 'footer'
