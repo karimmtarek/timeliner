@@ -3,7 +3,6 @@
   margin-bottom: 20px;
 
   &.cool{
-    // background-color: $light-gray;
     border: 5px solid $blue;
 
     .alert-heading{
@@ -13,12 +12,19 @@
     p{
       color: $copy-gray;
       font-size: 16px;
-      // font-weight: 300;
     }
 
     a{
       color: $dark-blue;
       text-decoration: underline;
+    }
+  }
+
+  &.watch-it{
+    border: 5px solid $red;
+
+    .alert-heading{
+      color: $red;
     }
   }
 

@@ -8,11 +8,12 @@
 
 .container.hero
   .row
-    .col.w-100
-      Sign in
-      = render 'form'
-
-    .ui.bottom.attached.message
-      = render "users/shared/links"
+    .col.w-60
+      .sub-container.opacity-90
+        .row
+          .col-100
+            %h2.dark.underline.left.thick.yellow
+              Sign in
+        = render 'form'
 
 = render 'static_pages/footer'

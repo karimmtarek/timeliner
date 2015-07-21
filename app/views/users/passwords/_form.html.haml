@@ -1,10 +1,16 @@
-.ui.form.attached.fluid.segment
-  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :email
-      .ui.icon.input
-        = f.email_field :email, autofocus: true
-        %i.mail.icon
-    .actions
-      = f.submit "Send me reset password instructions", class: 'ui submit button'
+= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+  .row.clearfix
+    .col.w-100
+      = devise_error_messages!
+
+  .form
+    .row.clearfix
+      .col.w-100
+        = f.label :email, class: 'form-label'
+        .field-icon
+          %i.fa.fa-envelope-o
+          = f.email_field :email, class: 'form-control', autofocus: true
+    .row.clearfix
+      .col.w-100
+        = f.submit "Send me reset password instructions", class: 'btn small ok'
+        = render "users/shared/links"

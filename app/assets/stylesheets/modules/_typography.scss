@@ -193,3 +193,20 @@ span{
     width: 60px;
   }
 }
+
+#errors,
+#error_explanation{
+  margin-bottom: 1em;
+
+  h2{
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: $red;
+  }
+
+  ul{
+    @extend .list-ul;
+    margin-left: 1em;
+
+  }
+}
