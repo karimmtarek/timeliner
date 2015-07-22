@@ -13,6 +13,3 @@
 
   - unless milestone.description.blank?
     .description= markdown(milestone.description)
-
-- unless milestone.projects.blank?
-  = render partial: 'projects', locals: { projects: milestone.projects }
