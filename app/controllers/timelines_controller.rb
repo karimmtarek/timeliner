@@ -3,14 +3,11 @@ class TimelinesController < ApplicationController
 
   def index
     @user = User.friendly.find(params[:user_id])
-    # @milestones = @user.milestones.current + @user.milestones.older
     @milestones = @user.milestones.load.order(date_start: :desc)
   end
 
   def show_overlay
     @milestone = Milestone.friendly.find(params[:milestone_id])
-    # binding.pry
-    # puts 'triggered overlay!!!'
   end
 
   def contact
@@ -19,12 +16,7 @@ class TimelinesController < ApplicationController
     @message_body =  params[:message][:body]
 
     ContactMailer.contact_form_email(@user, @sender_email, @message_body).deliver_now
-    @user.update(message_counter: @user.message_counter+1)
+    @user.update(message_counter: @user.message_counter + 1)
     puts @user.message_counter
-  end
-
-private
-  def set_user
-    @user = current_user
   end
 end

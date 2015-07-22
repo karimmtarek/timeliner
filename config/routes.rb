@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :milestones
+  resources :projects
+  resources :images
+
   resources :users do
     resources :timelines, only: [:index, :contact]
   end
@@ -12,8 +16,4 @@ Rails.application.routes.draw do
   post '/timelines/:user_id/contact', to: 'timelines#contact', as: 'contact'
 
   get '/timelines/:user_id/show_overlay/:milestone_id', to: 'timelines#show_overlay', as: 'show_overlay'
-
-  resources :milestones
-  resources :projects
-  resources :images
 end
