@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :projects
   resources :images
 
@@ -14,13 +15,6 @@ Rails.application.routes.draw do
   root "static_pages#index"
   get 'static_pages/index'
 
-  # resources :users do
-  #   resources :timelines, only: [:index]
-  # end
-
-  devise_for :users, :controllers => {
-    :omniauth_callbacks => "users/omniauth_callbacks"
-  }
 
   resources :users do
     resources :timelines, only: [:index, :contact]
