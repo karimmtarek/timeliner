@@ -3,10 +3,6 @@
 #timeline{
   @include clearfix;
   border-bottom: 6px solid #273747;
-  // width: 90%;
-  // max-width: 1200px;
-  // margin: 0 auto;
-  // display: none;
 }
 
 .timeline {
@@ -19,7 +15,6 @@
   .event {
     position: relative;
     width: 100%;
-    // padding: 0 25px;
     &:before{
       position: absolute;
       content: '';
@@ -33,8 +28,6 @@
       z-index: 10;
       border: 6px solid #34495E;
       background: white;
-      // border: 4px solid white;
-      // background: #ccc;
     }
 
     &:nth-child(odd){
@@ -123,7 +116,6 @@
     margin-bottom: 5px;
     .time{
       display: block;
-      text-transform: uppercase;
       font-size: .9em;
       color: #34495E;
     }
