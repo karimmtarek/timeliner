@@ -8,13 +8,15 @@
   outline: none;
 
   &:focus{
-    color: $dark-blue;
+    color: $blue;
     padding-left: 10px;
     border-color: $yellow;
   }
 
   @include placeholder {
     color: $edit-gray;
+    font-style: italic;
+    font-size: 14px;
   }
 }
 
@@ -29,9 +31,10 @@
     @extend .text-field;
     display: block;
     width: 100%;
-    color: $edit-gray;
+    color: $dark-blue;
     font-size: 18px;
     margin-bottom: 1em;
+    @include transition(all 0.3s ease-in-out);
 
     &.textarea{
       font-size: 14px;
@@ -67,6 +70,7 @@
     right: 0;
     top: 50%;
     @include transform(translateY(-50%));
+    @include transition(all 0.3s ease-in-out);
     color: $yellow;
     font-size: 14px;
   }
