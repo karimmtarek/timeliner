@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510171320) do
+ActiveRecord::Schema.define(version: 20150723212058) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
     t.string   "description"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.integer  "project_id"
   end
 
-  add_index "images", ["project_id"], name: "index_images_on_project_id"
+  add_index "images", ["project_id"], name: "index_images_on_project_id", using: :btree
 
   create_table "milestones", force: :cascade do |t|
     t.string   "title"
@@ -38,8 +41,8 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.string   "slug"
   end
 
-  add_index "milestones", ["slug"], name: "index_milestones_on_slug", unique: true
-  add_index "milestones", ["user_id"], name: "index_milestones_on_user_id"
+  add_index "milestones", ["slug"], name: "index_milestones_on_slug", unique: true, using: :btree
+  add_index "milestones", ["user_id"], name: "index_milestones_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -56,8 +59,8 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.string   "client_url"
   end
 
-  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
-  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+  add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
@@ -66,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "skills", ["user_id"], name: "index_skills_on_user_id"
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
 
   create_table "social_media_links", force: :cascade do |t|
     t.string   "name"
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "social_media_links", ["user_id"], name: "index_social_media_links_on_user_id"
+  add_index "social_media_links", ["user_id"], name: "index_social_media_links_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -92,23 +95,18 @@ ActiveRecord::Schema.define(version: 20150510171320) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "image"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "location"
     t.string   "phone"
     t.text     "description"
-    t.string   "access_key"
-    t.string   "access_secret"
     t.text     "bio"
     t.integer  "message_counter",        default: 0
     t.string   "slug"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
 end
