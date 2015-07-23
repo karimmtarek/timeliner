@@ -15,10 +15,22 @@ class ApplicationController < ActionController::Base
   end
 
   def layout_by_resource
+    devise_new_create || devise_password_forgot_edit
+  end
+
+  def devise_new_create
     if devise_controller? &&
       resource_name == :user &&
       (action_name == 'new' || action_name == 'create')
       'static_pages'
+    end
+  end
+
+  def devise_password_forgot_edit
+    if devise_controller? &&
+       controller_name == 'passwords' &&
+       action_name == 'edit'
+       'static_pages'
     end
   end
 

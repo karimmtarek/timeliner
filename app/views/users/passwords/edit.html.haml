@@ -1,18 +1,19 @@
-.container
-  .row.full.page-title.clearfix
-    %h2.dark.underline.left.thick.yellow
-      Change your password
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  .field
-    = f.label :password, "New password"
-    %br/
-    = f.password_field :password, autofocus: true, autocomplete: "off"
-  .field
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Change my password"
-= render "users/shared/links"
+- content_for(:title) do
+  Timeliner | Change your password
+
+- content_for(:description) do
+  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+
+= render 'static_pages/header'
+
+.container.hero
+  .row
+    .col.w-60
+      .sub-container.opacity-90
+        .row
+          .col-100
+            %h2.dark.underline.left.thick.yellow
+              Change your password
+        = render 'form_change'
+
+= render 'static_pages/footer'

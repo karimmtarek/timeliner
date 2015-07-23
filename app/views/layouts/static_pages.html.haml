@@ -6,6 +6,8 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     = render 'layouts/other/ga' if Rails.env.production?
-  %body.landing
+
+  - x = 'something'
+  %body.landing{class: controller_name}
     = render 'layouts/flash'
     = yield

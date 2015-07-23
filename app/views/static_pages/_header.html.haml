@@ -1,6 +1,7 @@
 %header.container.header
   .row
     .col.w-50
-      %h1.logo Timeliner
+      %h1
+        = link_to 'Timeliner', root_path, class: 'logo'
     .col.w-50.align-r
       = link_to 'Sign in', new_user_session_path, class: 'link white'

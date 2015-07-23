@@ -51,6 +51,32 @@ a{
       color: shade($blue, 10%);
     }
   }
+
+  &.dark-blue{
+    color: $dark-blue;
+    border-color: transparent;
+
+    &:after{
+      background-color: shade($dark-blue, 10%);
+    }
+
+    &:hover{
+      color: shade($dark-blue, 10%);
+    }
+  }
+
+  &.red{
+    color: $red;
+    border-color: transparent;
+
+    &:after{
+      background-color: shade($red, 10%);
+    }
+
+    &:hover{
+      color: shade($red, 10%);
+    }
+  }
 }
 
 .link-white{
@@ -73,6 +99,11 @@ a{
   border-bottom: 2px solid;
   text-transform: none;
 }
+
+// .mod{
+//   color: ;
+//   font-family: $font-roboto;
+// }
 
 .x-small{
   @extend .small;

@@ -9,6 +9,17 @@
   @include brdr-btm(5px, $yellow);
 }
 
+
+.landing{
+  &.passwords,
+  &.sessions,
+  &.registrations{
+    .hero{
+      background-color: #15497e; //15497e
+    }
+  }
+}
+
 .intro{
   h2{
     font-size: 36px;

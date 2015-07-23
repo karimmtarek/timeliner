@@ -15,11 +15,22 @@
   width: 193px;
   height: 69px;
   text-indent: -9999px;
+  display: block;
 }
 
 .landing{
   .header{
     z-index: 10;
+  }
+
+  &.passwords,
+  &.sessions,
+  &.registrations{
+    .header{
+      background-color: $dark-blue;
+      padding-bottom: 30px;
+      @include brdr-btm(5px, $yellow);
+    }
   }
 }
 
