@@ -88,6 +88,7 @@
     border-radius: 50%;
     position: absolute;
     top: 0;
+    @include transition(all 0.1s ease-in-out);
   }
 
   .note{
