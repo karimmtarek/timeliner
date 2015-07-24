@@ -9,15 +9,16 @@
       %i.fa.fa-external-link
 
 .section.profile-status.brdr-btm
-  %h5 Timeline status
+  %h5 Maintenance mode
   .switch-wrapper
     %span.lable online
-    %span.switch.on
+    - status = current_user.maintenance_mode ? 'on' : 'off'
+    = link_to maintenance_mode_path, class: "switch #{status}", remote: true, method: :post do
       %span.indicator
     %span.lable offline
     %p.note
-      Your timeline is visible to the whole world.
-      -# Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.
+      -# Your timeline is visible to the whole world.
+      Your timeline is invisible, as long as you loged-in you can see it, though everyone else can't.
 
 .menu
   %ul

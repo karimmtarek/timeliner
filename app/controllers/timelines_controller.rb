@@ -3,6 +3,9 @@ class TimelinesController < ApplicationController
 
   def index
     @user = User.friendly.find(params[:user_id])
+
+    return render :maintenance_page if @user.maintenance_mode && !current_user
+
     @milestones = @user.milestones.load.order(date_start: :desc)
   end
 

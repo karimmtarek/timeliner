@@ -24,17 +24,17 @@ $(document).ready(function () {
     $(this).closest('.alert').fadeOut('slow');
   });
 
-  $('.switch').on('click', function(){
-    if ($(this).hasClass('on')) {
-      $(this).addClass('off');
-      $(this).removeClass('on');
-      $(this).siblings('.note').text("Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.");
-    } else {
-      $(this).addClass('on');
-      $(this).removeClass('off');
-      $(this).siblings('.note').text("Your timeline is visible to the whole world.");
-    }
-  });
+  // $('.switch').on('click', function(){
+  //   if ($(this).hasClass('on')) {
+  //     $(this).addClass('off');
+  //     $(this).removeClass('on');
+  //     $(this).siblings('.note').text("Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.");
+  //   } else {
+  //     $(this).addClass('on');
+  //     $(this).removeClass('off');
+  //     $(this).siblings('.note').text("Your timeline is visible to the whole world.");
+  //   }
+  // });
 
   // setTimeout(function(){
   //   $('.flash').addClass('animated bounceOutRight');

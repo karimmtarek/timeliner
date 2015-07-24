@@ -17,6 +17,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def maintenance_mode
+    if current_user.maintenance_mode == true
+      current_user.maintenance_mode = false
+      current_user.save!
+    else
+      current_user.maintenance_mode = true
+      current_user.save!
+    end
+  end
+
   private
 
   def info_params

@@ -1,0 +1,11 @@
+// alert('fuck this!');
+<%- status = current_user.maintenance_mode ? 'on' : 'off' %>
+
+if ($('a.switch').hasClass('on')){
+  $('a.switch').addClass('<%= status %>');
+  $('a.switch').removeClass('on');
+} else {
+  $('a.switch').addClass('<%= status %>');
+  $('a.switch').removeClass('off');
+}
+

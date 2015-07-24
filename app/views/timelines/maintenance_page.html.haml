@@ -1,0 +1,9 @@
+= content_for(:title) do
+  "Timeliner | Maintenance mode"
+= content_for(:description) do
+  = @user.bio
+
+.wrapper
+  This page is in 'maintenance mode'
+  =  @user.first_name
+  is working hard to get his page done
