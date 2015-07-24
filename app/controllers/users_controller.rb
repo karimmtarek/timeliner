@@ -15,13 +15,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-
   end
 
   private
 
   def info_params
-    params.require(:user).permit(:username, :image, :first_name, :last_name, :location, :phone, :description, :bio, skills_attributes: [:id, :name, :_destroy], social_media_links_attributes: [:id, :name, :url, :_destroy]
+    params.require(:user).permit(:username, :image, :first_name, :last_name, :location, :phone, :description, :bio, :blog, skills_attributes: [:id, :name, :_destroy], social_media_links_attributes: [:id, :name, :url, :_destroy]
       )
   end
 end

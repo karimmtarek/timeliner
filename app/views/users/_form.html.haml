@@ -54,6 +54,14 @@
             %i.fa.fa-pencil
             = f.text_area :bio, rows: 5, class: 'form-control textarea'
 
+      .row.clearfix
+        .col.w-50
+          = f.label :blog, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_field :blog, class: 'form-control'
+        .col.w-50
+
     .container
       .row.full.clearfix
         .col.w-50.wrapper

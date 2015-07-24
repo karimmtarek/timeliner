@@ -37,6 +37,11 @@
         %span.lable Bio
         %p.textarea
           = @user.bio unless @user.bio.blank?
+    .row.clearfix
+      .col.w-50
+        %span.lable Blog
+        %p.textbox= @user.blog
+      .col.w-50
 
 .container
   .row.full.clearfix

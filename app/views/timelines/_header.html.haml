@@ -12,5 +12,11 @@
           - unless @user.milestones.blank?
             %li
               %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}} timeline
+          - unless @user.milestones.blank?
+            %li
+              %a{href:'#projects', class: 'timeline-link', data: {scrollto: '#timelines'}} projects
           %li
             %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch
+          - unless @user.blog.blank?
+            %li
+              %a{href: @user.blog, class: 'timeline-link external', target: '_blank'} blog
