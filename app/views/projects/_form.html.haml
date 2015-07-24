@@ -17,15 +17,17 @@
         .col.w-50
           = f.label :published_on, class: 'form-label'
           .select-field.date-select
-            = date_select(:project, :published_on, start_year: 1995,
-                                                   discard_day: true,
-                                                   order: [:month, :year])
+            = date_select(:project,
+                          :published_on,
+                          start_year: 1995,
+                          discard_day: true,
+                          order: [:month, :year])
       .row.clearfix
         .col.w-50
           = f.label :client, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :client, placeholder: "Client name", class: 'form-control'
+            = f.text_field :client, required: true, placeholder: "Client name", class: 'form-control'
         .col.w-50
           = f.label :client_url, class: 'form-label'
           .field-icon
@@ -45,16 +47,11 @@
             = f.text_field :link_source, placeholder: "http://www.project-source-link.com", class: 'form-control'
 
       .row.clearfix
-        .col.w-50
+        .col.w-100
           = f.label :description, class: 'form-label'
           .field-icon.textarea
             %i.fa.fa-pencil
-            = f.text_area :description, rows: 5, placeholder: 'Descripe the project...', class: 'form-control textarea'
-        .col.w-50
-          = f.label :role, class: 'form-label'
-          .field-icon.textarea
-            %i.fa.fa-pencil
-            = f.text_area :role, rows: 5, placeholder: 'What did you do, technologies used, stuff like that...', class: 'form-control textarea'
+            = f.text_area :description, rows: 5, required: true, placeholder: 'Descripe the project, what did you do, technologies used, stuff like that...', class: 'form-control textarea'
 
       .row.clearfix
         %h4.dark.underline.left.thin.yellow screenshots
