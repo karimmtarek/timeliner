@@ -6,6 +6,8 @@
         .thank-you
           %p Thanks for getting in touch, I'll get back to you as soon as possible.
         = form_for(:message, url: contact_path(user), remote:true, html:{id: 'contact_form'}) do |f|
+          %div.cleatfix
+            .field.fifty= f.email_field :email, placeholder: 'Your email', required: true
+            .field.fifty= f.text_field :subject, placeholder: 'What is this about?', required: true
           .field= f.text_area :body, placeholder: 'Your message...', required: true
-          .field= f.email_field :email, placeholder: 'Your email', required: true
-          .field= f.submit 'Send message'
+          .field.action= f.submit 'Send message'

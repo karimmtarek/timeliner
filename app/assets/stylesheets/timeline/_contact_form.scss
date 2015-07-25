@@ -1,6 +1,5 @@
 // CONTACT FORM
 .contact-form{
-  // border-top: 6px solid #273747;
   background-color: #18BC9C;
   padding: 25px 0;
   h2{
@@ -11,9 +10,11 @@
       background-color: #2C3E50;
     }
   }
+
   .form-wrapper{
     position: relative;
   }
+
   .thank-you{
     position: absolute;
     display: none;
@@ -33,8 +34,18 @@
   .field{
     border-bottom: 1px solid rgba(#000, 0.2);
     margin-bottom: 1em;
-    &:last-child{
-      border: none;
+
+    &.fifty{
+      width: 48%;
+      float: left;
+
+      &:nth-child(even){
+        float: right;
+      }
+    }
+
+    &.action{
+      border-bottom: none;
     }
   }
 
@@ -60,7 +71,7 @@
   }
 
   textarea{
-    min-height: 8em;
+    min-height: 5em;
   }
 
   input[type='submit']{
