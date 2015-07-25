@@ -55,6 +55,10 @@
       margin-top: 10px;
     }
   }
+
+  .hide{
+    display: none;
+  }
 }
 
 .field-icon{
@@ -268,11 +272,3 @@
 .clear{
   clear: both;
 }
-
-#end_date{
-  &.hide{
-    display: none;
-  }
-}
-
-// Checkbox

@@ -1,12 +1,15 @@
 //= require jquery
 //= require jquery_ujs
-
 //= require nested_form_fields
 
 $(document).ready(function () {
 
   $("#present").change(function(){
     $("#end_date").toggleClass("hide");
+  });
+
+  $("#available").change(function(){
+    $("#availability_message").toggleClass("hide");
   });
 
   $('.form-control').focusin(function() {
@@ -23,22 +26,6 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).closest('.alert').fadeOut('slow');
   });
-
-  // $('.switch').on('click', function(){
-  //   if ($(this).hasClass('on')) {
-  //     $(this).addClass('off');
-  //     $(this).removeClass('on');
-  //     $(this).siblings('.note').text("Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.");
-  //   } else {
-  //     $(this).addClass('on');
-  //     $(this).removeClass('off');
-  //     $(this).siblings('.note').text("Your timeline is visible to the whole world.");
-  //   }
-  // });
-
-  // setTimeout(function(){
-  //   $('.flash').addClass('animated bounceOutRight');
-  // }, 3000);
 
   console.log('window: ', $(window).height());
   console.log('header: ', $('.header').outerHeight());

@@ -30,6 +30,16 @@
         %p.textbox= @user.location
     .row.clearfix
       .col.w-50
+        %span.lable Blog
+        %p.textbox= @user.blog
+      .col.w-50
+        %span.lable Availability
+        - if @user.available
+          %p.textbox= @user.availability_message
+        - else
+          %p.textbox Not available
+    .row.clearfix
+      .col.w-50
         %span.lable Description
         %p.textarea
           = @user.description unless @user.description.blank?
@@ -37,11 +47,6 @@
         %span.lable Bio
         %p.textarea
           = @user.bio unless @user.bio.blank?
-    .row.clearfix
-      .col.w-50
-        %span.lable Blog
-        %p.textbox= @user.blog
-      .col.w-50
 
 .container
   .row.full.clearfix

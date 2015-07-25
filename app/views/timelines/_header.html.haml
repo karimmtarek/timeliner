@@ -19,4 +19,6 @@
             %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch
           - unless @user.blog.blank?
             %li
-              %a{href: @user.blog, class: 'timeline-link external', target: '_blank'} blog
+              = link_to@user.blog, target: '_blank', class: 'timeline-link external' do
+                blog
+                %i.fa.fa-external-link
