@@ -1,0 +1,24 @@
+.screenshots{
+  @include clearfix;
+
+  li{
+    background-color: #fff;
+    padding: 10px;
+    width: 30%;
+    position: relative;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+
+  img{
+    display: block;
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  span{
+    color: $copy-gray;
+    font-size: 12px;
+  }
+}

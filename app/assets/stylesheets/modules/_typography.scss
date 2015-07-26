@@ -67,6 +67,13 @@ h1, h2, h3, h4, h5{
 }
 
 .copy{
+  border-top: 1px solid rgba(#000, 0.05);
+  border-bottom: 1px solid rgba(#000, 0.05);
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+
   p{
     color: $copy-gray;
     font-size: 16px;

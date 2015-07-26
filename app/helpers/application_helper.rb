@@ -37,5 +37,4 @@ module ApplicationHelper
   def format_date(date, format='%B %Y')
     date.strftime(format) unless date.blank?
   end
-
 end
