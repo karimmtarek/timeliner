@@ -9,6 +9,13 @@ class Milestone < ActiveRecord::Base
 
   validates :title, :location, :company, presence: true
 
+  validates :company_url,
+            format: {
+              with: URI.regexp(['http', 'https']),
+              message: 'format should match http://link.com'
+            },
+            allow_blank: true
+
   scope :current, -> {where(present: true).order(date_start: :desc)}
   scope :older, -> {where(present: false).order(date_start: :desc)}
 

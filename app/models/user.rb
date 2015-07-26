@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   validates :blog_url,
             format: {
               with: URI.regexp(['http', 'https']),
-              message: 'format match http://link.com'
+              message: 'format should match http://link.com'
             },
             allow_blank: true
 end

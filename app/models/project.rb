@@ -12,4 +12,12 @@ class Project < ActiveRecord::Base
 
   validates :title, :client, presence: true
   validates :description, length: { in: 75..500 }
+  validates :client_url,
+            :link_live,
+            :link_source,
+            format: {
+              with: URI.regexp(['http', 'https']),
+              message: 'format should match http://link.com'
+            },
+            allow_blank: true
 end
