@@ -18,12 +18,10 @@ class UsersController < ApplicationController
   end
 
   def maintenance_mode
-    if current_user.maintenance_mode == true
-      current_user.maintenance_mode = false
-      current_user.save!
+    if current_user.maintenance_mode
+      current_user.update(maintenance_mode: false)
     else
-      current_user.maintenance_mode = true
-      current_user.save!
+      current_user.update(maintenance_mode: true)
     end
   end
 
