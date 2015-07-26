@@ -1,7 +1,7 @@
 = content_for(:title) do
   = "#{@user.first_name} #{@user.last_name} - #{@user.description} | Timeliner"
 = content_for(:description) do
-  = "#{@user.bio}"
+  = @user.bio
 
 .wrapper
   = render 'header'
