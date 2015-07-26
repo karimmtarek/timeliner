@@ -17,7 +17,7 @@
               %a{href:'#projects', class: 'timeline-link', data: {scrollto: '#timelines'}} projects
           %li
             %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch
-          - unless @user.blog.blank?
+          - unless @user.blog_url.blank?
             %li
               = link_to@user.blog, target: '_blank', class: 'timeline-link external' do
                 blog
