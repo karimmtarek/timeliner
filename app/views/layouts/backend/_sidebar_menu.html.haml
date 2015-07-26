@@ -17,8 +17,10 @@
       %span.indicator
     %span.lable offline
     %p.note
-      -# Your timeline is visible to the whole world.
-      Your timeline is invisible, as long as you loged-in you can see it, though everyone else can't.
+      - if current_user.maintenance_mode
+        Your timeline is invisible, as long as you loged-in you can see it, though everyone else can't.
+      - else
+        Your timeline is visible to the whole world.
 
 .menu
   %ul
