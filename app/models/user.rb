@@ -3,13 +3,14 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable
+  # :lockable, :timeoutable
   devise :database_authenticatable,
          :registerable,
          :recoverable,
          :rememberable,
          :trackable,
-         :validatable
+         :validatable,
+         :confirmable
 
   has_many :milestones, dependent: :destroy
   has_many :projects, dependent: :destroy
