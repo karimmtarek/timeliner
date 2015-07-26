@@ -13,11 +13,11 @@ $(document).ready(function () {
   });
 
   $('.form-control').focusin(function() {
-    $(this).parent().addClass('show-icon');
+    $(this).closest('.field-icon').addClass('show-icon');
   });
 
   $('.form-control').focusout(function() {
-    $(this).parent().removeClass('show-icon');
+    $(this).closest('.field-icon').removeClass('show-icon');
   });
 
   setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);

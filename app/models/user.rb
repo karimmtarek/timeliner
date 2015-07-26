@@ -22,19 +22,17 @@ class User < ActiveRecord::Base
 
   friendly_id :username, use: :slugged
 
-  # before_create :generate_username
-
-  private
-
-  def generate_username
-    username = self.username.gsub(' ', '-').downcase
-    if User.where(username: username).exists?
-      new_user_number = 1
-      begin
-        username = self.username.gsub(' ', '-').downcase + "-#{new_user_number}"
-        new_user_number += 1
-      end while User.where(username: username).exists?
-    end
-    self.username = username
-  end
+  validates :username,
+            presence: true,
+            uniqueness: true,
+            format: {
+              with: /\A[a-z0-9][-a-z0-9]{1,19}\Z/i,
+              message: "can't contain any special characters"
+            }
+  validates :blog_url,
+            format: {
+              with: URI.regexp(['http', 'https']),
+              message: 'format match http://link.com'
+            },
+            allow_blank: true
 end

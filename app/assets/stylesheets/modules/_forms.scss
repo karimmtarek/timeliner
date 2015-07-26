@@ -272,3 +272,9 @@
 .clear{
   clear: both;
 }
+
+.field_with_errors{
+  .form-control{
+    border-bottom-color: $red;
+  }
+}
