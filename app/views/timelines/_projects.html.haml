@@ -1,17 +1,18 @@
-.container#projects
-  .row
-    .col-100
-      %h2 #{pluralize_without_count(@user.projects.size, 'Selected Project')}
-      %ul#projects-list
-        - @user.projects.each do |project|
-          %li
-            .project-info
-              %h4
-                %span.year= project.published_on.year
-                %span.name= project.title
-                %span.client
-                  %em for
-                  = project.client
-              = link_to 'show me', show_overlay_path(@user, project), remote: true, class: 'show-btn'
+- unless @user.projects.blank?
+  .container#projects
+    .row
+      .col-100
+        %h2 #{pluralize_without_count(@user.projects.size, 'Selected Project')}
+        %ul#projects-list
+          - @user.projects.each do |project|
+            %li
+              .project-info
+                %h4
+                  %span.year= project.published_on.year
+                  %span.name= project.title
+                  %span.client
+                    %em for
+                    = project.client
+                = link_to 'show me', show_overlay_path(@user, project), remote: true, class: 'show-btn'
 
-            = image_tag(project.images.first.image, alt: project.images.first.description)
+              = image_tag(project.images.first.image, alt: project.images.first.description)

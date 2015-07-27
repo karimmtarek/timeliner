@@ -11,7 +11,7 @@
         - unless @user.milestones.blank?
           %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}}
             %span timeline
-        - unless @user.milestones.blank?
+        - unless @user.projects.blank?
           %a{href:'#projects', class: 'timeline-link', data: {scrollto: '#timelines'}}
             %span projects
         %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}}
