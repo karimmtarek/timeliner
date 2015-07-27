@@ -49,7 +49,7 @@
 	position: absolute;
 	top: 80%;
 	left: 50%;
-  background-color: rgba(#16A085, 0.8);
+  background-color: rgba($green-timeline, 0.8);
   border-radius: 10px;
   // padding: 1.5em;
   position: relative;
@@ -142,130 +142,6 @@
   }
 }
 
-#projects{
-  position: relative;
-  // margin-top: 1.5em;
-  // padding-top: 1.5em;
-  // margin-bottom: 0.5em;
-  // &:before{
-  //   content: '';
-  //   position: absolute;
-  //   left: 50%;
-  //   @include transform(translateX(-50%));
-  //   top: 0;
-  //   width: 25%;
-  //   height: 3px;
-  //   background-color: rgba(#000, 0.1);
-  // }
-  h2{
-    @extend .section-head;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 1.5em;
-    color: #fff;
-    &:after{
-      background-color: #fff;
-    }
-  }
-}
-#projects-list{
-  margin: 0;
-  padding: 0;
-  > li{
-    padding: 2em 1.5em;
-    width: 100%;
-    // padding-bottom: 2em;
-    // margin-bottom: 2em;
-    // border-bottom: 2px solid rgba(#000, 0.1);
-    font-size: 0.9em;
-    color: #fff;
-    @include clearfix;
-    .screenshot{
-      float: right;
-    }
-    .copy{
-     float: left;
-     padding-right: 2%;
-    }
-    &:nth-child(odd){
-      background-color: rgba(#000, 0.1);
-    }
-    // &:nth-child(even){
-    //   .screenshot{
-    //     float: left;
-    //   }
-    //   .copy{
-    //    float: right;
-    //    padding-left: 5%;
-    //   }
-    // }
-    &:last-child{
-      margin-bottom: 0;
-      padding-bottom: 1.5em;
-      border: none;
-    }
-  }
-  .screenshot{
-    width: 45%;
-    img{
-      width: 100%;
-      height: auto;
-      // padding: 5px;
-      background-color: rgba(#000, 0.1);
-      border-radius: 10px;
-    }
-  }
-  .copy{
-    width: 55%;
-    ul{
-      margin: 0;
-      padding: 0;
-    }
-    li{
-      @extend .list-item;
-      color: #fff;
-      &:before{
-        background-color: #34495E;
-        border-color: transparent;
-      }
-    }
-  }
-  p{
-    margin: 0;
-    line-height: 1.5em;
-    margin-bottom: 0.5em;
-    color: #fff;
-  }
-  h3{
-    font-size: 1.3em;
-    margin: 0;
-    color: #EDC92C;
-    text-transform: uppercase;
-  }
-  .role{
-    margin-bottom: 0.3em;
-    display: block;
-  }
-  a{
-    @extend .btn;
-    left: auto;
-    @include transform(translateX(0));
-  }
-  .info{
-    padding-bottom: 0.5em;
-    margin-bottom: .5em;
-    color: #34495E;
-    // border-bottom: 2px solid rgba(#000, 0.1);
-    strong{
-      font-size: 0.9em;
-
-    }
-    span{
-      font-weight: 400;
-    }
-  }
-}
-
 .wrapper {
 	@include transition(transform 0.5s ease-in-out, blur 0.5s ease-in-out);
 
@@ -279,7 +155,6 @@
 	  filter: blur(5px);
 	}
 }
-
 
 .overlay-contentscale {
 	visibility: hidden;

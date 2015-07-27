@@ -1,0 +1,25 @@
+.social-media{
+  background-color: #2f4254;
+  padding: 25px 0 50px 0;
+
+  h2{
+    @extend .section-head;
+    color: #fff;
+    &:after{
+      background-color: #fff;
+    }
+  }
+
+  ul.social-links{
+    margin: 0;
+
+    a{
+      color: $green-timeline;
+      background: #273747;
+
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}

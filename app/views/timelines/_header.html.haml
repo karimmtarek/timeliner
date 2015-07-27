@@ -1,24 +1,23 @@
 %header.container
-  .row
-    .col-50.logo
+  .row.flexbox
+    .col-40.logo
       %h1
         %span.name= "#{@user.first_name} #{@user.last_name}"
         %span.description= @user.description
-    .col-50.last
-      %nav#nav
-        %ul
-          %li
-            %a{href:'#about', class: 'about-link', data: {scrollto: '#about'}} about
-          - unless @user.milestones.blank?
-            %li
-              %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}} timeline
-          - unless @user.milestones.blank?
-            %li
-              %a{href:'#projects', class: 'timeline-link', data: {scrollto: '#timelines'}} projects
-          %li
-            %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}} get in touch
-          - unless @user.blog_url.blank?
-            %li
-              = link_to @user.blog_url, target: '_blank', class: 'timeline-link external' do
-                blog
-                %i.fa.fa-external-link
+    .col-60.flexbox.flexbox-end.last
+      %nav#nav.flexbox
+        %a{href:'#about', class: 'about-link', data: {scrollto: '#about'}}
+          %span about
+        - unless @user.milestones.blank?
+          %a{href:'#timeline', class: 'timeline-link', data: {scrollto: '#timeline'}}
+            %span timeline
+        - unless @user.milestones.blank?
+          %a{href:'#projects', class: 'timeline-link', data: {scrollto: '#timelines'}}
+            %span projects
+        %a{href: '#contact_form_wrapper', class: 'get-in-touch-link', data: {scrollto: '.contact-form'}}
+          %span get in touch
+        - unless @user.blog_url.blank?
+          = link_to @user.blog_url, target: '_blank', class: 'timeline-link external' do
+            %span
+              blog
+              %i.fa.fa-external-link

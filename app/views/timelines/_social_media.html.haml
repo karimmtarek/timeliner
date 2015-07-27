@@ -1,0 +1,6 @@
+- unless @user.social_media_links.blank?
+  .container.social-media
+    .row
+      .col-100.center
+        %h2 you should check those out
+        = render 'social_media_links'

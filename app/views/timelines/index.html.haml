@@ -15,7 +15,8 @@
           %span= skill.name
 
   = render 'timeline'
-  = render partial: 'contact', locals: {user: @user}
-
+  = render 'projects', user: @user
+  = render 'contact', user: @user
+  = render 'social_media'
   = render 'footer'
 = render 'overlay'

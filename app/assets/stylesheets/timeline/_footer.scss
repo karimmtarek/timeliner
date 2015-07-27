@@ -1,32 +1,15 @@
 //  FOOTER
 
 footer{
-  border-top: 6px solid #273747;
-  background-color: #2F4254;
-  padding: 25px 0 15px 0;
-}
-
-.social-media{
-  h2{
-    @extend .section-head;
-    color: #fff;
-    &:after{
-      background-color: #fff;
-    }
-  }
-  ul.social-links{
-    a{
-      color: #16A085;
-      &:hover{
-        background: #273747;
-        color: #fff;
-      }
-
-    }
-  }
+  background-color: #2f4254;
+  padding: 50px 0;
+  border-top: 1px solid #273747;
 }
 
 .copyrights{
   color: #fff;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
 

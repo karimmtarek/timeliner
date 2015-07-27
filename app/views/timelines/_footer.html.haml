@@ -1,10 +1,6 @@
 %footer.container
   .row
-    - unless @user.social_media_links.blank?
-      .col-100.center.social-media
-        %h2 you should check those out
-        = render 'social_media_links'
-    .col-100.center
+    .col-100.center.copyrights-border
       %p.copyrights
         All copyrights reserved - Timeliner &copy;
         = "#{Date.today.year}."

@@ -11,8 +11,11 @@ li{
 }
 
 @import 'timeline/header';
+@import 'timeline/banner';
 @import 'timeline/about';
 @import 'timeline/timeline';
+@import 'timeline/projects';
+@import 'timeline/social_media';
 @import 'timeline/contact_form';
 @import 'timeline/footer';
 
@@ -42,14 +45,16 @@ li{
 .section-head{
   text-transform: uppercase;
   position: relative;
+  margin-top: 13px;
+  margin-bottom: 33px;
   &:after{
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 50%;
-    margin-left: -5%;
-    height: 4px;
-    width: 10%;
+    margin-left: -30px;
+    height: 3px;
+    width: 60px;
   }
 }
 
@@ -113,19 +118,27 @@ li{
   position: relative;
   display: inline-block;
   padding-left: 0;
+
   li{
     display: inline-block;
+    margin-right: 1em;
+
+      &:last-child{
+        margin-right: 0;
+      }
   }
+
   a{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     border-radius: 50%;
-    padding: 13px 0 0 0;
+    padding: 11px 0 0 0;
     text-align: center;
     @include transition(all 0.3s ease-in-out);
   }
+
   i.fa{
-    font-size: 24px;
+    font-size: 18px;
   }
 }

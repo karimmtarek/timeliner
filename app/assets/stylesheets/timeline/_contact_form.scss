@@ -1,7 +1,9 @@
 // CONTACT FORM
 .contact-form{
-  background-color: #18BC9C;
-  padding: 25px 0;
+  background-color: $yellow;//#18BC9C;
+  padding: 25px 0 31px 0;
+  border-bottom: 6px solid $yellow-dark;
+
   h2{
     @extend .section-head;
     color: #2C3E50;

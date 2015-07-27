@@ -11,7 +11,10 @@
     }
   }
 
-  .col-50{
+  header{ .flexbox { display: block; } }
+
+  .col-50,
+  .col-40{
     width: 100%;
     float: none;
     padding-right: 0;
@@ -44,8 +47,33 @@
 
   }
 
-  #nav{
-    display: none;
+  header{
+    #nav{
+      display: none;
+    }
+  }
+
+  #projects-list{
+    h4{
+      margin-top: 5px;
+      line-height: 0.9em;
+    }
+
+    .name{
+      font-size: 18px;
+    }
+
+    .client{
+      font-size: 12px;
+    }
+
+    .project-info{
+      width: 100%;
+    }
+
+    .show-btn{
+      width: calc(100% - 5px);
+    }
   }
 
 }
@@ -66,6 +94,33 @@
           display: none;
         }
       }
+    }
+  }
+
+  #projects-list{
+    li{
+      float: none;
+      width: 100%;
+      margin-right: 0;
+      max-height: 150px;
+      overflow: hidden;
+    }
+
+    img{
+      max-height: 140px;
+    }
+
+    h4{
+      margin-top: 1em;
+      line-height: 1em;
+    }
+
+    .name{
+      font-size: 22px;
+    }
+
+    .client{
+      font-size: 14px;
     }
   }
 }

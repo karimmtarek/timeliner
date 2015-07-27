@@ -2,8 +2,10 @@
   .row
     .col-100
       - unless @user.bio.blank?
-        .about-bubble.wow.bounce
+        .about-bubble.wow.fadeInDown{data: {'wow-delay': '1s', 'wow-duration': '0.75s'}}
           .bio= @user.bio
-      .image
+      .image.wow.fadeIn{data: {'wow-duration': '2s'}}
         = image_tag(@user.gravatar_url, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
+
+      = render 'availability_banner', user: @user if @user.available_with_message?
       = render 'social_media_links' unless @user.social_media_links.blank?
