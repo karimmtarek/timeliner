@@ -65,7 +65,8 @@
     height: 11px;
     background-color: #23497a;
     border-radius: 5px;
-    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
 
     &.on{
       .indicator{
