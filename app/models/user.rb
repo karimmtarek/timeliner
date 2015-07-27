@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
             allow_blank: true
 
   def full_name
-    first_name + ' ' + last_name
+    format('%s %s', first_name, last_name)
+  end
+
+  def available_with_message?
+    available && availability_message.present?
   end
 end

@@ -1,0 +1,61 @@
+.availability-banner{
+  z-index: 10;
+    display: inline-block;
+    margin-top: 10px;
+    @include clearfix;
+
+  .text{
+    z-index: 10;
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    background-color: $yellow;
+    padding: 10px;
+    color: $dark-blue;
+    text-transform: uppercase;
+
+    &:after{
+      @extend .base;
+      right: 0;
+      border-width: 0 0 5px 5px;
+      border-color: transparent transparent transparent rgba($black, 0.4);
+    }
+
+    &:before{
+      @extend .base;
+      left: 0;
+      border-width: 0 5px 5px 0;
+      border-color: transparent rgba($black, 0.4) transparent transparent;
+    }
+
+    &.base{
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      bottom: -5px;
+    }
+  }
+
+  &>div{
+    float: left;
+  }
+}
+
+.edge{
+  z-index: 1;
+  position: relative;
+  border: 19px solid #dcba27;
+  top: 5px;
+
+  &.right{
+    border-right-color: rgba(255,255,255,0);
+    right: 5px;
+  }
+
+  &.left{
+    border-left-color: rgba(255,255,255,0);
+    left: 5px;
+  }
+}
