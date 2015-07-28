@@ -6,7 +6,7 @@
 new WOW().init();
 
 
-jQuery(function($){
+$(function($){
 
   $('#nav').ddscrollSpy();
 
@@ -19,6 +19,19 @@ jQuery(function($){
     overlay.removeClass('open').addClass('close');
     wrapper.removeClass('overlay-open');
     body.removeClass('noscroll');
+    e.preventDefault();
+  });
+
+  $('.more_milestone_details').on('click', function(e){
+    $(this).toggleClass('show')
+           .siblings('.description')
+           .slideToggle('fast', function(){
+             if ($(this).siblings('.btn').hasClass('show')){
+               $(this).siblings('.btn').text('less details');
+             } else {
+               $(this).siblings('.btn').text('more details');
+             }
+           });
     e.preventDefault();
   });
 });

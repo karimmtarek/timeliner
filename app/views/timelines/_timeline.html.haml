@@ -19,4 +19,6 @@
                     %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
 
                 - unless milestone.description.blank?
-                  = link_to 'more details', show_overlay_path(@user, milestone), remote: true, class: 'btn'
+                  .copy.description
+                    = markdown(milestone.description)
+                  = link_to 'more details', '#', class: 'btn more_milestone_details'
