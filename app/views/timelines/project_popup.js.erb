@@ -1,10 +1,15 @@
 console.log('overlay triggered!!!');
-overlay = $(".overlay");
-popup = $("#popup");
-wrapper = $(".wrapper");
+var overlay = $(".overlay"),
+    popup = $("#popup"),
+    wrapper = $(".wrapper");
 
 overlay.addClass('open');
 wrapper.addClass('overlay-open');
 
 $("#popup").html("<%= escape_javascript(render partial: 'project_popup', locals: {project: @project} ) %>");
 $("body").addClass('noscroll');
+
+$('.owl-carousel').owlCarousel({
+  items: 1,
+  dots: false
+});

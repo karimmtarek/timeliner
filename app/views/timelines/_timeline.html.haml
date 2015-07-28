@@ -19,6 +19,6 @@
                     %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
 
                 - unless milestone.description.blank?
-                  .copy.description
+                  .description.markdown
                     = markdown(milestone.description)
                   = link_to 'more details', '#', class: 'btn more_milestone_details'

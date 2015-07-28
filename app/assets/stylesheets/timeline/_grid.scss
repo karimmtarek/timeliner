@@ -6,8 +6,12 @@ body{
   width: 100%
 }
 
-.container{
+.flexbox{
+  display: flex;
+}
 
+.flexbox-end{
+  justify-content: flex-end;
 }
 
 .row{
@@ -15,18 +19,18 @@ body{
   max-width: 1200px;
   margin: 0 auto;
   @include clearfix;
+
+  &.full{
+    width: 100%;
+  }
 }
 
 .col-100{
   width: 100%;
 }
 
-.col-75{
-
-}
-
-.col-60{
-  width: 60%;
+.col-30{
+  width: 30%;
   float: left;
   padding-right: 1em;
 }
@@ -43,11 +47,23 @@ body{
   padding-right: 1em;
 }
 
+.col-60{
+  width: 60%;
+  float: left;
+  padding-right: 1em;
+}
+
+.col-70{
+  width: 70%;
+  float: left;
+  padding-right: 1em;
+}
+
 .last{
   padding-right: 0;
   padding-left: 1em;
 }
 
-.col-25{
-
+.gutter-free{
+  padding: 0;
 }

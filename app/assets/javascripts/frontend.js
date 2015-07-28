@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require frontend/wow.min
 //= require frontend/ddscrollspy
+//= require owl.carousel.min
 
 new WOW().init();
 

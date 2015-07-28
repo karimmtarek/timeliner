@@ -44,103 +44,85 @@
   @include transition(all 0.4s $ease-out-quint);
 }
 
-
 #popup{
 	position: absolute;
 	top: 80%;
 	left: 50%;
-  background-color: rgba($green-timeline, 0.8);
-  border-radius: 10px;
-  // padding: 1.5em;
+  background-color: $green-dark-timeline;
+  padding: 5px;
   position: relative;
   width: 70%;
-  max-width: 900px;
+  max-width: 1000px;
   opacity: 0;
 	@include transform(translateX(-50%));
   @include transition(all 0.5s $ease-out-circ);
 }
 
-#milestone{
-  padding: 1.5em;
-  .time-location{
-    float: right;
-    background-color: rgba(#000, 0.1);
-    border-radius: 10px;
-    padding: 10px;
-    top: 15px;
-    right: 15px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: #34495E;
-    .time{
-      display: block;
-      font-size: .9em;
-    }
-    .location{
-      display: block;
-      font-size: .9em;
-      margin-top: .2em;
-    }
-  }
+.project-info{
+  background-color: $green-timeline;
+  padding: 1em 1.5em;
 
-  h1{
-    margin: 0 0 0.2em 0;
-    color: #fff;
-  }
   h2{
+    padding: 0;
     margin: 0;
-    color: #EDC92C;
-    font-weight: 400;
+    font-size: 28px;
+    color: $dark-blue;
+    line-height: 1em;
+  }
+
+  .year{
+    color: $yellow;
+  }
+
+  .client{
+    display: block;
+    color: $white;
+    font-size: 18px;
+    margin: 5px 0;
+
     a{
-      color: #EDC92C;
-      &:hover{
-        color: #DBB626;
-      }
-      &:visited,
-      &:active{
-        color: #ffa449;
+      color: $white;
+    }
+  }
+
+  .tags{
+    margin: 0;
+    padding: 0;
+    background-color: $green-timeline;
+
+    li{
+      margin-top: 0;
+      font-size: 12px;
+      padding: 4px 8px 5px 18px;
+      margin-left: 13px;
+
+      .fa{
+        width: 26px;
       }
     }
   }
-  .description{
-    position: relative;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    padding-top: 1.5em;
-    color: #34495E;
-    &:before{
-      content: '';
-      position: absolute;
-      left: 50%;
-      @include transform(translateX(-50%));
-      top: 0;
-      width: 50%;
-      height: 3px;
-      background-color: rgba(#000, 0.1);
-    }
-    p{
-      margin: 0;
-      line-height: 1.5em;
-      font-weight: 700;
-      margin-bottom: 1em;
-      /*color: #34495E;*/
-    }
-    a{
-      @extend .link;
-    }
-    ul{
-      margin: 0;
-      /*margin-top: 10px;*/
-      padding: 0;
-    }
-    li{
-      @extend .list-item;
-    }
-    blockquote{
 
+  .copy{
+    border-top: 1px solid rgba(#000, 0.05);
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .markdown{
+    p{
+      color: $white;
+    }
+
+    li{
+      color: $white;
+
+      &:before{
+        background-color: $dark-blue;
+      }
     }
   }
 }
+
 
 .wrapper {
 	@include transition(transform 0.5s ease-in-out, blur 0.5s ease-in-out);
