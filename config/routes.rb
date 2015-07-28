@@ -17,5 +17,5 @@ Rails.application.routes.draw do
 
   post '/users/maintenance_mode', to: 'users#maintenance_mode', as: 'maintenance_mode'
 
-  get '/timelines/:user_id/show_overlay/:milestone_id', to: 'timelines#show_overlay', as: 'show_overlay'
+  get '/timelines/:user_id/project_popup/:project_id', to: 'timelines#project_popup', as: 'project_popup'
 end

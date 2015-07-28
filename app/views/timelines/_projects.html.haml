@@ -13,6 +13,6 @@
                   %span.client
                     %em for
                     = project.client
-                = link_to 'show me', show_overlay_path(@user, project), remote: true, class: 'show-btn'
+                = link_to 'show me', project_popup_path(@user, project), remote: true, class: 'show-btn'
 
               = image_tag(project.images.first.image, alt: project.images.first.description)

@@ -9,8 +9,8 @@ class TimelinesController < ApplicationController
     @milestones = @user.milestones.load.order(date_start: :desc)
   end
 
-  def show_overlay
-    @milestone = Milestone.friendly.find(params[:milestone_id])
+  def project_popup
+    @project = Project.friendly.find(params[:project_id])
   end
 
   def contact
