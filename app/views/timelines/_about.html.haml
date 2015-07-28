@@ -8,4 +8,4 @@
         = image_tag(@user.gravatar_url, alt: "#{@user.first_name} #{@user.last_name}", class: 'active')
 
       = render 'availability_banner', user: @user if @user.available_with_message?
-      = render 'social_media_links' unless @user.social_media_links.blank?
+      = render 'social_media_links', fade_in_delay: true unless @user.social_media_links.blank?

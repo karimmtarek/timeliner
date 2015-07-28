@@ -1,4 +1,7 @@
-%ul.social-links.wow.fadeInUp{class: @user.available_with_message? ? '' : 'top-border', data: {'wow-delay': '2.5s', 'wow-duration': '1s'}}
+- fade_in_delay = fade_in_delay || false
+- fade_in_attributes = {'wow-delay': '2.5s', 'wow-duration': '1s'}
+
+%ul.social-links.wow.fadeInUp{class: @user.available_with_message? ? '' : 'top-border', data: fade_in_delay ? fade_in_attributes : ''}
   - @user.social_media_links.each_with_index do |link, index|
     %li
       = link_to link.url, title: link.name, target: '_blank' do
