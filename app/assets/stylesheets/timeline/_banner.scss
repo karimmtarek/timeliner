@@ -1,8 +1,8 @@
 .availability-banner{
   z-index: 10;
-    display: inline-block;
-    margin-top: 10px;
-    @include clearfix;
+  display: inline-block;
+  margin-top: 10px;
+  @include clearfix;
 
   .text{
     z-index: 10;
@@ -45,17 +45,18 @@
 
 .edge{
   z-index: 1;
-  position: relative;
+  position: absolute;
+  width: 50px;
   border: 19px solid #dcba27;
-  top: 5px;
+  bottom: -5px;
 
   &.right{
     border-right-color: rgba(255,255,255,0);
-    right: 5px;
+    right: -45px;
   }
 
   &.left{
     border-left-color: rgba(255,255,255,0);
-    left: 5px;
+    left: -45px;
   }
 }

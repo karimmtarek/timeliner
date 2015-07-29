@@ -2,7 +2,6 @@
 
   .logo{
     h1{
-      // margin-bottom: 10px;
       text-align: center;
       .name{
         font-size: 1em;
@@ -28,15 +27,19 @@
     float: none;
     padding-top: 50px;
     padding-bottom: 50px;
+
     .event{
       &:before{
         display: none;
       }
+
       .bubble{
         width: 100%;
+
         &:before{
           display: none;
         }
+
         &:nth-child(odd),
         &:nth-child(even){
           left: 0;
@@ -89,20 +92,13 @@
 @media (max-width : 768px) {
   #about{
     .about-bubble{
-      width: 90%;
+      max-width: 80%;
     }
   }
 
   .timeline {
     padding-top: 25px;
     padding-bottom: 25px;
-    .event{
-      .bubble{
-        .btn{
-          display: none;
-        }
-      }
-    }
   }
 
   #projects-list{
@@ -134,6 +130,16 @@
 }
 
 @media (max-width : 420px) {
+  #about{
+    .about-bubble{
+      max-width: 90%;
+    }
+  }
+
+  .availability-banner{
+    max-width: 70%;
+  }
+
   .timeline {
     .time-location{
       float: none;
@@ -141,6 +147,7 @@
       display: inline-block;
       font-size: .8em;
     }
+
     .event{
       .bubble{
         h3{
@@ -148,6 +155,15 @@
           margin-bottom: .2em;
         }
       }
+    }
+  }
+
+  .noscroll{
+    .overlay-close{
+      top: 2.5%;
+      width: 30px;
+      height: 30px;
+      right: calc(50% - 15px);
     }
   }
 }
