@@ -7,14 +7,36 @@
 new WOW().init();
 
 
-$(function($){
 
+function miniNav(){
+  window.addEventListener('scroll', function(e){
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+      shrinkOn = 300,
+      header = document.querySelector("header");
+
+    if (distanceY > shrinkOn) {
+      $('header').addClass('smaller');
+    } else {
+      if ($('header').addClass('smaller')) {
+        $('header').removeClass('smaller');
+      }
+    }
+  });
+}
+
+$(function($){
+  miniNav();
   $('#nav').ddscrollSpy();
 
   var close_btn = $("button.overlay-close"),
       wrapper   = $(".wrapper"),
       overlay   = $(".overlay"),
-      body      = $("body");
+      body      = $("body"),
+      header    = $('header');
+
+  console.log('header outerHeight', header.outerHeight());
+  wrapper.css('padding-top', header.outerHeight());
+  header.addClass('fixed');
 
   close_btn.on('click', function(e){
     overlay.removeClass('open').addClass('close');
