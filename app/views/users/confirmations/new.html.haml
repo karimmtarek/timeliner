@@ -1,10 +1,18 @@
-%h2 Resend confirmation instructions
-= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .actions
-    = f.submit "Resend confirmation instructions"
-= render "users/shared/links"
+- content_for(:title) do
+  Timeliner | Create a good-looking resume, in five minutes or less
+
+- content_for(:description) do
+  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+
+= render 'static_pages/header'
+.container.hero
+  .row
+    .col.w-60
+      .sub-container.opacity-90
+        .row
+          .col-100
+            %h2.dark.underline.left.thick.yellow
+              Resend confirmation instructions
+        = render 'form'
+
+= render 'static_pages/footer'

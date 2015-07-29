@@ -1,0 +1,15 @@
+= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+  .row.clearfix
+    .col.w-100
+      = devise_error_messages!
+  .form
+    .row.clearfix
+      .col.w-100
+        = f.label :email, class: 'form-label'
+        .field-icon
+          %i.fa.fa-envelope-o
+          = f.email_field :email, required: true,class: 'form-control', autofocus: true
+    .row.clearfix
+      .col.w-100
+        = f.submit "Resend confirmation instructions", class: 'btn small ok'
+        = render "users/shared/links"
