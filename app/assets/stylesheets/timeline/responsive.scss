@@ -2,7 +2,7 @@
 
   .logo{
     h1{
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
       text-align: center;
       .name{
         font-size: 1em;
@@ -13,8 +13,9 @@
 
   header{ .flexbox { display: block; } }
 
+  .col-40,
   .col-50,
-  .col-40{
+  .col-60,{
     width: 100%;
     float: none;
     padding-right: 0;
@@ -76,6 +77,13 @@
     }
   }
 
+  .noscroll{
+    .overlay-close{
+      width: 40px;
+      height: 40px;
+      right: 1em;
+    }
+  }
 }
 
 @media (max-width : 768px) {
@@ -143,3 +151,4 @@
     }
   }
 }
+

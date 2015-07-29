@@ -1,7 +1,8 @@
 var overlay = $(".overlay"),
     popup   = $("#popup"),
     wrapper = $(".wrapper"),
-    header  = $('header');
+    header  = $('header'),
+    close_btn = $("button.overlay-close");
 
 header.slideUp('fast',function(){
   overlay.addClass('open');
@@ -11,7 +12,6 @@ header.slideUp('fast',function(){
 
   $('.owl-carousel').owlCarousel({
     items: 1,
-    dots: false
+    dots: true
   });
 });
-

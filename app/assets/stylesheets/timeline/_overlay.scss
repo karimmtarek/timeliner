@@ -1,11 +1,13 @@
 .noscroll{
   overflow: hidden;
   position: relative;
+
   .overlay-close{
-    right: 5%;
+    right: 2em;
     opacity: 0.9;
     @include transform(rotate(90deg));
     cursor: pointer;
+
     &:hover{
       opacity: 1;
     }
@@ -26,21 +28,21 @@
 }
 
 .overlay-close {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: fixed;
-  right: 0%;
+  top: calc(10% - 10px);
+  right: -1em;
   opacity: 0;
   cursor: default;
   @include transform(rotate(-45deg));
-  top: 5%;
   overflow: hidden;
   border: none;
   background: image-url('cross.png') no-repeat center center;
   text-indent: 200%;
   color: transparent;
   outline: none;
-  z-index: 100;
+  z-index: 1001;
   @include transition(all 0.4s $ease-out-quint);
 }
 
@@ -48,11 +50,12 @@
 	position: absolute;
 	top: 80%;
 	left: 50%;
-  background-color: $green-dark-timeline;
-  padding: 5px;
+  background-color: $green-timeline;
+  border: 5px solid $green-dark-timeline;
   position: relative;
-  width: 70%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 1200px;
+  min-height: 400px;
   opacity: 0;
 	@include transform(translateX(-50%));
   @include transition(all 0.5s $ease-out-circ);
@@ -109,6 +112,11 @@
   }
 }
 
+.owl-carousel .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .wrapper {
 	@include transition(transform 0.5s ease-in-out, blur 0.5s ease-in-out);
@@ -136,7 +144,7 @@
 
     #popup{
 			opacity: 1;
-			top: 5%;
+			top: 10%;
 			@include transition(all 0.5s $ease-out-quart 0.1s);
 		}
 	}

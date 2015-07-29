@@ -1,5 +1,5 @@
-.row.full.flexbox
-  .col-40.gutter-free.flexbox
+.row.full
+  .col-40.gutter-free
     .project-info
       %h2
         = project.title
@@ -20,8 +20,8 @@
       .copy.markdown
         = markdown(project.description)
 
-  .col-60.gutter-free.flexbox
+  .col-60.gutter-free
     .owl-carousel
       - project.images.each do |screenshot|
-        %div
+        %div.item
           = image_tag(screenshot.image, alt: screenshot.description)
