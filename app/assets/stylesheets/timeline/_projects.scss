@@ -42,7 +42,6 @@
   .project-info{
     width: calc(100% - 5px);
     padding: 1em;
-    // height: calc(100% - 10px);
     position: absolute;
     top: 5px;
     left: 0;
@@ -60,7 +59,6 @@
   }
 
   .year{
-    // display: block;
     color: $yellow;
     font-size: 22px;
   }
@@ -95,103 +93,5 @@
     text-decoration: none;
     color: $white;
     font-size: 12px;
-  }
-}
-
-#projects-listx{
-  margin: 0;
-  padding: 0;
-  > li{
-    padding: 2em 1.5em;
-    width: 100%;
-    // padding-bottom: 2em;
-    // margin-bottom: 2em;
-    // border-bottom: 2px solid rgba(#000, 0.1);
-    font-size: 0.9em;
-    color: #fff;
-    @include clearfix;
-    .screenshot{
-      float: right;
-    }
-    .copy{
-     float: left;
-     padding-right: 2%;
-    }
-    &:nth-child(odd){
-      background-color: rgba(#000, 0.1);
-    }
-    // &:nth-child(even){
-    //   .screenshot{
-    //     float: left;
-    //   }
-    //   .copy{
-    //    float: right;
-    //    padding-left: 5%;
-    //   }
-    // }
-    &:last-child{
-      margin-bottom: 0;
-      padding-bottom: 1.5em;
-      border: none;
-    }
-  }
-  .screenshot{
-    width: 45%;
-    img{
-      width: 100%;
-      height: auto;
-      // padding: 5px;
-      background-color: rgba(#000, 0.1);
-      border-radius: 10px;
-    }
-  }
-  .copy{
-    width: 55%;
-    ul{
-      margin: 0;
-      padding: 0;
-    }
-    li{
-      @extend .list-item;
-      color: #fff;
-      &:before{
-        background-color: #34495E;
-        border-color: transparent;
-      }
-    }
-  }
-  p{
-    margin: 0;
-    line-height: 1.5em;
-    margin-bottom: 0.5em;
-    color: #fff;
-  }
-  h3{
-    font-size: 1.3em;
-    margin: 0;
-    color: #EDC92C;
-    text-transform: uppercase;
-  }
-  .role{
-    margin-bottom: 0.3em;
-    display: block;
-  }
-  a{
-    @extend .btn;
-    left: auto;
-    @include transform(translateX(0));
-  }
-  .info{
-    padding-bottom: 0.5em;
-    margin-bottom: .5em;
-    color: #34495E;
-    // border-bottom: 2px solid rgba(#000, 0.1);
-    strong{
-      font-size: 0.9em;
-
-    }
-    span{
-      font-weight: 400;
-    }
   }
 }

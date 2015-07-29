@@ -34,7 +34,10 @@ $(function($){
       body      = $("body"),
       header    = $('header');
 
-  console.log('header outerHeight', header.outerHeight());
+  function showNav(){
+    header.slideDown('fast');
+  }
+
   wrapper.css('padding-top', header.outerHeight());
   header.addClass('fixed');
 
@@ -42,6 +45,7 @@ $(function($){
     overlay.removeClass('open').addClass('close');
     wrapper.removeClass('overlay-open');
     body.removeClass('noscroll');
+    window.setTimeout(showNav, 500);
     e.preventDefault();
   });
 

@@ -1,15 +1,17 @@
-console.log('overlay triggered!!!');
 var overlay = $(".overlay"),
-    popup = $("#popup"),
-    wrapper = $(".wrapper");
+    popup   = $("#popup"),
+    wrapper = $(".wrapper"),
+    header  = $('header');
 
-overlay.addClass('open');
-wrapper.addClass('overlay-open');
+header.slideUp('fast',function(){
+  overlay.addClass('open');
+  wrapper.addClass('overlay-open');
+  $("#popup").html("<%= escape_javascript(render partial: 'project_popup', locals: {project: @project} ) %>");
+  $("body").addClass('noscroll');
 
-$("#popup").html("<%= escape_javascript(render partial: 'project_popup', locals: {project: @project} ) %>");
-$("body").addClass('noscroll');
-
-$('.owl-carousel').owlCarousel({
-  items: 1,
-  dots: false
+  $('.owl-carousel').owlCarousel({
+    items: 1,
+    dots: false
+  });
 });
+

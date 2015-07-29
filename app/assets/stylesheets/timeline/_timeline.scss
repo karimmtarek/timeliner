@@ -54,6 +54,7 @@
       }
     }
   }
+
   .bubble{
     background-color: $green-timeline;
     border-radius: 10px;
@@ -72,19 +73,23 @@
       top: 50%;
       margin-top: -10px;
     }
+
     h3{
       margin: 0 0 0.5em 0;
-      color: #fff;
+      color: $dark-blue;
     }
+
     h4{
       margin: 0;
-      color: #EDC92C;
+      color: $yellow;
       font-weight: 400;
       a{
-        color: #EDC92C;
+        color: $yellow;
+
         &:hover{
           color: #DBB626;
         }
+
         &:visited,
         &:active{
           color: #ffa449;
@@ -93,16 +98,11 @@
     }
 
     .description{
-      // @include transition(all 0.3s $ease-in-out-expo);
       width: 100%;
-      // height: 0;
-      // opacity: 0;
+      border-top: 1px solid rgba(#000, 0.05);
+      margin-top: 10px;
+      padding-top: 10px;
       display: none;
-
-      &.show{
-        height: auto;
-        opacity: 1;
-      }
     }
 
     a.btn{
@@ -115,19 +115,18 @@
     background-color: rgba(#000, 0.1);
     border-radius: 10px;
     padding: 8px;
-    // top: 15px;
-    // right: 15px;
     margin-left: 10px;
     margin-bottom: 5px;
+    color: $white;
+
     .time{
       display: block;
       font-size: .9em;
-      color: #34495E;
     }
+
     .location{
       display: block;
       font-size: .8em;
-      color: #34495E;
     }
   }
 }
@@ -140,7 +139,7 @@
     line-height: 1.4em;
     margin-top: 0;
     margin-bottom: 0.8em;
-    color: $dark-blue;
+    color: $white;
 
     &:last-child{
       margin-bottom: 0;
@@ -157,7 +156,7 @@
   }
 
   li{
-    color: $dark-blue;
+    color: $white;
     font-size: 14px;
     margin-bottom: 0.4em;
     padding-left: 1em;
@@ -171,7 +170,7 @@
       height: 5px;
       top: 7px;
       left: 0;
-      background-color: $white;
+      background-color: $dark-blue;
       border-radius: 50%;
     }
   }
