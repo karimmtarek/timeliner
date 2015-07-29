@@ -40,9 +40,9 @@
   }
 
   .project-info{
-    width: calc(55% - 10px);;
-    padding: 0 10px;
-    height: calc(100% - 10px);
+    width: calc(100% - 5px);
+    padding: 1em;
+    // height: calc(100% - 10px);
     position: absolute;
     top: 5px;
     left: 0;
@@ -56,10 +56,11 @@
     color: $dark-blue;
     font-size: 22px;
     line-height: 1em;
+    margin: 0;
   }
 
   .year{
-    display: block;
+    // display: block;
     color: $yellow;
     font-size: 22px;
   }
@@ -75,14 +76,15 @@
     font-size: 14px;
     line-height: 1.2em;
     text-transform: none;
+    margin: 0;
   }
 
   .show-btn{
     font-weight: bold;
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     left: 0;
-    width: 100%;
+    width: calc(100% - 5px);
     display: block;
     background: $pink;
     border-left: 5px solid $white;

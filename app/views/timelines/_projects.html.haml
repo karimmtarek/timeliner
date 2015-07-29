@@ -8,11 +8,11 @@
             %li
               .project-info
                 %h4
-                  %span.year= project.published_on.year
                   %span.name= project.title
-                  %span.client
-                    %em for
-                    = project.client
-                = link_to 'show me', project_popup_path(@user, project), remote: true, class: 'show-btn'
+                  %span.year (#{project.published_on.year})
+                %span.client
+                  %em for
+                  = project.client
+              = link_to 'show me', project_popup_path(@user, project), remote: true, class: 'show-btn'
 
               = image_tag(project.images.first.image, alt: project.images.first.description)
