@@ -57,7 +57,7 @@
         %h4.dark.underline.left.thin.yellow screenshots
         = f.nested_fields_for :images do |images_form|
           = images_form.remove_nested_fields_link '', class: 'fa fa-trash'
-          .col.w-50
+          .col.w-45
             = images_form.label 'Choose an image to upload', class: 'form-label'
             = images_form.file_field :image
           .col.w-50
