@@ -2,6 +2,14 @@
   footer{
     padding: 80px 0;
     background-color: $dark-blue;
+
+    .col{
+      text-align: center;
+    }
+
+    .sm-icons{
+      display: inline-block;
+    }
   }
 }
 
@@ -50,10 +58,6 @@ footer{
     }
   }
 
-  .social-media{
-
-  }
-
   .copyrights{
     img{
       margin-bottom: 5px;
@@ -62,20 +66,19 @@ footer{
     p, small{
       font-weight: 300;
       color: $white;
-      letter-spacing: 0.5px;
     }
 
     p{
-      font-size: 12px;
+      font-size: 13px;
     }
 
     small{
-      font-size: 10px;
+      font-size: 11px;
     }
 
     .fa{
       color: $yellow;
-      font-size: 10px;
+      font-size: 11px;
     }
 
   }
@@ -114,6 +117,58 @@ footer{
 
     small{
       display: block;
+    }
+  }
+}
+
+@media (max-width : 768px) {
+  .landing{
+    .footer{
+      padding: 50px 0;
+
+      .col{
+        &.w-33{
+          width: 50%;
+
+          &:last-child{
+            width: 100%;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba($white, 0.1);
+
+            h3{
+              display: none;
+            }
+          }
+        }
+
+        &.gutter{
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width : 420px) {
+  .landing{
+    .footer{
+      .col{
+        text-align: center;
+        border-top: 1px solid rgba($white, 0.1);
+        margin-top: 25px;
+        padding-top: 25px;
+
+        &.w-33{
+          width: 100%;
+
+          &:nth-child(1){
+            margin-top: 0;
+            border: none;
+            padding: 0;
+          }
+        }
+      }
     }
   }
 }

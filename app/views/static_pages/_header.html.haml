@@ -1,7 +1,7 @@
 %header.container.header
-  .row
+  .row.clearfix.flexbox
     .col.w-50
       %h1
         = link_to 'Timeliner', root_path, class: 'logo'
-    .col.w-50.align-r
-      = link_to 'Sign in', new_user_session_path, class: 'link white'
+    .col.w-50.align-r.flexbox.flexbox-end
+      = link_to 'Sign in', new_user_session_path, class: 'link white flex-vertical-align-center'

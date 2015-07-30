@@ -22,7 +22,7 @@
 en:
   sign_up: 'Sign up'
   sign_in: 'Sign in'
-  Timeliner: 'Timeliner'
+  timeliner: 'Timeliner'
   and: 'and'
   by: 'by'
   with: 'with'
@@ -73,7 +73,7 @@ en:
       design_url: 'https://www.behance.net/karim-tarek'
       code: 'coded'
       code_url: 'https://github.com/karimmtarek'
-      credit_name: 'Karim Tarek'
+      credit_name: 'Karim Tarek.'
       credit_url: 'http://www.gotimeliner.com/karim-tarek'
       credit_location: 'from Montreal, Canada'
       copyrights: 'Copyright © 2015 Timeliner. All screenshots © their respective owners.'

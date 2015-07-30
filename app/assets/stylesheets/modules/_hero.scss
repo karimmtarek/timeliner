@@ -9,7 +9,6 @@
   @include brdr-btm(5px, $yellow);
 }
 
-
 .landing{
   &.passwords,
   &.sessions,
@@ -47,7 +46,21 @@
 
   .link{
     font-size: 14px;
-    // text-decoration: underline;
+  }
+
+  h2,
+  p,
+  .link{
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
   }
 }
 
+@media (max-width : 420px) {
+  .hero{
+    .col{
+      &.w-50{
+        width: 100%;
+      }
+    }
+  }
+}

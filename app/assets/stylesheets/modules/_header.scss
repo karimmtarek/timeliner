@@ -53,3 +53,19 @@
     text-indent: -9999px;
   }
 }
+
+@media (max-width : 420px) {
+  .landing{
+    .header{
+      .col{
+        &.w-50{
+          width: 100%;
+        }
+
+        &.align-r{
+          display: none;
+        }
+      }
+    }
+  }
+}

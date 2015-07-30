@@ -144,6 +144,18 @@
   @include clearfix;
 }
 
+.flexbox{
+  display: flex;
+}
+
+.flex-vertical-align-center{
+  align-self: center;
+}
+
+.flexbox-end{
+  justify-content: flex-end;
+}
+
 .app{
   .row{
     max-width: 100%;

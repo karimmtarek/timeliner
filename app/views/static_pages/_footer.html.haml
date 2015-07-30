@@ -1,11 +1,11 @@
 %footer.container.footer
   .row.clearfix
-    .col.w-30.gutter.newsletter
-      %h3.underline.white.left.thin= t('.newsletter_heading')
+    .col.w-33.gutter.newsletter
+      %h3.underline.white.center.thin= t('.newsletter_heading')
       %p= t('.newsletter_oneliner')
       = render 'layouts/app-frontend/mailchimp_form'
-    .col.w-30.gutter.social-media
-      %h3.underline.white.left.thin= t('.social_media_heading')
+    .col.w-33.gutter.social-media
+      %h3.underline.white.center.thin= t('.social_media_heading')
       %ul.sm-icons
         %li
           = link_to t('.linkedin_url'), class: 'sm-icon', target: '_blank' do
@@ -16,8 +16,8 @@
         %li
           = link_to t('.facebook_url'), class: 'sm-icon', target: '_blank' do
             = fa_icon "facebook"
-    .col.w-40.copyrights
-      = image_tag('logo-sml.png', alt: t('Timeliner'))
+    .col.w-33.copyrights
+      %h3.underline.white.center.thin= t('timeliner')
       %p
         = t('.credit_copy')
         = link_to t('.design'), t('.design_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
@@ -28,4 +28,4 @@
         = t('.credit_location')
         = t('by')
         = link_to t('.credit_name'), t('.credit_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
-      %small= t('.copyrights')
+        %small= t('.copyrights')

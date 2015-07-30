@@ -39,3 +39,28 @@
     line-height: 1.4;
   }
 }
+
+@media (max-width : 1024px) {
+  .features{ background-position: -100px 100px; }
+}
+
+@media (max-width : 768px) {
+  .features{
+    padding: 50px 0;
+    background-image: none;
+
+    .row{
+      background-color: rgba($white, 0.5);
+    }
+
+    .col{
+      &.w-50{
+        width: 100%;
+      }
+
+      &.pull-right{
+        float: none;
+      }
+    }
+  }
+}
