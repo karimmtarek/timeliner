@@ -76,6 +76,8 @@ GEM
       mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    codeclimate-test-reporter (0.4.7)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -462,6 +464,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails

@@ -88,6 +88,7 @@ group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem "codeclimate-test-reporter", require: nil
 end
 
 group :production do
