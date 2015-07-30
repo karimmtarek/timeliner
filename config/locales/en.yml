@@ -20,4 +20,61 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sign_up: 'Sign up'
+  sign_in: 'Sign in'
+  Timeliner: 'Timeliner'
+  and: 'and'
+  by: 'by'
+  with: 'with'
+
+  static_pages:
+    index:
+      page_title: 'Timeliner | Create one good-looking resume, portfolio or personal page in few minutes'
+      page_description: 'Timeliner is an open-source free service that creates a one good-looking personal page, resume, portfolio quick and easy.'
+
+    hero:
+      page_heading: 'Your professional journey in'
+      one_page: 'one page'
+      intro_paragraph: 'Create one good-looking portfolio page in few minutes.'
+
+    features:
+      feature_1_heading: 'what is timeliner?'
+      feature_1_copy: 'Timeliner is an open-source free service that helps coders and designers create and maintain a one good-looking portfolio page, quick and easy.'
+      feature_2_heading: 'is timeliner for you?'
+      feature_2_copy: 'If you need an online one page  portfolio done quickly with minimum effort, that looks good, then yeah most probably Timeliner is for you.'
+      feature_3_heading: 'Stand out from the crowd'
+      feature_3_copy: 'Show-off your resume, portfolio and who you are in a unique good looking modern design.'
+      feature_4_heading: 'be social'
+      feature_4_copy: 'Add links to your social media profiles, so poeple can check you out and connect with you easily.'
+      feature_5_heading: 'Link to your blog'
+      feature_5_copy: "Although Timeliner doesn't have a blog feature yet, you still can add a link to your blog as an external link in the navigation if you want."
+      feature_6_heading: "Don't feel like sharing your email"
+      feature_6_copy: "Then don't :) visitors to your timeline can messege you directly using the contact form on your page."
+      feature_7_heading: 'speak up'
+      feature_7_copy: 'Are you available for some freelance work or maybe looking for a full-time position, we got you covered, show that in a good-looking banner.'
+
+
+    cta:
+      cta_heading: 'Take control of your portfolio'
+      sign_up_free: 'Sign up for free now!'
+      see_an_example: 'see an example'
+      example_url: 'http://www.gotimeliner.com/karim-tarek'
+
+    footer:
+      newsletter_heading: 'Stay informed'
+      newsletter_oneliner: ' Subscribe to our newsletter!'
+      social_media_heading: 'You can find us on'
+      linkedin_url: 'https://linkedin.com'
+      twitter_url: 'https://twitter.com/gotimeliner'
+      facebook_url: 'https://facebook.com'
+      credit_copy: 'Timeliner is '
+      created_by: 'created by'
+      design: 'designed'
+      design_url: 'https://www.behance.net/karim-tarek'
+      code: 'coded'
+      code_url: 'https://github.com/karimmtarek'
+      credit_name: 'Karim Tarek'
+      credit_url: 'http://www.gotimeliner.com/karim-tarek'
+      credit_location: 'from Montreal, Canada'
+      copyrights: 'Copyright © 2015 Timeliner. All screenshots © their respective owners.'
+

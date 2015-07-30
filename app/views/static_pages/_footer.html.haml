@@ -1,27 +1,31 @@
 %footer.container.footer
   .row.clearfix
     .col.w-30.gutter.newsletter
-      %h3.underline.white.left.thin Stay informed
-      %p Subscribe to our newsletter!
+      %h3.underline.white.left.thin= t('.newsletter_heading')
+      %p= t('.newsletter_oneliner')
       = render 'layouts/app-frontend/mailchimp_form'
     .col.w-30.gutter.social-media
-      %h3.underline.white.left.thin You can find us on
+      %h3.underline.white.left.thin= t('.social_media_heading')
       %ul.sm-icons
         %li
-          = link_to '#', class: 'sm-icon' do
+          = link_to t('.linkedin_url'), class: 'sm-icon', target: '_blank' do
             = fa_icon "linkedin"
         %li
-          = link_to '#', class: 'sm-icon' do
+          = link_to t('.twitter_url'), class: 'sm-icon', target: '_blank' do
             = fa_icon "twitter"
         %li
-          = link_to '#', class: 'sm-icon' do
+          = link_to t('.facebook_url'), class: 'sm-icon', target: '_blank' do
             = fa_icon "facebook"
     .col.w-40.copyrights
-      = image_tag('logo-sml.png', alt: '')
+      = image_tag('logo-sml.png', alt: t('Timeliner'))
       %p
-        Timeliner, created by
-        = link_to 'Karim Tarek', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link-white'
-        , with
+        = t('.credit_copy')
+        = link_to t('.design'), t('.design_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+        = t('and')
+        = link_to t('.code'), t('.code_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+        = t('with')
         = fa_icon "heart"
-        from Montreal, Canada.
-      %small Copyright © 2015 Timeliner. All screenshots © their respective owners.
+        = t('.credit_location')
+        = t('by')
+        = link_to t('.credit_name'), t('.credit_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+      %small= t('.copyrights')

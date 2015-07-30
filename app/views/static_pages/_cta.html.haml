@@ -1,0 +1,8 @@
+%section.container.cta
+  .row.clearfix
+    .col.w-100.center
+      %h2.underline.yellow.thick.center= t('.cta_heading')
+      = link_to t('.sign_up_free'), new_user_registration_path, class: 'btn medium default'
+      %span
+        or
+        = link_to t('.see_an_example'), t('.example_url'), target: '_blank', class: 'link blue'

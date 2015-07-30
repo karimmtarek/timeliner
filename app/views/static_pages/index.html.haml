@@ -1,60 +1,15 @@
 - content_for(:title) do
-  Timeliner | Create a good-looking resume, in five minutes or less
+  = t('.page_title')
 
 - content_for(:description) do
-  Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
+  = t('.page_description')
 
 = render 'header'
 
-.container.hero
-  .row
-    .col.w-50
-      .intro
-        %h2.heading
-          Your professional journey in
-          %span.emphasize one page
-        %p Create a good-looking online resume, in 5 minutes or less, using your existing LinkedIn account.
-        = link_to 'Sign up', new_user_registration_path, class: 'btn x-large in'
-        %span
-          or
-          = link_to 'Sign in', new_user_session_path, class: 'link white'
+= render 'hero'
 
-%section.container.features
-  .row.clearfix
-    .col.w-50.pull-right
-      %ul
-        %li
-          = fa_icon "question"
-          %h3 WHAT IS TIMELINER?
-          %p Timeliner is a free service that creates a good looking online resumes, quick and easy by importing your information from LinkedIn.
-        %li
-          = fa_icon "check"
-          %h3 IS TIMELINER FOR YOU?
-          %p If you need an online resume done quickly with minimum effort, that looks good and free, then yeah most probably Timeliner is for you.
-        %li
-          = fa_icon "key"
-          %h3 one less password to remember
-          %p Timeliner uses your LinkedIn credentials to sign you up and later sign you in so you don’t need to remember one more username or password.
-        %li
-          = fa_icon "plus"
-          %h3 IMPORT DATA
-          %p Insted of adding content manually, you may import some of your data from LinkedIn.
-        %li
-          = fa_icon "eye"
-          %h3 SHOW OFF
-          %p Show-off your information in a unique good looking modern design.
-        %li
-          = fa_icon "share-alt"
-          %h3 BE SOCIAL
-          %p Add your social media links, so poeple can connect with you easily, plus they can messege you directly using the contact form on your page.
+= render 'features'
 
-%section.container.cta
-  .row.clearfix
-    .col.w-100.center
-      %h2.underline.yellow.thick.center Take control of your resume
-      = link_to 'Sign up for free now!', new_user_registration_path, class: 'btn medium default'
-      %span
-        or
-        = link_to 'see an example', 'http://www.gotimeliner.com/karim-tarek', target: '_blank', class: 'link blue'
+= render 'cta'
 
 = render 'footer'

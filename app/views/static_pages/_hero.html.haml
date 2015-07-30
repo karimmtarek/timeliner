@@ -1,0 +1,12 @@
+.container.hero
+  .row
+    .col.w-50
+      .intro
+        %h2.heading
+          = t('.page_heading')
+          %span.emphasize= t('.one_page')
+        %p= t('.intro_paragraph')
+        = link_to t('sign_up'), new_user_registration_path, class: 'btn large in'
+        %span
+          or
+          = link_to t('sign_in'), new_user_session_path, class: 'link white'
