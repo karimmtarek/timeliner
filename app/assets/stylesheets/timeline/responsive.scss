@@ -12,12 +12,20 @@
 
   header{ .flexbox { display: block; } }
 
+  .col-35,
   .col-40,
   .col-50,
-  .col-60,{
+  .col-60,
+  .col-65{
     width: 100%;
     float: none;
     padding-right: 0;
+  }
+
+  .project-description{
+    &>div{
+      &.col-65{ padding-left: 1.5em; }
+    }
   }
 
   .timeline {
@@ -58,25 +66,17 @@
   }
 
   #projects-list{
-    h4{
-      margin-top: 5px;
-      line-height: 0.9em;
-    }
+    li{
+      width: 49%;
 
-    .name{
-      font-size: 18px;
-    }
+      &:nth-child(odd){
+        margin-right: 1%;
+      }
 
-    .client{
-      font-size: 12px;
-    }
-
-    .project-info{
-      width: 100%;
-    }
-
-    .show-btn{
-      width: calc(100% - 5px);
+      &:nth-child(even){
+        margin-right: 0;
+        margin-left: 1%;
+      }
     }
   }
 
@@ -100,31 +100,32 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
+}
 
+@media (max-width : 650px) {
+  .project-info{
+    .pull-right{
+      float: none;
+      margin-bottom: 5px;
+    }
+  }
+
+  #contact_form{
+    .field{
+      &.fifty{
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+
+@media (max-width : 560px) {
   #projects-list{
     li{
       float: none;
       width: 100%;
       margin-right: 0;
-      max-height: 150px;
-      overflow: hidden;
-    }
-
-    img{
-      max-height: 140px;
-    }
-
-    h4{
-      margin-top: 1em;
-      line-height: 1em;
-    }
-
-    .name{
-      font-size: 22px;
-    }
-
-    .client{
-      font-size: 14px;
     }
   }
 }

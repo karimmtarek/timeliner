@@ -5,15 +5,7 @@
 
 .wrapper
   = render 'header'
-
   = render 'about'
-
-  #skills.container
-    .row
-      .col-100
-        - @user.skills.each do |skill|
-          %span= skill.name
-
   = render 'timeline'
   = render 'projects', user: @user
   = render 'contact', user: @user

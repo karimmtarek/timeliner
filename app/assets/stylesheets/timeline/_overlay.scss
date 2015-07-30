@@ -55,7 +55,6 @@
   position: relative;
   width: 80%;
   max-width: 1200px;
-  min-height: 400px;
   opacity: 0;
 	@include transform(translateX(-50%));
   @include transition(all 0.5s $ease-out-circ);
@@ -110,6 +109,10 @@
 .project-description{
   &>div{
     padding: 0 1.5em 1.5em;
+
+    &.col-65{
+      padding-left: 0;
+    }
   }
 }
 

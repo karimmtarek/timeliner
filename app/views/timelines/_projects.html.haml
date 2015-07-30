@@ -5,7 +5,8 @@
         %h2 #{pluralize_without_count(@user.projects.size, 'Selected Project')}
         %ul#projects-list
           - @user.projects.each do |project|
-            %li
+            - bg_img = project.images.any? ? project.images.first.image : 'no_image'
+            %li{style: "background-image: url(#{bg_img})"}
               .project-info
                 %h4
                   %span.name= project.title
@@ -15,4 +16,5 @@
                   = project.client
               = link_to 'show me', project_popup_path(@user, project), remote: true, class: 'show-btn'
 
-              = image_tag(project.images.first.image, alt: project.images.first.description)
+              -# - if project.images.any?
+              -#   = image_tag(project.images.first.image, alt: project.images.first.description)

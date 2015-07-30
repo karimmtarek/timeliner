@@ -10,12 +10,16 @@
           %em for
           = print_client(project)
 .row.full.project-description
-  .col-40.gutter-free
-    .copy.markdown
-      = markdown(project.description)
-
-  .col-60.gutter-free
-    .owl-carousel
-      - project.images.each do |screenshot|
-        %div.item
-          = image_tag(screenshot.image, alt: screenshot.description)
+  - if project.images.any?
+    .col-35
+      .copy.markdown
+        = markdown(project.description)
+    .col-65
+      .owl-carousel
+        - project.images.each do |screenshot|
+          %div.item
+            = image_tag(screenshot.image, alt: screenshot.description)
+  - else
+    .col-100
+      .copy.markdown
+        = markdown(project.description)
