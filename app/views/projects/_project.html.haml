@@ -10,20 +10,11 @@
           = link_to 'Edit', edit_project_path(project), class: 'btn warning x-small'
         %h4
           = project.title
+      = render 'shared/project_links', project: project
       .company-n-date
         client:
         = print_client(project)
         %span= "(#{project.published_on.year})"
-      - unless (project.link_live.blank? || project.link_source.blank?)
-        %ul.tags.social-media
-          - unless project.link_live.blank?
-            %li
-              %i{class: 'fa fa-globe'}
-              = link_to 'Live', project.link_live, target: '_blank'
-          - unless project.link_source.blank?
-            %li
-              %i{class: 'fa fa-code'}
-              = link_to 'Source', project.link_source, target: '_blank'
       - unless project.description.blank?
         .copy
           = markdown(project.description)

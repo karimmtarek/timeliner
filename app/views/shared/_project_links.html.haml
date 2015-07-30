@@ -1,0 +1,10 @@
+- if (project.link_live.present? || project.link_source.present?)
+  %ul.tags.social-media.pull-right
+    - if project.link_live.present?
+      %li
+        %i{class: 'fa fa-globe'}
+        = link_to 'Live', project.link_live, target: '_blank'
+    - if project.link_source.present?
+      %li
+        %i{class: 'fa fa-code'}
+        = link_to 'Source', project.link_source, target: '_blank'

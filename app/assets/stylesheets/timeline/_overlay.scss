@@ -62,8 +62,13 @@
 }
 
 .project-info{
-  background-color: $green-timeline;
-  padding: 1em 1.5em;
+  padding: 1.5em 1.5em 0;
+  margin-bottom: 1.5em;
+
+  &>div{
+    border-bottom: 1px solid rgba(#000, 0.05);
+    padding-bottom: 1em;
+  }
 
   h2{
     padding: 0;
@@ -81,7 +86,6 @@
     display: block;
     color: $white;
     font-size: 18px;
-    margin: 5px 0;
 
     a{
       color: $white;
@@ -89,19 +93,10 @@
   }
 
   .tags{
-    margin: 0;
-    padding: 0;
     background-color: $green-timeline;
 
-    li{
-      margin-top: 0;
-      font-size: 12px;
-      padding: 4px 8px 5px 18px;
-      margin-left: 13px;
-
-      .fa{
-        width: 26px;
-      }
+    a{
+      text-decoration: none;
     }
   }
 
@@ -109,6 +104,12 @@
     border-top: 1px solid rgba(#000, 0.05);
     margin-top: 10px;
     padding-top: 10px;
+  }
+}
+
+.project-description{
+  &>div{
+    padding: 0 1.5em 1.5em;
   }
 }
 

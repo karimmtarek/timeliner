@@ -1,24 +1,18 @@
 .row.full
-  .col-40.gutter-free
+  .col-100
     .project-info
-      %h2
-        = project.title
-        %span.year (#{project.published_on.year})
-      %span.client
-        %em for
-        = print_client(project)
-      - unless (project.link_live.blank? || project.link_source.blank?)
-        %ul.tags.social-media
-          - unless project.link_live.blank?
-            %li
-              %i{class: 'fa fa-globe'}
-              = link_to 'Live', project.link_live, target: '_blank'
-          - unless project.link_source.blank?
-            %li
-              %i{class: 'fa fa-code'}
-              = link_to 'Source', project.link_source, target: '_blank'
-      .copy.markdown
-        = markdown(project.description)
+      %div
+        = render 'shared/project_links', project: project
+        %h2
+          = project.title
+          %span.year (#{project.published_on.year})
+        %span.client
+          %em for
+          = print_client(project)
+.row.full.project-description
+  .col-40.gutter-free
+    .copy.markdown
+      = markdown(project.description)
 
   .col-60.gutter-free
     .owl-carousel
