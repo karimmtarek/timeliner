@@ -23,6 +23,8 @@ function miniNav(){
 }
 
 $(function($){
+  setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
+
   miniNav();
   $('#nav').ddscrollSpy();
 
