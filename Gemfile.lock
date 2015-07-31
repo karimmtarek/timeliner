@@ -82,10 +82,10 @@ GEM
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
-    coffee-script (2.3.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
@@ -461,7 +461,6 @@ DEPENDENCIES
   awesome_print!
   better_errors
   bourbon
-  byebug
   capybara
   carrierwave
   codeclimate-test-reporter
