@@ -29,8 +29,8 @@ en:
 
   static_pages:
     index:
-      page_title: 'Timeliner | Create one good-looking resume, portfolio or personal page in few minutes'
-      page_description: 'Timeliner is an open-source free service that creates a one good-looking personal page, resume, portfolio quick and easy.'
+      page_title: 'Timeliner | Create one good-looking portfolio page in few minutes'
+      page_description: 'Timeliner is an open-source, free to use web application aims to help coders and designers create a one good-looking portfolio page, quick and easy.'
 
     hero:
       page_heading: 'Your professional journey in'
@@ -41,7 +41,7 @@ en:
       feature_1_heading: 'what is timeliner?'
       feature_1_copy: 'Timeliner is an open-source free service that helps coders and designers create and maintain a one good-looking portfolio page, quick and easy.'
       feature_2_heading: 'is timeliner for you?'
-      feature_2_copy: 'If you need good-looking one page portfolio done quickly with minimum effort, then YEAH! most probably Timeliner is for you.'
+      feature_2_copy: 'If you need good-looking one page portfolio done quickly with minimum effort and free, then YEAH! most probably Timeliner is for you.'
       feature_3_heading: 'Stand out from the crowd'
       feature_3_copy: 'Show-off your resume, past projects and who you are in a unique good-looking modern design.'
       feature_4_heading: 'be social'
@@ -52,7 +52,6 @@ en:
       feature_6_copy: "Then don't :) visitors to your timeline can messege you directly using the contact form on your page."
       feature_7_heading: 'speak up'
       feature_7_copy: 'Are you available for some freelance work or maybe looking for a full-time position, we got you covered, communicate that in a good-looking banner.'
-
 
     cta:
       cta_heading: 'Take control of your portfolio'
