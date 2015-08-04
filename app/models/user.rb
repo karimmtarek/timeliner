@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   has_many :social_media_links, dependent: :destroy
   accepts_nested_attributes_for :social_media_links, allow_destroy: true
 
+  after_destroy :goodbye_email
+
   friendly_id :username, use: :slugged
 
   validates :username,
@@ -47,5 +49,9 @@ class User < ActiveRecord::Base
 
   def basic_info?
     first_name.present? && last_name.present? && description.present? && bio.present?
+  end
+
+  def goodbye_email
+    GoodbyeMailer.goodbye_email(self).deliver_now
   end
 end
