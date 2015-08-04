@@ -1,6 +1,6 @@
 # Timeliner [![Build Status](https://travis-ci.org/karimmtarek/timeliner.svg)](https://travis-ci.org/karimmtarek/timeliner) [![Code Climate](https://codeclimate.com/github/karimmtarek/timeliner/badges/gpa.svg)](https://codeclimate.com/github/karimmtarek/timeliner) [![Test Coverage](https://codeclimate.com/github/karimmtarek/timeliner/badges/coverage.svg)](https://codeclimate.com/github/karimmtarek/timeliner/coverage)
 
-Timeliner is an open-source, free to use web application aims to help coders and designers create a one good-looking portfolio page, quick and easy.
+Timeliner is an open-source, free to use web application aims to help web developers and designers create a one good-looking portfolio page, quick and easy.
 
 ## Use case
 You need a portfolio or just a unique online resume, you need to add some basic information about your self and what you do. You need it look good, you don't have time to build it from scratch and you don't want to buy a template for $10 and hack into it because again you don't have that, and you don't want to pay for fancy online service, if you do please check the **Fancy online services** list.
@@ -19,9 +19,25 @@ TBC
 5. Run `rake db:create`
 6. Create `config\application.yml` and fill it, you can see the sample file `config\application.sample.yml` for reference.
 
+## Coding style guides
+
+### Ruby
+- [Ruby coding style guide](https://github.com/bbatsov/ruby-style-guide)
+
+### Rails
+- [Ruby on Rails 4 style guide](https://github.com/bbatsov/rails-style-guide)
+
+### Front-end
+- [Code Guide](http://codeguide.co/)
+- [Sass Guidelines](http://sass-guidelin.es/)
+
+## TODO
+- Refactore code to follow the coding style guides.
+
 ## Contributing
 1. Fork it
-2. Create your feature branch (`git checkout -b your-initials-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin your-initials-new-feature`)
-5. Create a new Pull Request
+2. Set it up
+3. Create your feature branch (`git checkout -b your-initials-new-feature`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin your-initials-new-feature`)
+6. Create a new Pull Request
