@@ -15,13 +15,9 @@
             %i.fa.fa-pencil
             = f.text_field :title, required: true, placeholder: "Project title", class: 'form-control'
         .col.w-50
-          = f.label :published_on, class: 'form-label'
+          = f.label :published_on,class: 'form-label'
           .select-field.date-select
-            = date_select(:project,
-                          :published_on,
-                          start_year: 1995,
-                          discard_day: true,
-                          order: [:month, :year])
+            = f.text_field :published_on, required: true, value: format_date(@project.published_on, '%B %Y'), class: 'form-control'
       .row.clearfix
         .col.w-50
           = f.label :client, class: 'form-label'

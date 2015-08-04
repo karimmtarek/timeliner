@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
     allow_destroy: true,
     reject_if: lambda {|attributes| attributes['image'].blank?}
 
-  validates :title, :client, presence: true
+  validates :title, :client, :published_on, presence: true
   validates :description, length: { in: 75..500 }
   validates :client_url,
             :link_live,

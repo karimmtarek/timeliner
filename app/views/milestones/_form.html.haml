@@ -38,19 +38,11 @@
           .col.w-50
             = f.label 'Start date', class: 'form-label'
             .select-field.date-select
-              = date_select(:milestone,
-                            :date_start,
-                            start_year: 1995,
-                            discard_day: true,
-                            order: [:month, :year])
+              = f.text_field :date_start, required: true, value: format_date(@milestone.date_start, '%B %Y'), class: 'form-control'
           .col.w-50
             = f.label 'End date', class: 'form-label'
             %div{class:"select-field date-select end-date #{'hide' if @milestone.present}", id:'end_date'}
-              = date_select(:milestone,
-                            :date_end,
-                            start_year: 1995,
-                            discard_day: true,
-                            order: [:month, :year])
+              = f.text_field :date_end, required: true, value: format_date(@milestone.date_end, '%B %Y'), class: 'form-control'
             %div.checkbox
               = f.check_box :present, id: 'present'
               = f.label :present, for: 'present'

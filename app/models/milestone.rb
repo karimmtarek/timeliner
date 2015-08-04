@@ -7,7 +7,7 @@ class Milestone < ActiveRecord::Base
 
   after_initialize :default_present
 
-  validates :title, :location, :company, presence: true
+  validates :title, :location, :company, :date_start, presence: true
 
   validates :company_url,
             format: {

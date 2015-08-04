@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require nested_form_fields
 
 $(document).ready(function () {
@@ -38,9 +39,13 @@ $(document).ready(function () {
 
   fixHeight();
 
-  $('window').resize(function() {
-    fixHeight();
-  });
+  // datepicker
+  $('.date-select input').datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: "MM yy"
+    });
+
 });
 
 
