@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
   def available_with_message?
     available && availability_message.present?
   end
+
+  def basic_info?
+    first_name.present? && last_name.present? && description.present? && bio.present?
+  end
 end

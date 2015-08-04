@@ -92,14 +92,15 @@
     @include transition(all 0.1s ease-in-out);
   }
 
-  .note{
-    margin-top: 10px;
-    font-size: 10px;
-    font-weight: 400;
-    border-radius: 5px;
-    background-color: #23497a;
-    padding: .5em;
-  }
+}
+
+.switch-note{
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: #23497a;
+  padding: .5em;
 }
 
 .menu{
