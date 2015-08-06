@@ -2,16 +2,19 @@ require 'rails_helper'
 
 describe 'Contact form' do
   let(:user) { FactoryGirl.create(:user) }
-  before { user.confirm! }
+  before do
+    user.confirm!
+    user.update!(maintenance_mode: false)
+  end
 
   it 'send message to a user' do
     visit user_timelines_path(user)
 
     expect(current_path).to eq(user_timelines_path(user))
 
-    fill_in 'message[email]', with: "milestone@title.com"
-    fill_in 'message[subject]', with: "subject line!"
-    fill_in 'message[body]', with: "company name"
+    fill_in 'message[email]', with: 'milestone@title.com'
+    fill_in 'message[subject]', with: 'subject line!'
+    fill_in 'message[body]', with: 'company name'
 
     click_button 'Send message'
 
