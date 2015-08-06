@@ -1,22 +1,25 @@
 require 'rails_helper'
 
-describe "Edit account info" do
-  it 'updates account information' do
+describe 'Edit account info' do
+  let(:user) { FactoryGirl.create(:user) }
 
-    user = User.create!(user_attributes)
+  before do
+    user.confirm!
     sign_in(user)
+  end
 
+  it 'updates account information' do
     visit user_path(user)
-    expect(current_path).to eq(user_path(user))
     click_link 'Edit'
 
     expect(current_path).to eq(edit_user_path(user))
-    expect(find_field('Username').value).to eq(user.username)
-    fill_in 'Username', with: "new_user_name"
-    click_button 'Update'
+
+    fill_in 'Username', with: 'new-user-name'
+    within '.stick-it-up' do
+      click_button 'Update'
+    end
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_text('new_user_name')
-
+    expect(page).to have_text('new-user-name')
   end
 end
