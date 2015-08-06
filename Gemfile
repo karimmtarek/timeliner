@@ -29,6 +29,8 @@ gem 'rails_12factor'
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
   gem 'rubocop', '0.30.0'
   gem 'factory_girl_rails'
   gem 'jazz_hands2'
@@ -45,8 +47,6 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', require: nil
 end
