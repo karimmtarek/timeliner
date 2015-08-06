@@ -20,9 +20,8 @@ class TimelinesController < ApplicationController
     @message_subject =  params[:message][:subject]
     @message_body =  params[:message][:body]
 
-    ContactMailer.contact_form_email(@user, @sender_email, @message_subject, @message_body).deliver_now
-    @user.update(message_counter: @user.message_counter + 1)
-    puts @user.message_counter
+    @user.send_message(@sender_email, @message_subject, @message_body)
+    @user.increase_message_counter
   end
 
   private
