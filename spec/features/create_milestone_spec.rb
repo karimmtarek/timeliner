@@ -1,19 +1,19 @@
 require 'rails_helper'
-
+DatabaseCleaner.clean
 
 describe "Milestone" do
-  let(:user) { User.create!(user_attributes) }
+  let(:user) { FactoryGirl.create(:user) }
 
   before do
-    # request.env['omniauth.auth'] = auth_mock
-    sign_in user
+    user.confirm!
+    sign_in(user)
   end
 
   it 'Create' do
     visit user_path(user)
     expect(current_path).to eq(user_path(user))
-    click_link 'Create milestone'
 
+    click_on 'Milestone'
     expect(current_path).to eq(new_milestone_path)
 
     fill_in 'Title', with: "milestone title"
@@ -21,12 +21,13 @@ describe "Milestone" do
     fill_in 'Company url', with: "http://company.com"
     fill_in 'Location', with: "Montreal, Canada."
     fill_in 'Description', with: "Ooooops, I did again!"
-    fill_in 'Date start', with: 90.days.ago
-    fill_in 'Date end', with: Date.today
-    click_button 'Create'
+    fill_in 'milestone[date_start]', with: 90.days.ago
+    fill_in 'milestone[date_end]', with: Date.today
+    within '.stick-it-up' do
+      click_button('Create')
+    end
 
     expect(current_path).to eq(milestones_path)
     expect(page).to have_text('milestone title')
-
   end
 end
