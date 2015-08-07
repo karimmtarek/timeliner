@@ -6,18 +6,21 @@
     .row.clearfix
       .col.w-100
         = f.label :email, class: 'form-label'
+        %span.required *
         .field-icon
           %i.fa.fa-envelope-o
-          = f.email_field :email, class: 'form-control', autofocus: true
+          = f.email_field :email, class: 'form-control', autofocus: true, required: true
     .row.clearfix
       .col.w-100
         = f.label :username, class: 'form-label'
+        %span.required *
         .field-icon
           %i.fa.fa-user
           = f.text_field :username, class: 'form-control'
     .row.clearfix
       .col.w-100
         = f.label :password, class: 'form-label'
+        %span.required *
         - if @validatable
           %em.form-label
             (#{@minimum_password_length} characters minimum)
@@ -27,6 +30,7 @@
     .row.clearfix
       .col.w-100
         = f.label :password_confirmation, class: 'form-label'
+        %span.required *
         .field-icon
           %i.fa.fa-lock
           = f.password_field :password_confirmation, class: 'form-control', autocomplete: "off"
