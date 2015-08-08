@@ -1,21 +1,24 @@
 class TimelinesController < ApplicationController
   skip_before_action :authenticate_user!
-  around_action :catch_not_found, only: :index
+  around_action :catch_not_found, only: :show
 
-  def index
-    @user = User.friendly.find(params[:user_id])
+  def show
+    user = User.fetch(params[:user_id])
+    @timeline = Timeline.new(user)
 
-    return maintenance if @user.maintenance_mode && !current_user
-
-    @milestones = @user.milestones.load.order(date_start: :desc)
+    if @timeline.viewable?(current_user)
+      render
+    else
+      render_maintenance
+    end
   end
 
   def project_popup
-    @project = Project.friendly.find(params[:project_id])
+    @project = Project.fetch(params[:project_id])
   end
 
   def contact
-    @user = User.friendly.find(params[:user_id])
+    @user = User.fetch(params[:user_id])
     @sender_email =  params[:message][:email]
     @message_subject =  params[:message][:subject]
     @message_body =  params[:message][:body]
@@ -26,7 +29,7 @@ class TimelinesController < ApplicationController
 
   private
 
-  def maintenance
+  def render_maintenance
     flash[:error] = 'This timeline is in maintenance mode'
     render :maintenance
   end
