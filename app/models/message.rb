@@ -1,9 +1,7 @@
 class Message
-  attr_reader :user
-
-  def initialize(email:, subject:, body:)
-    @email = email
-    @subject = subject
-    @body = body
+  def initialize(message_params)
+    @email = message_params[:email]
+    @subject = message_params[:subject]
+    @body = message_params[:body]
   end
 end
