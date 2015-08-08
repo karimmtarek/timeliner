@@ -1,8 +1,8 @@
-- unless @user.milestones.blank?
+- unless @timeline.milestones.blank?
   %section#timeline
     .row
       .timeline
-        - @milestones.each_with_index do |milestone, index|
+        - @timeline.milestones.each_with_index do |milestone, index|
           - unless milestone.title.blank?
             .event
               .bubble
