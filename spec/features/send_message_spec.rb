@@ -8,9 +8,9 @@ describe 'Contact form' do
   end
 
   it 'send message to a user' do
-    visit user_timelines_path(user)
+    visit timeline_path(user)
 
-    expect(current_path).to eq(user_timelines_path(user))
+    expect(page).to have_text(user.full_name)
 
     fill_in 'message[email]', with: 'milestone@title.com'
     fill_in 'message[subject]', with: 'subject line!'
