@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  extend Fetchable
   extend FriendlyId
+  extend Fetchable
   include Gravtastic
   gravtastic
   # Include default devise modules. Others available are:

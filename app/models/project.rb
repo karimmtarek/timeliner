@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   extend FriendlyId
+  extend Fetchable
 
   friendly_id :title, use: :slugged
 
