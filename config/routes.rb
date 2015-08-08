@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :timelines, only: [:index, :contact]
   end
 
-  get '/:user_id' => 'timelines#index', as: 'timeline'
+  get '/:user_id' => 'timelines#show', as: 'timeline'
 
-  post '/timelines/:user_id/contact', to: 'timelines#contact', as: 'contact'
+  post '/contacts/:user_id', to: 'contacts#create', as: 'contact'
 
   post '/users/maintenance_mode', to: 'users#maintenance_mode', as: 'maintenance_mode'
 
