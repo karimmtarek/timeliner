@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  extend Fetchable
   extend FriendlyId
   include Gravtastic
   gravtastic
@@ -63,11 +64,7 @@ class User < ActiveRecord::Base
     GoodbyeMailer.goodbye_email(self).deliver_now
   end
 
-  def send_message(sender_email, message_subject, message_body)
-    ContactMailer.contact_form_email(self, sender_email, message_subject, @message_body).deliver_now
-  end
-
-  def increase_message_counter
-    update(message_counter: message_counter + 1)
+  def message_sent
+    increment!(:message_counter)
   end
 end
