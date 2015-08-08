@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20150726024123) do
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
+    t.string   "image"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "image"
     t.integer  "project_id"
   end
 
@@ -116,4 +116,9 @@ ActiveRecord::Schema.define(version: 20150726024123) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
+  add_foreign_key "images", "projects"
+  add_foreign_key "milestones", "users"
+  add_foreign_key "projects", "users"
+  add_foreign_key "skills", "users"
+  add_foreign_key "social_media_links", "users"
 end
