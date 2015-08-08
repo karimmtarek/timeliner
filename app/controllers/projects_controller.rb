@@ -31,7 +31,6 @@ class ProjectsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -45,7 +44,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:title, :description, :role, :client, :client_url, :published_on, :link_live, :link_source, images_attributes: [:id, :image, :description, :_destroy])
   end
-
 end
-
-
