@@ -31,7 +31,7 @@
     .row.clearfix
       .col.w-50
         %span.lable Blog URL
-        %p.textbox= @user.blog_url
+        %p.textbox= link_to @user.blog_url, @user.blog_url, target: '_blank'
       .col.w-50
         %span.lable Availability
         - if @user.available
@@ -52,7 +52,7 @@
   .row.full.clearfix
     - unless @user.social_media_links.blank?
       .col.w-50.wrapper
-        %h4.dark.underline.left.thin.yellow Social media links
+        %h3.dark.underline.left.thick.yellow Social media links
         %ul.tags.social-media
           - @user.social_media_links.each do |link|
             %li

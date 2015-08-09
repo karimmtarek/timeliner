@@ -19,18 +19,20 @@
           = f.text_field :username, class: 'form-control'
     .row.clearfix
       .col.w-100
-        = f.label :password, class: 'form-label'
-        %span.required *
-        - if @validatable
-          %em.form-label
-            (#{@minimum_password_length} characters minimum)
+        = f.label :password, class: 'form-label' do
+          Password
+          %span.required *
+          - if @validatable
+            %em.form-label
+              (#{@minimum_password_length} characters minimum)
         .field-icon
           %i.fa.fa-lock
           = f.password_field :password, class: 'form-control', autocomplete: "off"
     .row.clearfix
       .col.w-100
-        = f.label :password_confirmation, class: 'form-label'
-        %span.required *
+        = f.label :password_confirmation, class: 'form-label' do
+          Password confirmation
+          %span.required *
         .field-icon
           %i.fa.fa-lock
           = f.password_field :password_confirmation, class: 'form-control', autocomplete: "off"

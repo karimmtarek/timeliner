@@ -76,7 +76,7 @@
     .container
       .row.full.clearfix
         .col.w-50.wrapper
-          %h4.dark.underline.left.thin.yellow Social media links
+          %h3.dark.underline.left.thick.yellow Social media links
           = f.nested_fields_for :social_media_links do |smlf|
             = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
             .field-icon
@@ -87,7 +87,7 @@
             = f.add_nested_fields_link :social_media_links, 'Add a link', class: 'btn small warning'
 
         .col.w-50.wrapper
-          %h4.dark.underline.left.thin.yellow Skills
+          %h3.dark.underline.left.thick.yellow Skills
           .clearfix
             = f.nested_fields_for :skills do |sf|
               .field-icon
