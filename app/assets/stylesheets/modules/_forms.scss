@@ -22,8 +22,8 @@
 
 .form{
   .form-label{
-    color: #979797;
-    font-size: 13px;
+    color: $copy-gray;
+    font-size: 14px;
     font-weight: 300;
   }
 
@@ -274,7 +274,15 @@
 }
 
 .field_with_errors{
+  .form-label{
+    color: $red;
+  }
+
   .form-control{
     border-bottom-color: $red;
   }
+}
+
+.required{
+  color: $red;
 }

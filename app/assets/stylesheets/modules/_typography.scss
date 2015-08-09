@@ -121,7 +121,7 @@ p{
   line-height: 1.6;
 
   &.textbox{
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.2em;
     margin-bottom: 1em;
     color: $dark-blue;
@@ -142,8 +142,8 @@ div{
 
 span{
   &.lable{
-    color: #979797;
-    font-size: 13px;
+    color: $copy-gray;
+    font-size: 14px;
     font-weight: 300;
   }
 }
