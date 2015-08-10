@@ -47,7 +47,7 @@
           = f.label 'End date', class: 'form-label'
           %div{class:"select-field date-select field-icon end-date #{'hide' if @milestone.present}", id:'end_date'}
             %i.fa.fa-pencil
-            = f.text_field :date_end, required: true, placeholder: 'August 2015', value: format_date(@milestone.date_end, '%B %Y'), class: 'form-control'
+            = f.text_field :date_end, placeholder: 'August 2015', value: format_date(@milestone.date_end, '%B %Y'), class: 'form-control'
           %div.checkbox
             = f.check_box :present, id: 'present'
             = f.label :present, for: 'present'

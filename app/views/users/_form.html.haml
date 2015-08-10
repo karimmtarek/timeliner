@@ -11,12 +11,12 @@
           = f.label :first_name, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :first_name, class: 'form-control'
+            = f.text_field :first_name, placeholder: 'e.g. Karim', class: 'form-control'
         .col.w-50
           = f.label :last_name, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :last_name, class: 'form-control'
+            = f.text_field :last_name, placeholder: 'e.g. Tarek', class: 'form-control'
 
       .row.clearfix
         .col.w-50
@@ -35,44 +35,42 @@
           = f.label :phone, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :phone, class: 'form-control'
+            = f.text_field :phone, placeholder: 'e.g. 514 000 0000', class: 'form-control'
         .col.w-50
           = f.label :location, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :location, class: 'form-control'
-
-      .row.clearfix
-        .col.w-50
-          = f.label :description, class: 'form-label'
-          .field-icon.textarea
-            %i.fa.fa-pencil
-            = f.text_area :description, rows: 5, class: 'form-control textarea'
-        .col.w-50
-          = f.label :bio, class: 'form-label'
-          .field-icon.textarea
-            %i.fa.fa-pencil
-            = f.text_area :bio, rows: 5, class: 'form-control textarea'
+            = f.text_field :location, placeholder: 'e.g. Montrael, Canada', class: 'form-control'
 
       .row.clearfix
         .col.w-50
           = f.label :blog_url, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :blog_url, class: 'form-control'
-        .col.w-50
-
-      .row.clearfix
-        .col.w-50
-          %div.checkbox
-            = f.check_box :available, id: 'available'
-            = f.label :available, for: 'available'
+            = f.text_field :blog_url, placeholder: 'http://karimtarek.com/blog', class: 'form-control'
         .col.w-50
           %div{class: "#{'hide' unless @user.available}", id: 'availability_message'}
             = f.label :availability_message, class: 'form-label'
             .field-icon
               %i.fa.fa-pencil
-              = f.text_field :availability_message, class: 'form-control'
+              = f.text_field :availability_message, placeholder: 'e.g. Available for freelance work', class: 'form-control'
+          %div.checkbox
+            = f.check_box :available, id: 'available'
+            = f.label 'Show availability message', for: 'available'
+
+      .row.clearfix
+        .col.w-100
+          = f.label :description, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_field :description, placeholder: 'Keep this short. e.g. Full-stack Ruby on Rails developer / UI designer', class: 'form-control textarea'
+      .row.clearfix
+        .col.w-100
+          = f.label :bio, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :bio,placeholder: "Two or three lines about yourself. e.g. I'm a full stack Ruby on Rails web developer / UI designer, a problem solver who always loves a challenge and enjoys working on precise & detailed projects.", rows: 5, class: 'form-control textarea'
+
     .container
       .row.full.clearfix
         .col.w-50.wrapper
@@ -81,7 +79,7 @@
             = smlf.select :name, SocialMediaLink::ALLOWED_SITES, prompt: "Pick one"
             .field-icon
               %i.fa.fa-pencil
-              = smlf.text_field :url, class: 'form-control'
+              = smlf.text_field :url, placeholder: 'e.g. https://twitter.com/gotimeliner', class: 'form-control'
             = smlf.remove_nested_fields_link '', class: 'fa fa-trash'
           .action.solo
             = f.add_nested_fields_link :social_media_links, 'Add a link', class: 'btn small warning'
@@ -92,7 +90,7 @@
             = f.nested_fields_for :skills do |sf|
               .field-icon
                 %i.fa.fa-pencil
-                = sf.text_field :name, class: 'form-control'
+                = sf.text_field :name, placeholder: 'e.g. Ruby', class: 'form-control'
               = sf.remove_nested_fields_link '', class: 'fa fa-trash'
           .action.solo
             = f.add_nested_fields_link :skills, 'Add a skill', class: 'btn small warning'
