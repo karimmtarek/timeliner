@@ -16,8 +16,8 @@ TBC
 2. Run `bundle install` in the root directory
 3. Make sure that Postgresql is installed and you have an account setup
 4. Create `config\database.yml` and fill it, you can see the sample file `config\database.sample.yml` for reference.
-5. Run `rake db:create`
-6. Create `config\application.yml` and fill it, you can see the sample file `config\application.sample.yml` for reference.
+5. Create `config\application.yml` and fill it, you can see the sample file `config\application.sample.yml` for reference.
+6. Run `rake db:create`
 
 ## Coding style guides
 
