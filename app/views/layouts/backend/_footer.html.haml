@@ -1,6 +1,10 @@
-Created by
-= link_to 'Karim Tarek', 'http://www.gotimeliner.com/karim-tarek', target: '_blank'
-With
-%i.fa.fa-heart
-from Montreal, Canada.
-%small Copyright © 2015 Timeliner. All screenshots © their respective owners.
+= t('static_pages.footer.credit_copy')
+= link_to t('static_pages.footer.design'), t('static_pages.footer.design_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+= t('and')
+= link_to t('static_pages.footer.code'), t('static_pages.footer.code_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+= t('with')
+= fa_icon "heart"
+= t('static_pages.footer.credit_location')
+= t('by')
+= link_to t('static_pages.footer.credit_name'), t('static_pages.footer.credit_url'), target: '_blank', rel: 'nofollow', class: 'link-white'
+%small= t('static_pages.footer.copyrights')
