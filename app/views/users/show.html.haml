@@ -56,7 +56,7 @@
         %ul.tags.social-media
           - @user.social_media_links.each do |link|
             %li
-              %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
+              %i{class: 'fa fa-' + link.name.downcase.gsub(' ', '-')}
               = link_to link.name, link.url, target: '_blank'
     - unless @user.skills.blank?
       .col.w-50.wrapper
