@@ -12,7 +12,6 @@
           = project.title
       = render 'shared/project_links', project: project
       .company-n-date
-        client:
         = print_client(project)
         %span= "(#{project.published_on.year})"
       - unless project.description.blank?
