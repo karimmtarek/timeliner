@@ -43,7 +43,7 @@ $(document).ready(function () {
   $('.date-select input').datepicker({
       changeMonth: true,
       changeYear: true,
-      dateFormat: "MM yy"
+      dateFormat: "yy-mm-dd"
     });
 
 });
