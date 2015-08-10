@@ -26,13 +26,16 @@ $(function($){
   setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
 
   miniNav();
-  $('#nav').ddscrollSpy();
+  $('#nav').ddscrollSpy({
+    scrolltopoffset: -70
+  });
 
   var close_btn = $("button.overlay-close"),
       wrapper   = $(".wrapper"),
       overlay   = $(".overlay"),
       body      = $("body"),
       header    = $('header');
+
 
   function showNav(){
     header.slideDown('fast');
