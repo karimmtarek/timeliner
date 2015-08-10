@@ -12,46 +12,52 @@
       .row.clearfix
         .col.w-50
           = f.label :title, class: 'form-label'
+          %span.required *
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :title, required: true, class: 'form-control'
+            = f.text_field :title, required: true, placeholder: 'e.g. Front-end developer', class: 'form-control'
         .col.w-50
           = f.label :location, class: 'form-label'
+          %span.required *
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :location, required: true, class: 'form-control'
+            = f.text_field :location, required: true, placeholder: 'e.g. Montreal, Canada', class: 'form-control'
 
       .row.clearfix
         .col.w-50
           = f.label :company, class: 'form-label'
+          %span.required *
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :company, required: true, class: 'form-control'
+            = f.text_field :company, required: true, placeholder: 'e.g. Timeliner', class: 'form-control'
         .col.w-50
           = f.label :company_url, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :company_url, :placeholder => "domain.com", class: 'form-control'
+            = f.text_field :company_url, :placeholder => 'http://gotimeliner.com', class: 'form-control'
 
       .row.clearfix
         .col.w-50
-          .col.w-50
-            = f.label 'Start date', class: 'form-label'
-            .select-field.date-select
-              = f.text_field :date_start, required: true, value: format_date(@milestone.date_start, '%B %Y'), class: 'form-control'
-          .col.w-50
-            = f.label 'End date', class: 'form-label'
-            %div{class:"select-field date-select end-date #{'hide' if @milestone.present}", id:'end_date'}
-              = f.text_field :date_end, required: true, value: format_date(@milestone.date_end, '%B %Y'), class: 'form-control'
-            %div.checkbox
-              = f.check_box :present, id: 'present'
-              = f.label :present, for: 'present'
-
+          = f.label 'Start date', class: 'form-label'
+          %span.required *
+          .select-field.date-select.field-icon
+            %i.fa.fa-pencil
+            = f.text_field :date_start, required: true, placeholder: 'March 2015', value: format_date(@milestone.date_start, '%B %Y'), class: 'form-control'
         .col.w-50
+          = f.label 'End date', class: 'form-label'
+          %div{class:"select-field date-select field-icon end-date #{'hide' if @milestone.present}", id:'end_date'}
+            %i.fa.fa-pencil
+            = f.text_field :date_end, required: true, placeholder: 'August 2015', value: format_date(@milestone.date_end, '%B %Y'), class: 'form-control'
+          %div.checkbox
+            = f.check_box :present, id: 'present'
+            = f.label :present, for: 'present'
+
+      .row.clearfix
+        .col.w-100
           = f.label :description, class: 'form-label'
           .field-icon.textarea
             %i.fa.fa-pencil
-            = f.text_area :description, rows: 5, class: 'form-control textarea'
+            = f.text_area :description, rows: 5, placeholder: 'Describe your responsibilities, keep it short and sweet. You can use markdown syntax.', class: 'form-control textarea'
 
     .container
       .row.full.action.group.clearfix

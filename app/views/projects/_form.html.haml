@@ -11,50 +11,54 @@
       .row.clearfix
         .col.w-50
           = f.label :title, class: 'form-label'
+          %span.required *
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :title, required: true, placeholder: "Project title", class: 'form-control'
+            = f.text_field :title, required: true, placeholder: 'e.g. Timeliner', class: 'form-control'
         .col.w-50
           = f.label :published_on,class: 'form-label'
-          .select-field.date-select
-            = f.text_field :published_on, required: true, value: format_date(@project.published_on, '%B %Y'), class: 'form-control'
+          %span.required *
+          .select-field.date-select.field-icon
+            %i.fa.fa-pencil
+            = f.text_field :published_on, required: true, placeholder: 'August 2015',value: format_date(@project.published_on, '%B %Y'), class: 'form-control'
       .row.clearfix
         .col.w-50
           = f.label :client, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :client, required: true, placeholder: "Client name", class: 'form-control'
+            = f.text_field :client, required: true, placeholder: "Karim Tarek", class: 'form-control'
         .col.w-50
           = f.label :client_url, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :client_url, placeholder: "http://www.client-url.com", class: 'form-control'
+            = f.text_field :client_url, placeholder: 'http://karimtarek.com', class: 'form-control'
 
       .row.clearfix
         .col.w-50
           = f.label :link_live, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :link_live, placeholder: "http://www.project-live-link.com", class: 'form-control'
+            = f.text_field :link_live, placeholder: 'http://gotimeliner.com', class: 'form-control'
         .col.w-50
           = f.label :link_source, class: 'form-label'
           .field-icon
             %i.fa.fa-pencil
-            = f.text_field :link_source, placeholder: "http://www.project-source-link.com", class: 'form-control'
+            = f.text_field :link_source, placeholder: 'https://github.com/karimmtarek/timeliner', class: 'form-control'
 
       .row.clearfix
         .col.w-100
           = f.label :description, class: 'form-label'
           .field-icon.textarea
             %i.fa.fa-pencil
-            = f.text_area :description, rows: 5, required: true, placeholder: 'Descripe the project, what did you do, technologies used, stuff like that...', class: 'form-control textarea'
+            = f.text_area :description, rows: 5, required: true, placeholder: 'Descripe the project, what did you do, technologies used, stuff like that. You can use markdown syntax.', class: 'form-control textarea'
 
       .row.clearfix
-        %h4.dark.underline.left.thin.yellow screenshots
+        %h4.dark.underline.left.thick.yellow screenshots
         = f.nested_fields_for :images do |images_form|
           = images_form.remove_nested_fields_link '', class: 'fa fa-trash'
           .col.w-45
             = images_form.label 'Choose an image to upload', class: 'form-label'
+            %span.required *
             = images_form.file_field :image
           .col.w-50
             = images_form.label :description, class: 'form-label'
