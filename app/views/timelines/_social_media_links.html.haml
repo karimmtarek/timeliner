@@ -5,4 +5,4 @@
   - @user.social_media_links.each_with_index do |link, index|
     %li
       = link_to link.url, title: link.name, target: '_blank' do
-        %i{class: 'fa fa-' + link.name.gsub(' ', '-')}
+        %i{class: 'fa fa-' + link.name.downcase.gsub(' ', '-')}
