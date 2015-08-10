@@ -1,5 +1,4 @@
 class MilestonesController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:show]
   before_action :set_user
 
@@ -8,10 +7,8 @@ class MilestonesController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:account_id])
     @milestone = Milestone.friendly.find(params[:id])
     render :show
-    # binding.pry
   end
 
   def new
@@ -47,7 +44,6 @@ class MilestonesController < ApplicationController
 
     @milestone.destroy
     redirect_to :back, notice: 'Milestone destroyed!'
-    # flash.now[:notice] =
   end
 
   private
