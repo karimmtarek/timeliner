@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
   has_many :projects, dependent: :destroy
 
   has_many :skills, dependent: :destroy
-  accepts_nested_attributes_for :skills, allow_destroy: true
+  accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: lambda { |attr| attr['name'].blank? }
 
   has_many :social_media_links, dependent: :destroy
-  accepts_nested_attributes_for :social_media_links, allow_destroy: true
+  accepts_nested_attributes_for :social_media_links, allow_destroy: true, reject_if: lambda { |attr| attr['url'].blank? }
 
   after_destroy :send_goodbye_email
 
