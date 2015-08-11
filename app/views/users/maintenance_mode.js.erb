@@ -1,12 +1,12 @@
-<%- status = current_user.maintenance_mode ? 'on' : 'off' %>
+<% status = current_user.maintenance_mode ? 'on' : 'off' %>
 
 if ($('a.switch').hasClass('on')){
   $('a.switch').addClass('<%= status %>');
   $('a.switch').removeClass('on');
-  $('a.switch').siblings('.note').text("Your timeline is visible to the whole world.");
+  $('.switch-note').text("Your timeline is visible to the whole world.");
 } else {
   $('a.switch').addClass('<%= status %>');
   $('a.switch').removeClass('off');
-  $('a.switch').siblings('.note').text("Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.");
+  $('.switch-note').text("Your timeline is invisible, as long as you loged-in you still can see it, though everyone else can't.");
 }
 
