@@ -43,6 +43,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_user
-    @user = User.friendly.find(current_user.id)
+    @user = User.fetch(current_user.id)
   end
 end
