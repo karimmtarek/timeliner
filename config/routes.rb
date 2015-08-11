@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsEmailPreview::Engine, at: 'emails'
   root 'static_pages#index'
 
   devise_for :users

@@ -25,6 +25,7 @@ gem 'font-awesome-rails'
 gem 'unicorn'
 gem 'pg'
 gem 'rails_12factor'
+gem 'rails_email_preview', '~> 0.2.29'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
