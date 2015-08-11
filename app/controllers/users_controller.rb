@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user = User.fetch(params[:id])
   end
 
   def edit
-    @user = current_user
+    @user = User.fetch(params[:id])
   end
 
   def update
-    @user = current_user
+    @user = User.fetch(params[:id])
 
     if @user.update(info_params)
       redirect_to user_path
