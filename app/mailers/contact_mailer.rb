@@ -7,7 +7,7 @@ class ContactMailer < ApplicationMailer
     @message_body = message_params[:body]
     mail(from: @sender_email,
          to: @user.email,
-         subject: @message_subject || "You just got message ##{@user.message_counter} through Timeliner.",
+         subject: @message_subject || "You just got message ##{@user.message_counter} via Timeliner.",
          template_path: 'emails',
          template_name: 'contact_form_email'
         )
