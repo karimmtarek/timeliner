@@ -1,6 +1,7 @@
 class ContactMailer < ApplicationMailer
   def contact_form_email(user, message_params)
     @user = user
+    @preheader_text = 'You got a new message through your timeline.'
     @sender_email = message_params[:email]
     @message_subject = message_params[:subject]
     @message_body = message_params[:body]
