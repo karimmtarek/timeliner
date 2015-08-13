@@ -25,7 +25,6 @@ gem 'font-awesome-rails'
 gem 'unicorn'
 gem 'pg'
 gem 'rails_12factor'
-gem 'rails_email_preview', '~> 0.2.29'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -36,6 +35,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'jazz_hands2'
   gem 'awesome_print', github: 'eoinkelly/awesome_print'
+  gem 'rails_email_preview', '~> 0.2.29'
 end
 
 group :development do

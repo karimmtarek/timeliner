@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  mount RailsEmailPreview::Engine, at: 'emails'
+  if Rails.env.development?
+    mount RailsEmailPreview::Engine, at: 'emails'
+  end
+
   root 'static_pages#index'
 
   devise_for :users
