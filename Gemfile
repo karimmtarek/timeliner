@@ -29,6 +29,7 @@ gem 'rails_12factor'
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'rubocop', '0.30.0'
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'jazz_hands2'
   gem 'awesome_print', github: 'eoinkelly/awesome_print'
   gem 'rails_email_preview', '~> 0.2.29'
+  gem 'poltergeist'
 end
 
 group :development do
@@ -49,6 +51,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'launchy'
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', require: nil
 end
