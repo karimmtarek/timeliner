@@ -58,6 +58,8 @@ GEM
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
+    bugsnag (2.8.12)
+      json (~> 1.7, >= 1.7.7)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -483,6 +485,7 @@ DEPENDENCIES
   awesome_print!
   better_errors
   bourbon
+  bugsnag
   capybara
   carrierwave
   codeclimate-test-reporter
@@ -524,4 +527,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.4
+   1.10.6
