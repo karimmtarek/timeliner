@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  username: postgres
+  password:
+  pool: 5
+
+test:
+  <<: *default
+  database: travis_ci_test
