@@ -25,7 +25,7 @@ gem 'font-awesome-rails'
 gem 'unicorn'
 gem 'pg'
 gem 'rails_12factor'
-gem "bugsnag"
+gem 'bugsnag'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
