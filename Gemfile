@@ -37,7 +37,6 @@ group :development, :test do
   gem 'jazz_hands2'
   gem 'awesome_print', github: 'eoinkelly/awesome_print'
   gem 'rails_email_preview', '~> 0.2.29'
-  gem 'poltergeist'
 end
 
 group :development do
@@ -54,4 +53,6 @@ group :test do
   gem 'launchy'
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', require: nil
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
 end
