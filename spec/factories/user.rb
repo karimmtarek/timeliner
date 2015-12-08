@@ -5,5 +5,13 @@ FactoryGirl.define do
     username 'john-doe'
     email 'john_doe@gmail.com'
     password 'password'
+
+    trait :confirmed do
+      confirmed_at 1.day.ago
+    end
+
+    trait :published do
+      maintenance_mode false
+    end
   end
 end
