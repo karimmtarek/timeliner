@@ -17,7 +17,7 @@ TBC
 3. Make sure that Postgresql is installed and you have an account setup
 4. Create `config\database.yml` and fill it, you can see the sample file `config\database.sample.yml` for reference.
 5. Create `config\application.yml` and fill it, you can see the sample file `config\application.sample.yml` for reference.
-6. Run `rake db:create db:migrte`
+6. Run `rake db:create db:migrate`
 
 ## Coding style guides
 
@@ -30,6 +30,14 @@ TBC
 ### Front-end
 - [Code Guide](http://codeguide.co/)
 - [Sass Guidelines](http://sass-guidelin.es/)
+
+### Docker
+- Install [docker](https://www.docker.com)
+- Install [docker-compose](https://docs.docker.com/compose)
+- Run `docker-compose build` to build the image from the specified Dockerfile.
+- Run `docker-compose run web rake db:create db:migrate` once to build the database.
+- Run `docker-compose up -d` to launch the app.
+- Navigate to [localhost:3000](http://localhost:3000) to access the application.
 
 ## TODO
 - Refactore code to follow the coding style guides.
