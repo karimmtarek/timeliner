@@ -1,13 +1,14 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  username: username
-  password: password
+  host: db
+  username: <%= ENV['POSTGRESS_USERNAME'] %>
+  password: <%= ENV['POSTGRESS_PASSWORD'] %>
   pool: 5
 
 development:
   <<: *default
-  database: timeliner_development
+  database: <%= ENV['POSTGRESS_DB_NAME'] %>
 
 test:
   <<: *default
