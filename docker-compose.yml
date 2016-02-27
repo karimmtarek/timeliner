@@ -1,0 +1,19 @@
+dbdata:
+  image: postgres
+  volumes: 
+    - ./pgdata:/var/lib/postgresql
+  command: /bin/true
+db:
+  image: postgres
+  env_file: .env
+  volumes_from:
+    - dbdata
+web:
+  build: .
+  links:
+    - db
+  ports:
+    - 3000:3000
+  volumes:
+    - .:/timeliner
+  command: bundle exec rails s -p 3000 -b '0.0.0.0'
