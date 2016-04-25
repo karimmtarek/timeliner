@@ -4,7 +4,7 @@
     .switch-wrapper
       %span.lable online
       - status = current_user.maintenance_mode ? 'on' : 'off'
-      = link_to maintenance_mode_path, class: "switch #{status}", remote: true, method: :post do
+      = link_to maintenance_mode_path, class: "switch #{status}", id: 'status-switch', remote: true, method: :post do
         %span.indicator
       %span.lable offline
   %p.switch-note
