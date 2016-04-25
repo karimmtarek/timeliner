@@ -1,5 +1,4 @@
 require 'rails_helper'
-DatabaseCleaner.clean
 
 describe "Milestone" do
   let(:user) { FactoryGirl.create(:user) }
@@ -29,5 +28,9 @@ describe "Milestone" do
 
     expect(current_path).to eq(milestones_path)
     expect(page).to have_text('milestone title')
+
+    click_on 'Delete'
+
+    expect(page).to have_text('Milestone destroy')
   end
 end
