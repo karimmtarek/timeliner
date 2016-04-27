@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  if Rails.env.development?
-    mount RailsEmailPreview::Engine, at: 'emails'
-  end
+  mount RailsEmailPreview::Engine, at: 'emails' if Rails.env.development?
 
   root 'static_pages#index'
 
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
   resources :milestones
   resources :projects
   resources :images
+  resources :posts
 
   resources :users do
     resources :timelines, only: [:index, :contact]

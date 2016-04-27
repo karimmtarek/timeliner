@@ -21,6 +21,10 @@
       = link_to milestones_path do
         %i.fa.fa-map-marker
         %span.title Milestones
+    %li{class: "item #{active_class?('posts', %w[index])}"}
+      = link_to posts_path do
+        %i.fa.fa-map-marker
+        %span.title Blog
     %li{class: "item #{active_class?('projects', %w[index])}"}
       = link_to projects_path do
         %i.fa.fa-eye
@@ -34,6 +38,10 @@
           = link_to new_milestone_path do
             %i.fa.fa-angle-right
             Milestone
+        %li{class: "item #{active_class?('posts', %w[new edit])}"}
+          = link_to new_post_path do
+            %i.fa.fa-angle-right
+            Post
         %li{class: "item #{active_class?('projects', %w[new edit])}"}
           = link_to new_project_path do
             %i.fa.fa-angle-right

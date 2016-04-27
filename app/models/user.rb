@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :confirmable
-
   has_many :milestones, dependent: :destroy
   has_many :projects, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   has_many :skills, dependent: :destroy
   accepts_nested_attributes_for :skills, allow_destroy: true, reject_if: lambda { |attr| attr['name'].blank? }
@@ -53,7 +53,8 @@ class User < ActiveRecord::Base
   end
 
   def after_confirmation
-    send_welcome_email
+    # TODO: mock emails
+    send_welcome_email unless Rails.env.test?
   end
 
   def send_welcome_email

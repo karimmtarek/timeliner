@@ -1,0 +1,34 @@
+= form_for(@post) do |f|
+  = render 'shared/errors', object: @post
+  .form
+    .stick-it-up
+      - if @post.new_record?
+        = f.submit "Create", class: 'btn small default'
+      - else
+        = f.submit "Update", class: 'btn small ok'
+      = link_to "Cancel", posts_path, class: 'btn x-small actionless'
+    .sub-container
+
+      .row.clearfix
+        .col.w-100
+          = f.label :title, class: 'form-label'
+          %span.required *
+          .field-icon
+            %i.fa.fa-pencil
+            = f.text_field :title, required: true, placeholder: 'Metaprograming for Rookies', class: 'form-control'
+
+      .row.clearfix
+        .col.w-100
+          = f.label :body, class: 'form-label'
+          .field-icon.textarea
+            %i.fa.fa-pencil
+            = f.text_area :body, rows: 10, placeholder: 'Post body. You can use markdown syntax.', class: 'form-control textarea'
+
+    .container
+      .row.full.action.group.clearfix
+        .col.w-100
+          - if @post.new_record?
+            = f.submit "Create", class: 'btn small default'
+          - else
+            = f.submit "Update", class: 'btn small ok'
+          = link_to "Cancel", posts_path, class: 'btn x-small actionless'
