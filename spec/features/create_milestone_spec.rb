@@ -4,7 +4,7 @@ describe "Milestone" do
   let(:user) { FactoryGirl.create(:user, :confirmed) }
 
   before do
-    sign_in(user)
+    login_as(user)
   end
 
   it 'Create' do

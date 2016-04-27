@@ -4,7 +4,7 @@ describe 'Edit account info', :js do
   let(:user) { FactoryGirl.create(:user, :confirmed) }
 
   before do
-    sign_in(user)
+    login_as(user)
   end
 
   it 'updates account information' do

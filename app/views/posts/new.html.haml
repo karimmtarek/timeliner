@@ -1,0 +1,10 @@
+= content_for(:title) do
+  = "Create Post - #{@user.first_name} #{@user.last_name} | Timeliner"
+
+.container
+  .row.full.page-title.clearfix
+    %h2.dark.underline.left.thick.yellow
+      Post
+      %span.heighlight (Create)
+
+  = render 'form'

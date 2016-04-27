@@ -1,0 +1,32 @@
+= content_for(:title) do
+  = "Posts - #{@user.first_name} #{@user.last_name} | Timeliner"
+
+.container
+  .row.full.page-title.clearfix
+    = link_to 'New', new_post_path, class: 'btn small default pull-right'
+    %h2.dark.underline.left.thick.yellow
+      Posts
+
+- unless @posts.any?
+  = render 'first_post'
+
+- if @posts.any?
+  - @posts.each_with_index do |post, index|
+    .container.post
+      .row.full.clearfix
+        .col.w-100.wrapper
+          .ribbon-wrapper
+            %span.ribbon
+              = index + 1
+          .title
+            .btn-group.pull-right
+              = link_to 'Delete', post_path(post), method: :delete, class: 'btn danger x-small'
+              = link_to 'Edit', edit_post_path(post), class: 'btn warning x-small'
+            %h4
+              = post.title.blank? ? 'Edit to add a title' : post.title
+            .company-n-date
+              Published at
+              %span
+                date goes here
+          .copy
+            = markdown(post.body)
