@@ -5,10 +5,12 @@ class PostsController < ApplicationController
     @posts = current_user.posts
   end
 
-  # def show
-  #   @milestone = Milestone.friendly.find(params[:id])
-  #   render :show
-  # end
+  def show
+    # TODO: make this happen
+    # @milestone = Milestone.friendly.find(params[:id])
+    @post = Post.find(params[:id])
+    render :show
+  end
 
   def new
     @post = current_user.posts.new
@@ -24,19 +26,23 @@ class PostsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @milestone = Milestone.friendly.find(params[:id])
-  # end
+  def edit
+    # TODO: make this happen
+    # @post = Post.friendly.find(params[:id])
+    @post = Post.find(params[:id])
+  end
 
-  # def update
-  #   @milestone = Milestone.friendly.find(params[:id])
+  def update
+    # TODO: make this happen
+    # @post = Post.friendly.find(params[:id])
+    @post = Post.find(params[:id])
 
-  #   if @milestone.update(milestone_params)
-  #     redirect_to milestones_path, notice: 'Milestone updated!'
-  #   else
-  #     render :edit
-  #   end
-  # end
+    if @post.update(post_params)
+      redirect_to posts_path, notice: 'Post updated!'
+    else
+      render :edit
+    end
+  end
 
   def destroy
     # TODO: make this happen
