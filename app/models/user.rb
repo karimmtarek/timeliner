@@ -49,7 +49,10 @@ class User < ActiveRecord::Base
   end
 
   def basic_info?
-    first_name.present? && last_name.present? && description.present? && bio.present?
+    first_name.present? &&
+      last_name.present? &&
+      description.present? &&
+      bio.present?
   end
 
   def after_confirmation

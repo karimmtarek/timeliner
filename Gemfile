@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.0'
 
-gem 'rails', '4.2.0'
+gem 'rails', '~> 4.2.5'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
+gem 'uglifier', '>= 2.7.2'
+gem 'jquery-rails', '>= 4.0.4'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'devise'
+gem 'devise', '>= 3.5.4'
 gem 'gravtastic'
 gem 'haml-rails', '~> 0.8'
 gem 'figaro'
-gem 'redcarpet'
+gem 'redcarpet', '3.2.3'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
@@ -28,7 +28,6 @@ gem 'rails_12factor'
 gem 'bugsnag'
 
 group :development, :test do
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0'
@@ -36,11 +35,12 @@ group :development, :test do
   gem 'rubocop', '0.30.0'
   gem 'factory_girl_rails'
   gem 'jazz_hands2'
-  gem 'awesome_print', github: 'eoinkelly/awesome_print'
+  gem 'awesome_print'
   gem 'rails_email_preview', '~> 0.2.29'
 end
 
 group :development do
+  gem 'web-console', '>= 2.1.3'
   gem 'thin'
   gem 'guard-rspec', require: false
   gem 'guard-livereload', '~> 2.4', require: false
@@ -56,4 +56,5 @@ group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'poltergeist'
   gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'capybara-screenshot'
 end
