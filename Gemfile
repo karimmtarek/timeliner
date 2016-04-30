@@ -9,7 +9,7 @@ gem 'jquery-rails', '>= 4.0.4'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'devise', '>= 3.5.4'
+gem 'devise', '~> 3.5'
 gem 'gravtastic'
 gem 'haml-rails', '~> 0.8'
 gem 'figaro'
