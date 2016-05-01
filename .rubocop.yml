@@ -1,5 +1,13 @@
 AllCops:
   DisabledByDefault: true
+  Include:
+    - '**/Gemfile'
+    - '**/Rakefile'
+  Exclude:
+    - '**/bin/spring'
+    - '**/bin/rake'
+    - '**/bin/rails'
+    - '**/db/schema.rb'
 
 #################### Lint ################################
 
