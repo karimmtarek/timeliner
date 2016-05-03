@@ -122,20 +122,6 @@
   height: auto;
 }
 
-.wrapper {
-	@include transition(transform 0.5s ease-in-out, blur 0.5s ease-in-out);
-
-	&.overlay-open {
-		@include transform(scale(0.95));
-
-		-webkit-filter: blur(5px);
-	  -moz-filter: blur(5px);
-	  -o-filter: blur(5px);
-	  -ms-filter: blur(5px);
-	  filter: blur(5px);
-	}
-}
-
 .overlay-contentscale {
 	visibility: hidden;
 	@include transform(translateY(100%));
