@@ -129,6 +129,7 @@
 
 	&.open {
 		visibility: visible;
+    z-index: 999;
 		@include transform(translateY(0%));
 		@include transition(transform 0.5s $ease-out-expo);
 
