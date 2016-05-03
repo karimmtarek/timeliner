@@ -53,6 +53,10 @@
       .time-location{
       }
     }
+
+    &.hide{
+      display: none;
+    }
   }
 
   .bubble{
@@ -173,5 +177,17 @@
       background-color: $dark-blue;
       border-radius: 50%;
     }
+  }
+}
+
+#show-milestones{
+  background-color: #273747;
+  color: #fff;
+  border-bottom: 2px solid #1b2631;
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  &:hover{
+    background-color: #1b2631;
   }
 }

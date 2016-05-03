@@ -15,4 +15,8 @@ module TimelinesHelper
     end
     "#{word}"
   end
+
+  def hide_event(index)
+    index > 2 ? 'hide' : ''
+  end
 end
