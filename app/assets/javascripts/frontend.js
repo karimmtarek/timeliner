@@ -64,5 +64,11 @@ $(function($){
            });
     e.preventDefault();
   });
+
+  $('#show-milestones').on('click', function(e){
+    e.preventDefault();
+    $('#show-milestones').fadeOut();
+    $('.event').removeClass('hide');
+  });
 });
 

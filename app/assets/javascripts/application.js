@@ -28,9 +28,9 @@ $(document).ready(function () {
     $(this).closest('.alert').fadeOut('slow');
   });
 
-  console.log('window: ', $(window).height());
-  console.log('header: ', $('.header').outerHeight());
-  console.log('footer: ', $('.footer').outerHeight());
+  // console.log('window: ', $(window).height());
+  // console.log('header: ', $('.header').outerHeight());
+  // console.log('footer: ', $('.footer').outerHeight());
   var getHeight = $(window).height() - ($('.header').outerHeight() + $('.footer').outerHeight()) - 50;
 
   function fixHeight(){
@@ -45,7 +45,6 @@ $(document).ready(function () {
       changeYear: true,
       dateFormat: "yy-mm-dd"
     });
-
 });
 
 

@@ -4,7 +4,7 @@
       .timeline
         - @timeline.milestones.each_with_index do |milestone, index|
           - unless milestone.title.blank?
-            .event
+            %div{ :class => "event #{hide_event(index)}", :id => "event-#{index + 1}" }
               .bubble
                 .time-location
                   %span.time
@@ -16,9 +16,11 @@
                     = "at #{milestone.company}"
                   - else
                     at
-                    %a{:href => "#{milestone.company_url}", :target => '_blank'}= milestone.company
+                    %a{ :href => "#{milestone.company_url}", :target => '_blank' }= milestone.company
 
                 - unless milestone.description.blank?
                   .description.markdown
                     = markdown(milestone.description)
                   = link_to 'more details', '#', class: 'btn more_milestone_details'
+    - if @timeline.milestones.size > 3
+      %a{ :href => '#', :class => 'btn', :id => 'show-milestones' } Show all milestones
