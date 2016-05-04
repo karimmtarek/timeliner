@@ -26,6 +26,7 @@ gem 'unicorn'
 gem 'pg'
 gem 'rails_12factor'
 gem 'bugsnag'
+gem 'appsignal'
 
 group :development, :test do
   gem 'spring'
