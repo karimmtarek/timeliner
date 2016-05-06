@@ -220,6 +220,7 @@
   .remove_nested_fields_link{
     display: table-cell;
     float: right;
+    position: relative;
 
     &.fa{
       background-color: $edit-gray;
