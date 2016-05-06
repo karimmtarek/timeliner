@@ -20,9 +20,14 @@ $(function($){
   setTimeout(function(){ $('.flash').fadeOut('slow'); }, 3000);
 
   miniNav();
-  $('#nav').ddscrollSpy({
-    scrolltopoffset: -70
-  });
+
+  scrollSpy = function() {
+    $('#nav').ddscrollSpy({
+      scrolltopoffset: -70
+    });
+  }
+
+  scrollSpy();
 
   var closeBtn = $('button.overlay-close'),
       wrapper   = $('.wrapper'),
@@ -61,8 +66,9 @@ $(function($){
 
   $('#show-milestones').on('click', function(e){
     e.preventDefault();
-    $('#show-milestones').fadeOut();
+    $(this).fadeOut();
     $('.event').removeClass('hide');
+    scrollSpy();
   });
 });
 
