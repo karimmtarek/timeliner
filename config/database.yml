@@ -17,8 +17,8 @@ test:
 
 staging:
   <<: *default
-  database: <%= ENV['POSTGRESQL_URL'] %>
+  database: <%= ENV['DATABASE_URL'] %>
 
 production:
   <<: *default
-  database: <%= ENV['POSTGRESQL_URL'] %>
+  database: <%= ENV['DATABASE_URL'] %>
