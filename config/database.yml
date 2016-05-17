@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  database: timeliner_development
+
+test:
+  <<: *default
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  database: timeliner_test
+
+staging:
+  <<: *default
+  database: <%= ENV['POSTGRESQL_URL'] %>
+
+production:
+  <<: *default
+  database: <%= ENV['POSTGRESQL_URL'] %>
