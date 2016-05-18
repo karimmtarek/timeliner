@@ -5,14 +5,14 @@ default: &default
 
 development:
   <<: *default
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   database: timeliner_development
 
 test:
   <<: *default
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
   database: timeliner_test
 
 staging:
