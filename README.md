@@ -1,4 +1,4 @@
-# Timeliner [![Build Status](https://travis-ci.org/karimmtarek/timeliner.svg)](https://travis-ci.org/karimmtarek/timeliner) [![Code Climate](https://codeclimate.com/github/karimmtarek/timeliner/badges/gpa.svg)](https://codeclimate.com/github/karimmtarek/timeliner) [![Test Coverage](https://codeclimate.com/github/karimmtarek/timeliner/badges/coverage.svg)](https://codeclimate.com/github/karimmtarek/timeliner/coverage)
+# Timeliner [![Build Status](https://travis-ci.org/karimmtarek/timeliner.svg)](https://travis-ci.org/karimmtarek/timeliner) [![Code Climate](https://codeclimate.com/github/karimmtarek/timeliner/badges/gpa.svg)](https://codeclimate.com/github/karimmtarek/timeliner) [![Test Coverage](https://codeclimate.com/github/karimmtarek/timeliner/badges/coverage.svg)](https://codeclimate.com/github/karimmtarek/timeliner/coverage) [![security](https://hakiri.io/github/karimmtarek/timeliner/master.svg)](https://hakiri.io/github/karimmtarek/timeliner/master)
 
 Timeliner is an open-source, free to use web application aims to help web developers and designers create a one good-looking portfolio page, quick and easy.
 
@@ -37,7 +37,7 @@ TBC
 ## Contributing
 1. Fork it
 2. Set it up
-3. Create your feature branch (`git checkout -b your-initials-new-feature`)
+3. Create your feature branch (`git checkout -b new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin your-initials-new-feature`)
+5. Push to the branch (`git push -u origin new-feature`)
 6. Create a new Pull Request
