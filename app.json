@@ -1,0 +1,14 @@
+{
+  "name": "timeliner",
+  "description": "Timeliner post-deployment script",
+  "keywords": [
+    "dokku",
+    "rails",
+    "gotimeliner.com"
+  ],
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec rake db:migrate"
+    }
+  }
+}
