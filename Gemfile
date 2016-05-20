@@ -22,7 +22,7 @@ gem 'bourbon'
 gem 'friendly_id', '~> 5.1.0'
 gem 'newrelic_rpm'
 gem 'font-awesome-rails'
-gem 'unicorn'
+gem 'puma'
 gem 'pg'
 gem 'rails_12factor'
 gem 'bugsnag'
@@ -42,7 +42,6 @@ end
 
 group :development do
   gem 'web-console', '>= 2.1.3'
-  gem 'thin'
   gem 'guard-rspec', require: false
   gem 'guard-livereload', '~> 2.4', require: false
   gem 'faker'
