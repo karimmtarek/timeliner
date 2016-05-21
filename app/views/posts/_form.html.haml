@@ -22,7 +22,7 @@
           = f.label :body, class: 'form-label'
           .field-icon.textarea
             %i.fa.fa-pencil
-            = f.text_area :body, rows: 10, placeholder: 'Post body. You can use markdown syntax.', class: 'form-control textarea'
+            = f.text_area :body, rows: 10, required: true, placeholder: 'Post body. You can use markdown syntax.', class: 'form-control textarea'
 
     .container
       .row.full.action.group.clearfix
