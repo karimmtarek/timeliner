@@ -15,7 +15,7 @@ namespace :deploy do
   end
 
   def notify_appsignal(env:)
-    puts `APPSIGNAL_PUSH_API_KEY=ENV['APPSIGNAL_PUSH_API_KEY'] appsignal notify_of_deploy --revision=#{timestamp} --user=karim --environment=#{env} --name=Timeliner`
+    puts `APPSIGNAL_PUSH_API_KEY=#{ENV['APPSIGNAL_PUSH_API_KEY']} appsignal notify_of_deploy --revision=#{timestamp} --user=karim --environment=#{env} --name=Timeliner`
   end
 
   def timestamp
