@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-    body "MyText"
-    published_on nil
+    title { Faker::Book.title }
+    body { Faker::Lorem.paragraph(Random.new.rand(5)) }
+    published_on { Faker::Date.backward(Random.new.rand(99)) }
     user nil
   end
-
 end

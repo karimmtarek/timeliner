@@ -38,13 +38,13 @@ group :development, :test do
   gem 'jazz_hands2'
   gem 'awesome_print'
   gem 'rails_email_preview', '~> 0.2.29'
+  gem 'faker'
 end
 
 group :development do
   gem 'web-console', '>= 2.1.3'
   gem 'guard-rspec', require: false
   gem 'guard-livereload', '~> 2.4', require: false
-  gem 'faker'
   gem 'better_errors'
   gem 'letter_opener'
 end
