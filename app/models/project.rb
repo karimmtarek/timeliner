@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :images,
     allow_destroy: true,
-    reject_if: lambda {|attributes| attributes['image'].blank?}
+    reject_if: lambda { |attributes| attributes['image'].blank? }
 
   validates :title, :client, :published_on, presence: true
   validates :description, length: { in: 75..500 }
