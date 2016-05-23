@@ -2,6 +2,8 @@ class TimelinesController < ApplicationController
   skip_before_action :authenticate_user!
   around_action :catch_not_found, only: :show
 
+  theme :theme_selector
+
   def show
     @user = User.fetch(params[:user_id])
     @timeline = Timeline.new(@user)
@@ -29,5 +31,9 @@ class TimelinesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "We could't find that user"
     render :user_not_found
+  end
+
+  def theme_selector
+    params[:theme] || 'original'
   end
 end

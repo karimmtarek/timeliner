@@ -25,6 +25,7 @@ gem 'puma'
 gem 'pg'
 gem 'rails_12factor'
 gem 'appsignal'
+gem 'themes_on_rails'
 
 group :development, :test do
   gem 'spring'
