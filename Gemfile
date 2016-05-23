@@ -24,7 +24,6 @@ gem 'font-awesome-rails'
 gem 'puma'
 gem 'pg'
 gem 'rails_12factor'
-gem 'newrelic_rpm'
 gem 'appsignal'
 
 group :development, :test do
