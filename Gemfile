@@ -20,12 +20,11 @@ gem 'fog'
 gem 'nested_form_fields'
 gem 'bourbon'
 gem 'friendly_id', '~> 5.1.0'
-gem 'newrelic_rpm'
 gem 'font-awesome-rails'
 gem 'puma'
 gem 'pg'
 gem 'rails_12factor'
-gem 'bugsnag'
+gem 'newrelic_rpm'
 gem 'appsignal'
 
 group :development, :test do
