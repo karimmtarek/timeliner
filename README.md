@@ -3,10 +3,7 @@
 Timeliner is an open-source, free to use web application aims to help web developers and designers create a one good-looking portfolio page, quick and easy.
 
 ## Use case
-You need a portfolio or just a unique online resume, you need to add some basic information about your self and what you do. You need it look good, you don't have time to build it from scratch and you don't want to buy a template for $10 and hack into it because again you don't have that, and you don't want to pay for fancy online service, if you do please check the **Fancy online services** list.
-
-## Fancy online services
-TBC
+You need a portfolio or just a unique online resume, you need to add some basic information about yourself and what you do. You need it look good, you don't have time to build it from scratch, and you don't want to buy a template for $10 and hack into it because again you don't have time for that, and you don't want to pay for fancy online service.
 
 ## Demo
 TBC
@@ -41,3 +38,10 @@ TBC
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push -u origin new-feature`)
 6. Create a new Pull Request
+
+## Sponsored by
+Thanks to
+- [DigitalOcean](https://www.digitalocean.com/) for hosting
+- [AppSignal](https://appsignal.com/) for providing error tracking & performance insight
+
+you guys rock!
