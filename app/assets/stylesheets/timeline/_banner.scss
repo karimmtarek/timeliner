@@ -2,6 +2,7 @@
   z-index: 10;
   display: inline-block;
   margin-top: 10px;
+  position: relative;
   @include clearfix;
 
   .text{
