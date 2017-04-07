@@ -1,9 +1,9 @@
 # Timeliner [![Build Status](https://travis-ci.org/karimmtarek/timeliner.svg)](https://travis-ci.org/karimmtarek/timeliner) [![Code Climate](https://codeclimate.com/github/karimmtarek/timeliner/badges/gpa.svg)](https://codeclimate.com/github/karimmtarek/timeliner) [![Test Coverage](https://codeclimate.com/github/karimmtarek/timeliner/badges/coverage.svg)](https://codeclimate.com/github/karimmtarek/timeliner/coverage) [![security](https://hakiri.io/github/karimmtarek/timeliner/master.svg)](https://hakiri.io/github/karimmtarek/timeliner/master)
 
-Timeliner is an open-source, free to use web application aims to help web developers and designers create a one good-looking portfolio page, quick and easy.
+Timeliner is an open-source, free to use web application that aims to help web developers and designers create a good-looking portfolio page, quick and easy.
 
-## Use case
-You need a portfolio or just a unique online resume, you need to add some basic information about yourself and what you do. You need it look good, you don't have time to build it from scratch, and you don't want to buy a template for $10 and hack into it because again you don't have time for that, and you don't want to pay for fancy online service.
+## Use Case
+You need a portfolio or just a unique online resume, you need to add some basic information about yourself and what you do. You need it to look good, you don't have time to build it from scratch, and you don't want to buy a template for $10 and hack into it because again you don't have time for that, and you don't want to pay for a fancy online service.
 
 ## Demo
 TBC
@@ -16,7 +16,7 @@ TBC
 5. Create `config\application.yml` and fill it, you can see the sample file `config\application.sample.yml` for reference.
 6. Run `rake db:create db:migrte`
 
-## Coding style guides
+## Coding Style Guides
 
 ### Ruby
 - [Ruby coding style guide](https://github.com/bbatsov/ruby-style-guide)
@@ -29,7 +29,7 @@ TBC
 - [Sass Guidelines](http://sass-guidelin.es/)
 
 ## TODO
-- Refactore code to follow the coding style guides.
+- Refactor code to follow the coding style guides.
 
 ## Contributing
 1. Fork it
