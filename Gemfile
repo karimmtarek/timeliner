@@ -35,11 +35,11 @@ group :development, :test do
   gem 'jazz_hands2'
   gem 'awesome_print'
   gem 'rails_email_preview', '~> 0.2.29'
-  gem 'faker'
 end
 
 group :development, :test, :staging do
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
