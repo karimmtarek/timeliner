@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
   end
 
   def send_goodbye_email
-    GoodbyeMailer.goodbye_email(self).deliver_now
+    GoodbyeMailer.goodbye_email(self).deliver_now unless (Rails.env.test? || Rails.env.staging?)
   end
 
   def message_sent
