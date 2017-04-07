@@ -3,7 +3,7 @@ FactoryGirl.define do
     first_name 'John'
     last_name  'Doe'
     username 'john-doe'
-    email 'john_doe@gmail.com'
+    email 'john_doe@example.com'
     password 'password'
 
     trait :confirmed do
